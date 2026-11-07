@@ -1,0 +1,62 @@
+{
+  "root_dir": "D:\\KimiData\\kimi\\tasks\\2026-11-04\\18-10-19-c586ec5e\\GNSS数据下载",
+  "threads": 4,
+  "timeout": 60,
+  "retry": 2,
+  "earthdata_user": "jzshhh",
+  "earthdata_pass": "SnpzODg1MjAxMzE0",
+  "force_recheck_missing": false,
+  "proxy": "",
+  "lang": "zh",
+  "auto_gunzip": true,
+  "auto_crx2rnx": true,
+  "ui": {
+    "igs_obs": true,
+    "igs_nav": true,
+    "igs_center": "CDDIS",
+    "igs_stations": [
+      "bjfs",
+      "bjnm",
+      "chan",
+      "jfng"
+    ],
+    "prd_checked": [],
+    "hf": {
+      "sopacr20": [
+        false,
+        "igs"
+      ],
+      "mit": [
+        false,
+        ""
+      ]
+    },
+    "rg_enable": {
+      "hk": false,
+      "sopac": false,
+      "nz": false,
+      "ga": false,
+      "earthscope": false
+    },
+    "rg_stations": {
+      "hk": [],
+      "sopac": [],
+      "nz": [],
+      "ga": [],
+      "earthscope": []
+    },
+    "rg_collapsed": {
+      "hk": false,
+      "sopac": true,
+      "nz": true,
+      "ga": true,
+      "earthscope": true
+    }
+  },
+  "_order": [
+    "WHU",
+    "BKG",
+    "IGN",
+    "CDDIS"
+  ]
+}

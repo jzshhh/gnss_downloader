@@ -1,0 +1,202 @@
+GNSS Data Downloader — User Manual (English)
+=============================================
+
+Developer:  Zhongshan Jiang
+Affiliation: Sun Yat-sen University
+Email: jiangzhsh@mail.sysu.edu.cn
+
+
+1. Portable Edition
+-------------------
+- No installation required. Just double-click gnss_downloader.exe.
+- The single exe bundles everything (IGS station list, station
+  coordinates, map component, icon, gzip/crx2rnx utilities) and runs
+  from any folder.
+- To use your own station list / coordinates, place a newer
+  igs_stations.txt or igs_stations_geo.json beside the exe;
+  external files take precedence over the built-in ones.
+- No registry writes, no online activation.
+- Single instance: only one window may run at a time; launching again
+  shows a notice instead of opening a second window (which would
+  overwrite settings).
+- Everything is stored in the program folder:
+    config.json   settings (incl. UI memory and Earthdata account)
+    sources.json  data-source URLs (editable in the "Sources" tab)
+    history.json  download history (skips finished / known-missing files)
+    cache\        directory-listing cache (permanent for data >30 days old,
+                  1 hour for recent data)
+    logs\         per-run statistics reports
+- To "uninstall", simply delete the folder.
+
+
+2. Interface Overview
+---------------------
+The top bar holds the GLOBAL date range (YYYY-MM-DD), shared by all tabs,
+with Yesterday / Last 7d / Last 30d shortcuts.
+
+Tabs:
+  1. IGS Obs + Nav     RINEX observation files and brdc broadcast ephemeris
+  2. AC Products       orbits / clocks / ERP / biases / ionosphere,
+                       Final / Rapid / Ultra-rapid series
+  3. hfile             SOPAC and MIT h-files (for GAMIT)
+  4. Regional          regional RINEX networks (Hong Kong built in;
+                       add your own, e.g. Australia or New Zealand)
+  5. Sources           view/edit repository URLs; add regional/hfile sources
+  6. Settings          data root, threads, Earthdata account, language
+
+Bottom (only on the four download tabs): Start/Stop buttons, overall
+progress bar, per-file progress (percentage + speed), and Log /
+Statistics tabs. The statistics view lists
+every file with its status (OK / missing / failed) and a classified
+failure reason, with one-click "Retry failed".
+
+
+3. Using Each Tab
+-----------------
+[1. IGS Obs + Nav]
+- Check "Obs files" and/or "Broadcast nav (brdc)", then select stations.
+- Stations are grouped by continent (Asia first; Chinese stations
+  CHN/HKG/MAC/TWN lead the Asia block). The 3-letter IGS country code
+  follows each station name.
+- Each continent row has a tri-state checkbox: one click selects/clears
+  the whole continent; ▣ means partially selected.
+- "Map" opens an interactive map to pick stations; copy them and use
+  "Paste" back in the program.
+- Repository: pick one of WHU / BKG / IGN / CDDIS. If unsure, click
+  "Speed test" next to it and use "Use fastest" in the result window
+  (BKG may require a proxy in China).
+- Naming is automatic: RINEX 3 long names are preferred; RINEX 2 short
+  names are used when no RINEX 3 file exists.
+- Output: rinex/obs/yyyy/ddd/, rinex/nav/yyyy/.
+
+[2. AC Products]
+- Three-level tree: Repository -> AC + Series -> Product. Click the Sel
+  column to check. Repository rows and AC rows have tri-state checkboxes
+  that select/clear everything beneath them in one click; ▣ means
+  partially selected.
+- Series: Final (~2 weeks latency), Rapid, Ultra-rapid (4 epochs/day,
+  00/06/12/18 UTC). Ultra-rapid clocks are embedded in the orbit files,
+  so only orbit + ERP are offered.
+- MGEX series (marked "MGEX since 2014, incl. BDS") contains
+  BeiDou/Galileo/QZSS and starts in 2014. Products before GPS week 2238
+  (Nov 2022) use legacy short names; the software adapts automatically.
+- IONEX products (codg/igsg/whug/esag/jplg) sit under each repository.
+- The CODE(AIUB) repository offers the full CODE product line (including
+  the COD0MGXFIN multi-GNSS series) plus AIUB-specific products
+  (GIM ionosphere, Bernese ION/BIA, monthly DCB).
+- Output: product/<ac>/<final|rapid|ultra>/yyyy/ddd/.
+
+[3. hfile]  Built in: SOPAC ITRF2020 reprocessing (hfilesR20, 1992–now)
+            and MIT. For SOPAC the Network field defaults to "igs" and
+            matches all IGS solutions (higs1a–9a, higsaa…; the daily count
+            varies) — enter another network (eu, ak…) or leave empty for
+            all; MIT has no network prefix, just leave it empty. The MIT
+            server (chandler.mit.edu) has been unstable lately; failures
+            are grouped as "network unreachable", and the URL can be
+            edited in Sources. Output: hfile/<agency>/yyyy/.
+
+[4. Regional]
+- Built in: Hong Kong SatRef, US SOPAC, New Zealand GeoNet, Geoscience
+  Australia (GA), and US EarthScope (OAuth: click the network's
+  "Authorize" button, log in via the browser and confirm the code;
+  the token is stored locally and refreshed automatically).
+- Each network is a collapsible panel (click ▸/▾) with select-all/none;
+  "+ Add network" on top adds your own. Stations you type in are
+  remembered. Output: rinex/obs/yyyy/ddd/.
+- GA serves RINEX 3 (.crx.gz) only; GeoNet is RINEX 3 only since Oct 2024.
+  Free EarthScope account: https://www.earthscope.org/data/
+
+[5. Sources]
+- Double-click an entry to edit its URL template. Product-type sources
+  (repositories / ACs / IONEX) are a closed set: edit/delete only.
+  Regional and hfile sources can be added freely.
+- Placeholders: {YYYY} 4-digit year, {YY} 2-digit year, {DDD} day of year,
+  {GPSW} GPS week, {GPSD} day of week, {SSSS} 4-char station (lower),
+  {SSSSSSSSS} 9-char station (upper).
+- Regional/hfile sources accept an optional username/password (Basic
+  auth sites), stored encrypted in local sources.json and sent
+  automatically; login redirects are reported as "denied (login required)".
+  Exception: EarthScope uses OAuth instead — authorize it from the
+  Regional tab, no username/password needed.
+
+[6. Settings]
+- Language: 中文 / English, applied immediately (current settings are
+  saved before the switch).
+- Proxy: blank = direct connection (the system proxy is NOT used);
+  enter e.g. http://127.0.0.1:7890 here if a proxy is needed.
+- CDDIS requires a free NASA Earthdata account
+  (https://urs.earthdata.nasa.gov). Enter it and click "Test Earthdata
+  login"; a dialog tells you directly: OK / wrong password / network
+  unreachable. The account is stored locally only (config.json).
+- "Speed test" measures each repository's latency and shows the results
+  in a window, where you can adopt the fastest one.
+- "Extract .gz/.Z after download": decompresses each archive in place
+  (original kept), using the bundled gzip.exe.
+- "Convert .crx to .rnx": converts compact RINEX to plain RINEX with the
+  bundled crx2rnx.exe (combine with the extract option).
+- All settings and check states are saved automatically when the window
+  is closed.
+
+[7. About]  Developer and contact info; both manuals open with one click.
+
+
+4. Repositories
+---------------
+  WHU   Wuhan University IGS Data Center (web API; fast in China;
+        no IONEX, no MGEX-final products)
+  BKG   https://igs.bkg.bund.de/root_ftp/IGS/  (may require a proxy in China)
+  IGN   ftp://igs.ign.fr/pub/igs/
+  CDDIS https://cddis.nasa.gov/archive/gnss/  (Earthdata account required)
+  CODE(AIUB)  https://www.aiub.unibe.ch/download/  (old FTP retired)
+
+
+5. FAQ
+------
+Q: Files reported "missing (no such file on server)"?
+A: Usually they simply do not exist yet (Final products lag ~2 weeks;
+   Ultra-rapid exists only for recent years). Files once marked missing
+   are skipped next time; enable "re-check" in Settings to force a retry.
+
+Q: CDDIS fails with "denied (login required)"?
+A: Enter your Earthdata account in Settings and test it.
+
+Q: Do I have to restart downloads after a network break?
+A: No. Partial files (.part) resume automatically, and completed files
+   are skipped.
+
+Q: Is a whole-year span slow?
+A: The WHU channel fetches a full year's file list in one query, and
+   other repositories use a disk cache, so a second run over the same
+   dates is nearly instant.
+
+
+6. Contact
+----------
+Zhongshan Jiang
+School of Geospatial Engineering and Science, Sun Yat-sen University
+Email: jiangzhsh@mail.sysu.edu.cn
+
+
+7. Build It Yourself (for developers)
+-------------------------------------
+The source gnss_downloader.py uses only the Python standard library
+(3.8+) and runs directly:
+    python gnss_downloader.py
+
+To build the single-file exe with PyInstaller (run in the source folder,
+with the resource files alongside):
+    python -m pip install pyinstaller
+    python -m PyInstaller --noconfirm --onefile --windowed ^
+        --icon=gnss.ico --name gnss_downloader ^
+        --add-data "igs_stations.txt;." ^
+        --add-data "igs_stations_geo.json;." ^
+        --add-data "leaflet;leaflet" ^
+        --add-data "gnss.ico;." ^
+        --add-data "gzip.exe;." ^
+        --add-data "crx2rnx.exe;." ^
+        gnss_downloader.py
+The output is dist\gnss_downloader.exe, ready to distribute on its own.
+
+Or simply double-click 打包发布.bat: it builds the exe and creates a
+clean Release\ folder (exe + both manuals, with NO local config or
+download history) — distribute that folder as-is.

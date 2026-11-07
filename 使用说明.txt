@@ -1,0 +1,170 @@
+GNSS 数据下载器 使用说明（中文版）
+=====================================
+
+开发者：姜中山（Zhongshan Jiang）
+单位：中山大学（Sun Yat-sen University）
+邮箱：jiangzhsh@mail.sysu.edu.cn
+
+
+一、绿色版说明
+--------------
+- 无需安装，双击 gnss_downloader.exe 即可运行。
+- 单个 exe 即包含全部资源（IGS 站表、测站坐标、地图组件、图标、
+  gzip/crx2rnx 解压转换工具），可随意复制到任何位置独立使用。
+- 如需自行更新站表/坐标：把新的 igs_stations.txt 或
+  igs_stations_geo.json 放到 exe 同目录，软件会优先读取外部文件。
+- 程序只依赖系统本身，不联网激活、不写注册表。
+- 单实例：同一时刻只允许运行一个软件窗口，重复双击会提示
+  "软件已在运行"，避免多窗口互相覆盖配置。
+- 所有运行文件都保存在程序所在目录：
+    config.json   设置（含界面勾选记忆、Earthdata 账号）
+    sources.json  数据源地址（可在「数据源管理」页查看修改）
+    history.json  下载历史（已下/不存在的文件，跳过重复下载用）
+    cache\        目录列表缓存（30 天前的永久缓存，近期的缓存 1 小时）
+    logs\         每次下载的统计报告
+- 想"卸载"直接删除整个文件夹即可。
+
+
+二、界面概览
+------------
+顶部是全局日期栏：起始/结束日期（YYYY-MM-DD），所有页签联动共用，
+带「昨天 / 近7天 / 近30天」快捷按钮。
+
+页签：
+  1. IGS观测+广播星历   IGS 站 RINEX 观测文件、brdc 广播星历
+  2. 分析中心产品       轨道/钟差/ERP/BIA/电离层，分 最终/快速/超快速
+  3. hfile              SOPAC、MIT 的 h 文件（GAMIT 用）
+  4. 区域网             香港等区域网 RINEX（可自行新增澳大利亚、新西兰等）
+  5. 数据源管理         查看/修改各存储库地址，新增区域网、hfile 源
+  6. 设置               保存目录、线程数、Earthdata 账号、中英文切换
+
+底部（仅前四个下载页显示）：开始/停止按钮、总进度条、当前文件进度
+（百分比+速度）、「日志」和「本次统计」两个页签。统计页列出每个文件的状态
+（成功/不存在/失败）和失败原因分类，可一键「重下失败项」。
+
+
+三、各页用法
+------------
+【1. IGS观测+广播星历】
+- 勾选「观测文件」「广播星历brdc」，在测站表中勾选测站。
+- 测站按洲分组（亚洲在最前，中国 CHN/HKG/MAC/TWN 排在亚洲最前面），
+  站名后括号内是 IGS 三字符国家码。
+- 洲分组行带三态勾选框：点一下整洲全选/全不选；组内部分选中时显示 ▣。
+- 「地图选站」按钮可在地图上点选测站，复制后回软件点「粘贴导入」。
+- 存储库下拉：指定 WHU/BKG/IGN/CDDIS 之一；拿不准选哪个就点旁边的
+  「存储库测速」，各库延迟测出来后一键「采用最快」（BKG 国内可能需代理）。
+- 命名自动判断：同一站同一天有 RINEX 3 长名先下 3，没有再下 RINEX 2 短名。
+- 保存：rinex/obs/yyyy/ddd/站文件，rinex/nav/yyyy/brdc 文件。
+
+【2. 分析中心产品】
+- 三级树：存储库 → 机构+系列 → 产品。点「下载」列勾选；
+  存储库行和机构行都带三态勾选框，可一键全选/全不选该级全部产品，
+  部分选中时显示 ▣。
+- 系列：最终（final，延迟约2周）、快速（rapid）、超快速（ultra，每天
+  00/06/12/18 四个时点）。超快速钟差含在轨道文件中，故只提供轨道+ERP。
+- MGEX 系列（树中标注"MGEX 2014起·含北斗"）：含北斗/Galileo/QZSS，
+  2014 年起才有。2022-11（GPS 周 2238）前的产品为短命名，软件自动适配。
+- 电离层 IONEX 挂在各存储库下（codg/igsg/whug/esag/jplg）。
+- CODE(AIUB) 库提供 CODE 全线产品（含 COD0MGXFIN 北斗系列）和
+  AIUB 专属产品（GIM 电离层、Bernese ION/BIA、月度 DCB）。
+- 保存：product/机构缩写/系列(final|rapid|ultra)/yyyy/ddd/文件。
+
+【3. hfile】
+- 内置 SOPAC ITRF2020 重处理（hfilesR20，1992年至今）和 MIT。
+- 「网络」栏：SOPAC 默认 igs，匹配 higs1a–9a、higsaa 等全部 IGS 解
+  （每天个数不固定），改填 eu、ak 等可下其他网；MIT 无前缀，留空即可。
+- MIT 服务器（chandler.mit.edu）近年不稳定，连不上会归入"网络连不上"；
+  地址若变动可在「数据源管理」双击修改。保存 hfile/机构/yyyy/。
+
+【4. 区域网】
+- 内置：香港 SatRef、美国 SOPAC、新西兰 GeoNet、澳大利亚 GA、
+  美国 EarthScope（需登录授权：点该网面板上的「登录授权」按钮，
+  在弹窗里打开浏览器登录 EarthScope 账号并确认验证码即可；
+  token 自动保存、过期自动续期，一次授权长期有效）。
+- 每个网一块可折叠面板（点 ▾/▸ 收起展开），自带一键全选/全不选；
+  顶部「+ 新增区域网」可直接添加新网，配置自动保存。
+- 手工添加进测站表的站名会随配置记住。保存 rinex/obs/yyyy/ddd/。
+- 澳大利亚 GA 为 RINEX 3 (.crx.gz)；新西兰 2024-10 起仅 RINEX 3；
+  EarthScope 账号免费注册 https://www.earthscope.org/data/ 。
+
+【5. 数据源管理】
+- 双击条目修改地址模板；产品类源（存储库/机构/IONEX）为封闭集合，
+  只能修改/删除，不能新增；区域网、hfile 可新增。
+- 占位符：{YYYY}=4位年 {YY}=2位年 {DDD}=年积日 {GPSW}=GPS周
+  {GPSD}=周内日 {SSSS}=4位站名小写 {SSSSSSSSS}=9位站名大写。
+- 区域网/hfile 源可填用户名/密码（Basic 型网站），加密保存在本地
+  sources.json，下载时自动带上；未登录跳登录页的会标"权限被拒"。
+- 例外：EarthScope 使用 OAuth 授权（区域网页「登录授权」按钮），
+  不需要在此填账号密码。
+
+【6. 设置】
+- 界面语言：中文 / English，切换立即生效（切换前自动保存当前设置）。
+- 代理：留空 = 直连（不使用系统代理）；连不上时可在此填入代理地址，
+  如 http://127.0.0.1:7890。
+- CDDIS 需要 NASA Earthdata 账号（免费注册 https://urs.earthdata.nasa.gov），
+  填好后点「测试 Earthdata 登录」，弹窗直接告知成功 / 密码错误 / 网络不通。
+  账号只保存在本地 config.json。
+- 「存储库测速」立即测试各库延迟，弹窗显示结果，可直接采用最快的库。
+- 「下载后自动解压 .gz/.Z」：勾选后每下完一个压缩文件就地解压
+  （保留原压缩包），用内置 gzip.exe 完成。
+- 「下载后自动转换 .crx→.rnx」：勾选后 RINEX 3 压缩格式自动转成
+  普通 RINEX（配合解压选项使用），用内置 crx2rnx.exe 完成。
+- 关闭窗口时自动保存全部设置与勾选状态，不会丢失未保存的输入。
+
+【7. 关于】开发者与联系方式，中/英文说明书可点击直接打开。
+
+
+四、存储库一览
+--------------
+  WHU   武汉大学IGS数据中心（网页接口，国内速度快，无电离层和MGEX最终）
+  BKG   https://igs.bkg.bund.de/root_ftp/IGS/（国内可能需代理）
+  IGN   ftp://igs.ign.fr/pub/igs/
+  CDDIS https://cddis.nasa.gov/archive/gnss/（需 Earthdata 账号）
+  CODE(AIUB)  https://www.aiub.unibe.ch/download/（原 FTP 已停用）
+
+
+五、常见问题
+------------
+Q: 提示"不存在(服务器无此文件)"？
+A: 多数是该天确实没发布（最终产品延迟约2周；超快速只有近几年有）。
+   历史标记过"不存在"的文件下次会跳过，想重查请在设置页打开强制重查。
+
+Q: CDDIS 全部失败"权限被拒"？
+A: 没填 Earthdata 账号或密码错误，到设置页填写并测试。
+
+Q: 下载中断/换网络后要重下吗？
+A: 不用。软件记录断点（.part 文件），下次自动续传；已下完的文件
+   会自动跳过。
+
+Q: 下一年跨度的数据会不会很慢？
+A: 武大通道一次查询即可拿回全年文件清单；其他库有目录磁盘缓存，
+   第二次跑同样日期基本秒出任务列表。
+
+
+六、联系方式
+------------
+姜中山  中山大学遥感科学与技术学院
+邮箱：jiangzhsh@mail.sysu.edu.cn
+
+
+七、自行打包（开发者）
+--------------------
+源码 gnss_downloader.py 只依赖 Python 标准库（3.8+），可直接运行：
+    python gnss_downloader.py
+
+用 PyInstaller 打成单文件 exe（在源码目录执行，资源文件需同目录）：
+    python -m pip install pyinstaller
+    python -m PyInstaller --noconfirm --onefile --windowed ^
+        --icon=gnss.ico --name gnss_downloader ^
+        --add-data "igs_stations.txt;." ^
+        --add-data "igs_stations_geo.json;." ^
+        --add-data "leaflet;leaflet" ^
+        --add-data "gnss.ico;." ^
+        --add-data "gzip.exe;." ^
+        --add-data "crx2rnx.exe;." ^
+        gnss_downloader.py
+产物在 dist\gnss_downloader.exe，复制出来即可单独分发。
+
+也可以直接双击「打包发布.bat」：自动完成打包并在 Release\ 目录
+生成纯净分发包（exe + 中英文说明书，不含任何本机配置/历史记录），
+分发 Release 目录即可。

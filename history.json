@@ -1,0 +1,222 @@
+{
+ "rinex/obs/2025/001/hkws0010.25o.gz": {
+  "status": "ok",
+  "time": "2026-11-07 11:22:45",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=4955"
+ },
+ "rinex/obs/2025/001/hksl0010.25o.gz": {
+  "status": "ok",
+  "time": "2026-11-07 11:22:46",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=4958"
+ },
+ "rinex/obs/2025/002/hkws0020.25o.gz": {
+  "status": "ok",
+  "time": "2026-11-07 11:22:46",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=5798"
+ },
+ "rinex/obs/2025/002/hksl0020.25o.gz": {
+  "status": "ok",
+  "time": "2026-11-07 11:22:46",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=5805"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250010000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-07 11:22:48",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=4335"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250020000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-07 11:22:49",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=5439"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253090000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-07 12:53:32",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=365657"
+ },
+ "rinex/obs/2025/309/hkws3090.25o.gz": {
+  "status": "ok",
+  "time": "2026-11-07 12:53:32",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=366085"
+ },
+ "rinex/obs/2025/309/hksl3090.25o.gz": {
+  "status": "ok",
+  "time": "2026-11-07 12:53:33",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=366091"
+ },
+ "product/igs/final/2025/309/IGS0OPSFIN_20253090000_01D_15M_ORB.SP3.gz": {
+  "status": "ok",
+  "time": "2026-11-07 12:54:06",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=384987"
+ },
+ "product/igs/final/2025/309/IGS0OPSFIN_20253090000_01D_30S_CLK.CLK.gz": {
+  "status": "ok",
+  "time": "2026-11-07 12:54:09",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=384997"
+ },
+ "product/igs/rapid/2025/309/IGS0OPSRAP_20253090000_01D_01D_ERP.ERP.gz": {
+  "status": "ok",
+  "time": "2026-11-07 12:57:38",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=366366"
+ },
+ "product/igs/rapid/2025/309/IGS0OPSRAP_20253090000_01D_15M_ORB.SP3.gz": {
+  "status": "ok",
+  "time": "2026-11-07 12:57:38",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=366370"
+ },
+ "product/igs/rapid/2025/309/IGS0OPSRAP_20253090000_01D_05M_CLK.CLK.gz": {
+  "status": "ok",
+  "time": "2026-11-07 12:57:39",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=366369"
+ },
+ "product/igs/ultra/2025/309/IGS0OPSULT_20253090000_02D_01D_ERP.ERP.gz": {
+  "status": "ok",
+  "time": "2026-11-07 12:58:22",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=365402"
+ },
+ "product/igs/ultra/2025/309/IGS0OPSULT_20253090600_02D_01D_ERP.ERP.gz": {
+  "status": "ok",
+  "time": "2026-11-07 12:58:22",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=365982"
+ },
+ "product/igs/ultra/2025/309/IGS0OPSULT_20253091200_02D_01D_ERP.ERP.gz": {
+  "status": "ok",
+  "time": "2026-11-07 12:58:22",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=366200"
+ },
+ "product/igs/ultra/2025/309/IGS0OPSULT_20253091800_02D_01D_ERP.ERP.gz": {
+  "status": "ok",
+  "time": "2026-11-07 12:58:22",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=366591"
+ },
+ "product/igs/ultra/2025/309/IGS0OPSULT_20253090000_02D_15M_ORB.SP3.gz": {
+  "status": "ok",
+  "time": "2026-11-07 12:58:22",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=365405"
+ },
+ "product/igs/ultra/2025/309/IGS0OPSULT_20253090600_02D_15M_ORB.SP3.gz": {
+  "status": "ok",
+  "time": "2026-11-07 12:58:22",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=365983"
+ },
+ "product/igs/ultra/2025/309/IGS0OPSULT_20253091200_02D_15M_ORB.SP3.gz": {
+  "status": "ok",
+  "time": "2026-11-07 12:58:22",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=366188"
+ },
+ "product/igs/ultra/2025/309/IGS0OPSULT_20253091800_02D_15M_ORB.SP3.gz": {
+  "status": "ok",
+  "time": "2026-11-07 12:58:23",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=366595"
+ },
+ "product/cod/final/2025/309/COD0OPSFIN_20253090000_01D_01D_OSB.BIA.gz": {
+  "status": "ok",
+  "time": "2026-11-07 12:58:59",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=375219"
+ },
+ "product/cod/final/2025/309/COD0OPSFIN_20253090000_01D_05M_ORB.SP3.gz": {
+  "status": "ok",
+  "time": "2026-11-07 12:59:00",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=375320"
+ },
+ "product/cod/final/2025/309/COD0OPSFIN_20253090000_01D_30S_CLK.CLK.gz": {
+  "status": "ok",
+  "time": "2026-11-07 12:59:04",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=375317"
+ },
+ "product/cod/final/2025/309/COD0OPSFIN_20253090000_01D_01D_SOL.SNX.gz": {
+  "status": "ok",
+  "time": "2026-11-07 12:59:32",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=375235"
+ },
+ "product/cod/ultra/2025/309/COD0OPSULT_20253090000_02D_01D_ERP.ERP.gz": {
+  "status": "ok",
+  "time": "2026-11-07 13:00:34",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=365143"
+ },
+ "product/cod/rapid/2025/309/COD0OPSRAP_20253090000_01D_01D_ERP.ERP.gz": {
+  "status": "ok",
+  "time": "2026-11-07 13:00:34",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=365359"
+ },
+ "product/cod/ultra/2025/309/COD0OPSULT_20253090600_02D_01D_ERP.ERP.gz": {
+  "status": "ok",
+  "time": "2026-11-07 13:00:34",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=365974"
+ },
+ "product/cod/rapid/2025/309/COD0OPSRAP_20253090000_01D_05M_ORB.SP3.gz": {
+  "status": "ok",
+  "time": "2026-11-07 13:00:34",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=365321"
+ },
+ "product/cod/ultra/2025/309/COD0OPSULT_20253091200_02D_01D_ERP.ERP.gz": {
+  "status": "ok",
+  "time": "2026-11-07 13:00:34",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=365932"
+ },
+ "product/cod/ultra/2025/309/COD0OPSULT_20253090000_02D_05M_ORB.SP3.gz": {
+  "status": "ok",
+  "time": "2026-11-07 13:00:36",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=365142"
+ },
+ "product/cod/ultra/2025/309/COD0OPSULT_20253091800_02D_01D_ERP.ERP.gz": {
+  "status": "ok",
+  "time": "2026-11-07 13:00:36",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=366034"
+ },
+ "product/cod/ultra/2025/309/COD0OPSULT_20253090600_02D_05M_ORB.SP3.gz": {
+  "status": "ok",
+  "time": "2026-11-07 13:00:38",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=365966"
+ },
+ "product/cod/ultra/2025/309/COD0OPSULT_20253091200_02D_05M_ORB.SP3.gz": {
+  "status": "ok",
+  "time": "2026-11-07 13:00:38",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=365929"
+ },
+ "product/cod/rapid/2025/309/COD0OPSRAP_20253090000_01D_30S_CLK.CLK.gz": {
+  "status": "ok",
+  "time": "2026-11-07 13:00:40",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=365903"
+ },
+ "product/cod/ultra/2025/309/COD0OPSULT_20253091800_02D_05M_ORB.SP3.gz": {
+  "status": "ok",
+  "time": "2026-11-07 13:00:40",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=366032"
+ },
+ "product/mit/final/2025/309/MIT0OPSFIN_20253090000_01D_05M_ORB.SP3.gz": {
+  "status": "ok",
+  "time": "2026-11-07 13:00:41",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=377874"
+ },
+ "product/wum/rapid/2025/309/WUM0MGXRAP_20253090000_01D_01D_ERP.ERP.gz": {
+  "status": "ok",
+  "time": "2026-11-07 13:00:41",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=367915"
+ },
+ "product/wum/rapid/2025/309/WUM0MGXRAP_20253090000_01D_05M_ORB.SP3.gz": {
+  "status": "ok",
+  "time": "2026-11-07 13:00:44",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=367881"
+ },
+ "product/wum/rapid/2025/309/WUM0MGXRAP_20253090000_01D_30S_CLK.CLK.gz": {
+  "status": "ok",
+  "time": "2026-11-07 13:00:46",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=367909"
+ },
+ "product/mit/final/2025/309/MIT0OPSFIN_20253090000_01D_30S_CLK.CLK.gz": {
+  "status": "ok",
+  "time": "2026-11-07 13:00:49",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=377872"
+ },
+ "product/mit/final/2025/309/MIT0OPSFIN_20253090000_01D_01D_SOL.SNX.gz": {
+  "status": "ok",
+  "time": "2026-11-07 13:00:51",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=377883"
+ },
+ "product/cod/final/2025/309/COD0OPSFIN_20253090000_01D_01D_ERP.ERP.gz": {
+  "status": "ok",
+  "time": "2026-11-07 13:02:49",
+  "src": "https://www.aiub.unibe.ch/download/CODE/2025/COD0OPSFIN_20253090000_01D_01D_ERP.ERP.gz"
+ }
+}

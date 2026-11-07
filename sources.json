@@ -1,0 +1,374 @@
+{
+  "centers": {
+    "WHU": {
+      "kind": "whuweb",
+      "api": "http://www.igs.gnsswhu.cn/index.php/igs/",
+      "obs": "",
+      "nav": "",
+      "prod": "",
+      "mgex": "",
+      "ion": ""
+    },
+    "BKG": {
+      "kind": "dir",
+      "obs": "https://igs.bkg.bund.de/root_ftp/IGS/obs/{YYYY}/{DDD}/",
+      "nav": "https://igs.bkg.bund.de/root_ftp/IGS/BRDC/{YYYY}/{DDD}/",
+      "prod": "https://igs.bkg.bund.de/root_ftp/IGS/products/{GPSW}/",
+      "mgex": "https://igs.bkg.bund.de/root_ftp/IGS/products/mgex/{GPSW}/",
+      "ion": "https://igs.bkg.bund.de/root_ftp/IGS/products/ionex/{YYYY}/{DDD}/"
+    },
+    "IGN": {
+      "kind": "dir",
+      "obs": "ftp://igs.ign.fr/pub/igs/data/{YYYY}/{DDD}/",
+      "nav": "ftp://igs.ign.fr/pub/igs/data/{YYYY}/brdc/",
+      "prod": "ftp://igs.ign.fr/pub/igs/products/{GPSW}/",
+      "mgex": "ftp://igs.ign.fr/pub/igs/products/mgex/{GPSW}/",
+      "ion": "ftp://igs.ign.fr/pub/igs/products/ionosphere/{YYYY}/{DDD}/"
+    },
+    "CDDIS": {
+      "kind": "dir",
+      "obs": "https://cddis.nasa.gov/archive/gnss/data/daily/{YYYY}/{DDD}/{YY}d/",
+      "nav": "https://cddis.nasa.gov/archive/gnss/data/daily/{YYYY}/brdc/",
+      "prod": "https://cddis.nasa.gov/archive/gnss/products/{GPSW}/",
+      "mgex": "https://cddis.nasa.gov/archive/gnss/products/mgex/{GPSW}/",
+      "ion": "https://cddis.nasa.gov/archive/gnss/products/ionex/{YYYY}/{DDD}/"
+    },
+    "CODE(AIUB)": {
+      "kind": "aiubweb",
+      "api": "https://code.aiub.unibe.ch/s3_script/aiub_s3_bucket_listing.php?path=",
+      "obs": "",
+      "nav": "",
+      "prod": "https://www.aiub.unibe.ch/download/CODE/{YYYY}/",
+      "mgex": "https://www.aiub.unibe.ch/download/CODE_MGEX/CODE/{YYYY}/",
+      "ion": ""
+    }
+  },
+  "auto_order": [
+    "WHU",
+    "BKG",
+    "IGN",
+    "CDDIS"
+  ],
+  "analysis_centers": [
+    {
+      "id": "igs",
+      "name": "IGS",
+      "mgex": false,
+      "series": {
+        "fin": [
+          "orb",
+          "clk",
+          "erp",
+          "snx",
+          "bia"
+        ],
+        "rap": [
+          "orb",
+          "clk",
+          "erp"
+        ],
+        "ult": [
+          "orb",
+          "erp"
+        ]
+      }
+    },
+    {
+      "id": "cod",
+      "name": "CODE",
+      "mgex": false,
+      "series": {
+        "fin": [
+          "orb",
+          "clk",
+          "erp",
+          "snx",
+          "bia"
+        ],
+        "rap": [
+          "orb",
+          "clk",
+          "erp"
+        ],
+        "ult": [
+          "orb",
+          "erp"
+        ]
+      }
+    },
+    {
+      "id": "esa",
+      "name": "ESA",
+      "mgex": false,
+      "series": {
+        "fin": [
+          "orb",
+          "clk",
+          "erp",
+          "snx",
+          "bia"
+        ],
+        "rap": [
+          "orb",
+          "clk",
+          "erp"
+        ],
+        "ult": [
+          "orb",
+          "erp"
+        ]
+      }
+    },
+    {
+      "id": "jpl",
+      "name": "JPL",
+      "mgex": false,
+      "series": {
+        "fin": [
+          "orb",
+          "clk",
+          "erp",
+          "snx"
+        ],
+        "rap": [
+          "orb",
+          "clk",
+          "erp"
+        ]
+      }
+    },
+    {
+      "id": "mit",
+      "name": "MIT",
+      "mgex": false,
+      "series": {
+        "fin": [
+          "orb",
+          "clk",
+          "erp",
+          "snx"
+        ]
+      }
+    },
+    {
+      "id": "wum",
+      "name": "WHU",
+      "mgex": true,
+      "series": {
+        "fin": [
+          "orb",
+          "clk",
+          "erp",
+          "snx",
+          "bia"
+        ],
+        "rap": [
+          "orb",
+          "clk",
+          "erp"
+        ]
+      }
+    },
+    {
+      "id": "com",
+      "name": "CODE",
+      "mgex": true,
+      "series": {
+        "fin": [
+          "orb",
+          "clk",
+          "erp",
+          "bia",
+          "snx"
+        ]
+      }
+    },
+    {
+      "id": "gbm",
+      "name": "GFZ",
+      "mgex": true,
+      "series": {
+        "fin": [
+          "orb",
+          "clk",
+          "erp",
+          "snx",
+          "bia"
+        ],
+        "rap": [
+          "orb",
+          "clk",
+          "erp"
+        ]
+      }
+    },
+    {
+      "id": "grm",
+      "name": "GRGS",
+      "mgex": true,
+      "series": {
+        "fin": [
+          "orb",
+          "clk",
+          "erp",
+          "bia"
+        ]
+      }
+    },
+    {
+      "id": "jam",
+      "name": "JAXA",
+      "mgex": true,
+      "series": {
+        "fin": [
+          "orb",
+          "clk",
+          "erp",
+          "bia"
+        ]
+      }
+    },
+    {
+      "id": "shm",
+      "name": "SHAO",
+      "mgex": true,
+      "series": {
+        "fin": [
+          "orb",
+          "clk",
+          "erp",
+          "bia"
+        ]
+      }
+    }
+  ],
+  "ionex": [
+    {
+      "id": "igsg",
+      "name": "IGS"
+    },
+    {
+      "id": "codg",
+      "name": "CODE"
+    },
+    {
+      "id": "whug",
+      "name": "WHU"
+    },
+    {
+      "id": "esag",
+      "name": "ESA"
+    },
+    {
+      "id": "jplg",
+      "name": "JPL"
+    }
+  ],
+  "aiub": {
+    "url": "https://www.aiub.unibe.ch/download/CODE/{YYYY}/",
+    "items": [
+      {
+        "id": "gim",
+        "name": "电离层 GIM (IONEX)"
+      },
+      {
+        "id": "ion",
+        "name": "电离层 ION (Bernese)"
+      },
+      {
+        "id": "bia",
+        "name": "BIA 偏差 (Bernese)"
+      },
+      {
+        "id": "dcb",
+        "name": "月度 DCB (P1C1/P1P2)"
+      }
+    ]
+  },
+  "hfile": [
+    {
+      "id": "sopacr20",
+      "name": "SOPAC ITRF2020重处理(1992起)",
+      "by": "day",
+      "prefix": "igs",
+      "urls": [
+        "https://garner.ucsd.edu/pub/hfilesR20/{YYYY}/{DDD}/"
+      ]
+    },
+    {
+      "id": "mit",
+      "name": "MIT(无前缀,服务器不稳时可在数据源管理改地址)",
+      "by": "day",
+      "prefix": "",
+      "urls": [
+        "https://chandler.mit.edu/ftp/hfiles/{YYYY}/{DDD}/"
+      ]
+    }
+  ],
+  "regional": [
+    {
+      "id": "hk",
+      "name": "香港 SatRef",
+      "templates": [
+        "https://rinex.geodetic.gov.hk/rinex3/{YYYY}/{DDD}/{SSSS}/30s/",
+        "https://rinex.geodetic.gov.hk/rinex2/{YYYY}/{DDD}/{SSSS}/30s/"
+      ],
+      "stations": [
+        "hkcl",
+        "hkfn",
+        "hkkt",
+        "hklm",
+        "hkmw",
+        "hknp",
+        "hkpc",
+        "hkqt",
+        "hksc",
+        "hksl",
+        "hkss",
+        "hkst",
+        "hktb",
+        "hkth",
+        "hktw",
+        "hkws",
+        "kyc1",
+        "t430"
+      ]
+    },
+    {
+      "id": "sopac",
+      "name": "美国 SOPAC",
+      "templates": [
+        "https://garner.ucsd.edu/pub/rinex/{YYYY}/{DDD}/"
+      ],
+      "stations": []
+    },
+    {
+      "id": "nz",
+      "name": "新西兰 GeoNet",
+      "templates": [
+        "https://data.geonet.org.nz/gnss/rinex/{YYYY}/{DDD}/"
+      ],
+      "stations": []
+    },
+    {
+      "id": "ga",
+      "name": "澳大利亚 GA",
+      "templates": [
+        "https://ga-gnss-data-rinex-v1.s3.amazonaws.com/?list-type=2&max-keys=1000&prefix=public/daily/{YYYY}/{DDD}/"
+      ],
+      "stations": []
+    },
+    {
+      "id": "earthscope",
+      "name": "美国 EarthScope(需登录授权)",
+      "auth": "esdevice",
+      "templates": [
+        "https://data.earthscope.org/archive/gnss/rinex/obs/{YYYY}/{DDD}/"
+      ],
+      "stations": [],
+      "user": "jiangzhsh@mail.sysu.edu.cn",
+      "pass": "SnpzQDg4NTIwMTMxNA==",
+      "es_token": "eyJhY2Nlc3MiOiAiZXlKaGJHY2lPaUpTVXpJMU5pSXNJblI1Y0NJNkltRjBLMnAzZENJc0ltdHBaQ0k2SW04MFdETk1NMXAwUWtONk1tWjVSa3RNVlc5bVdpSjkuZXlKcGMzTWlPaUpvZEhSd2N6b3ZMMnh2WjJsdUxtVmhjblJvYzJOdmNHVXViM0puTHlJc0luTjFZaUk2SW1GMWRHZ3dmRFk0T1RFM056TmtZalZsWmpNM01EaGxOMk15TUdJeE55SXNJbUYxWkNJNkltaDBkSEJ6T2k4dllYQnBMbVZoY25Sb2MyTnZjR1V1YjNKbklpd2lhV0YwSWpveE56azBNRFU0T0RneExDSmxlSEFpT2pFM09UUXhORFV5T0RFc0luTmpiM0JsSWpvaWIyWm1iR2x1WlY5aFkyTmxjM01pTENKcWRHa2lPaUp2TW1oVVlYSlNUVXBHUWxKaVpsbEdkakZDYVVSdklpd2lZMnhwWlc1MFgybGtJam9pWWpsRWRFRkdRbVEyVVhaTlp6YzJNWFpKTTFsb1dYRjFUbHBpU2xnMVJ6QWlmUS5tcUh5VklROVJuQ0lvdTRwc1ZJejljUnprWk9xdkoyaURhX1BPeWRmZjFHQ2pIcHRmMkhYcVkwejVLeDhvSWpmbkIyS3FsR3NZYkswa1loWjFOenM1TGdQT3dQOFFpX21zRUxWZUE3Xzlja1pjcHRTbzdhNllHcWNrRmJoVGM5end5aGdhMng5cVNNWS1vdGJGQnN3WFV6VUtRcGxqdG1kN3QydFJVTlROTjRSdFJQWEhDNTFWMHlscHdtaWZBUGlRdGFqRnZMejdXaGdUbURfLU5fbmVyRWJTdGVwRzBaQ29NQTFNYXE2MVYwLVpqNGllUHpGXzBTaWlvSnlYU2ptajBPaWlHWVhzalYwQ2JUZUpUb0hEMlpiZHpNZFdvY1plTGowM3dOMlcteHZNd1ZYNkNFTnpkdmRrOUQ2OG15OXVHNnBOX19mMm5EdXJLTnhlUHNPcWciLCAicmVmcmVzaCI6ICJraHExb0t2bzE3dVlIX1p3SFJCZXpMUTFlVWVPRjZhS3dvZGdEOHFoMHJMSzYiLCAiZXhwIjogMTc5NDE0NTE2Ni4wMjY4MDM1fQ=="
+    }
+  ]
+}
