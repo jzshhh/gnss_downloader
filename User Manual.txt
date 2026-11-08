@@ -183,8 +183,8 @@ The source gnss_downloader.py uses only the Python standard library
 (3.8+) and runs directly:
     python gnss_downloader.py
 
-To build the single-file exe with PyInstaller (run in the source folder,
-with the resource files alongside):
+To build the single-file exe with PyInstaller (all dependencies are
+embedded — the exe alone runs on any machine):
     python -m pip install pyinstaller
     python -m PyInstaller --noconfirm --onefile --windowed ^
         --icon=gnss.ico --name gnss_downloader ^
@@ -194,9 +194,12 @@ with the resource files alongside):
         --add-data "gnss.ico;." ^
         --add-data "gzip.exe;." ^
         --add-data "crx2rnx.exe;." ^
+        --add-data "使用说明.txt;." ^
+        --add-data "User Manual.txt;." ^
         gnss_downloader.py
-The output is dist\gnss_downloader.exe, ready to distribute on its own.
+The output is dist\gnss_downloader.exe, ready to distribute on its own;
+both manuals are embedded and can be opened from the About tab.
 
-Or simply double-click 打包发布.bat: it builds the exe and creates a
-clean Release\ folder (exe + both manuals, with NO local config or
-download history) — distribute that folder as-is.
+Or simply double-click Packaging.bat: it builds the exe and creates a
+clean Release\ folder (just the exe, with NO local config or download
+history) — distribute that folder as-is.

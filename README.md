@@ -13,7 +13,7 @@ All download addresses are open, editable templates ({YYYY}, {DDD}, {SSSS} …) 
 
 # Build
 ```bat
-python -m PyInstaller --noconfirm --onefile --windowed --icon=gnss.ico --name gnss_downloader --add-data "igs_stations.txt;." --add-data "igs_stations_geo.json;."  --add-data "leaflet;leaflet" --add-data "gnss.ico;." --add-data "gzip.exe;." --add-data "crx2rnx.exe;." gnss_downloader.py
+python -m PyInstaller --noconfirm --onefile --windowed --icon=gnss.ico --name gnss_downloader --add-data "igs_stations.txt;." --add-data "igs_stations_geo.json;."  --add-data "leaflet;leaflet" --add-data "gnss.ico;." --add-data "gzip.exe;." --add-data "crx2rnx.exe;."  --add-data "User Manual.txt;." --add-data "使用说明.txt;." gnss_downloader.py
 ```
 
 # Usage

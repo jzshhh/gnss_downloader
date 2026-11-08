@@ -45,7 +45,10 @@ else:
 
 
 def _res_path(name):
-    """内置资源路径：PyInstaller 单文件解压目录，否则为源码目录。"""
+    """资源路径：exe 旁外部文件优先（便于用户自行更新），否则用 exe 内置资源。"""
+    ext = os.path.join(APP_DIR, name)
+    if os.path.exists(ext):
+        return ext
     base = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
     return os.path.join(base, name)
 
@@ -3310,7 +3313,7 @@ class App(tk.Tk):
                    command=lambda: self._open_file('User Manual.txt')).pack(side='left')
 
     def _open_file(self, name):
-        p = os.path.join(APP_DIR, name)
+        p = _res_path(name)          # exe 同目录优先，否则用 exe 内置
         if os.path.exists(p):
             try:
                 os.startfile(p)

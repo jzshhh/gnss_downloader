@@ -152,7 +152,8 @@ A: 武大通道一次查询即可拿回全年文件清单；其他库有目录�
 源码 gnss_downloader.py 只依赖 Python 标准库（3.8+），可直接运行：
     python gnss_downloader.py
 
-用 PyInstaller 打成单文件 exe（在源码目录执行，资源文件需同目录）：
+用 PyInstaller 打成单文件 exe（全部依赖内嵌，只需要这一个 exe
+即可在任何电脑上运行）：
     python -m pip install pyinstaller
     python -m PyInstaller --noconfirm --onefile --windowed ^
         --icon=gnss.ico --name gnss_downloader ^
@@ -162,9 +163,12 @@ A: 武大通道一次查询即可拿回全年文件清单；其他库有目录�
         --add-data "gnss.ico;." ^
         --add-data "gzip.exe;." ^
         --add-data "crx2rnx.exe;." ^
+        --add-data "使用说明.txt;." ^
+        --add-data "User Manual.txt;." ^
         gnss_downloader.py
-产物在 dist\gnss_downloader.exe，复制出来即可单独分发。
+产物在 dist\gnss_downloader.exe，复制出来即可单独分发；
+中英文说明书也已内嵌，软件「关于」页可点击打开。
 
-也可以直接双击「打包发布.bat」：自动完成打包并在 Release\ 目录
-生成纯净分发包（exe + 中英文说明书，不含任何本机配置/历史记录），
+也可以直接双击「Packaging.bat」：自动完成打包并在 Release\ 目录
+生成纯净分发包（只有一个 exe，不含任何本机配置/历史记录），
 分发 Release 目录即可。
