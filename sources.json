@@ -1,5 +1,29 @@
 {
   "centers": {
+    "CDDIS": {
+      "kind": "dir",
+      "obs": "https://cddis.nasa.gov/archive/gnss/data/daily/{YYYY}/{DDD}/{YY}d/",
+      "nav": "https://cddis.nasa.gov/archive/gnss/data/daily/{YYYY}/brdc/",
+      "prod": "https://cddis.nasa.gov/archive/gnss/products/{GPSW}/",
+      "mgex": "https://cddis.nasa.gov/archive/gnss/products/mgex/{GPSW}/",
+      "ion": "https://cddis.nasa.gov/archive/gnss/products/ionex/{YYYY}/{DDD}/"
+    },
+    "ESA": {
+      "kind": "dir",
+      "obs": "ftp://gssc.esa.int/gnss/data/daily/{YYYY}/{DDD}/{YY}d/",
+      "nav": "ftp://gssc.esa.int/gnss/data/daily/{YYYY}/brdc/",
+      "prod": "ftp://gssc.esa.int/gnss/products/{GPSW}/",
+      "mgex": "ftp://gssc.esa.int/gnss/products/mgex/{GPSW}/",
+      "ion": "ftp://gssc.esa.int/gnss/products/ionex/{YYYY}/{DDD}/"
+    },
+    "SOPAC": {
+      "kind": "dir",
+      "obs": "http://garner.ucsd.edu/pub/rinex/{YYYY}/{DDD}/",
+      "nav": "http://garner.ucsd.edu/pub/rinex/{YYYY}/brdc/",
+      "prod": "http://garner.ucsd.edu/pub/products/{GPSW}/",
+      "mgex": "http://garner.ucsd.edu/pub/products/mgex/{GPSW}/",
+      "ion": "http://garner.ucsd.edu/pub/products/ionex/{YYYY}/{DDD}/"
+    },
     "WHU": {
       "kind": "whuweb",
       "api": "http://www.igs.gnsswhu.cn/index.php/igs/",
@@ -9,13 +33,26 @@
       "mgex": "",
       "ion": ""
     },
-    "BKG": {
+    "WHU-FTP": {
       "kind": "dir",
-      "obs": "https://igs.bkg.bund.de/root_ftp/IGS/obs/{YYYY}/{DDD}/",
-      "nav": "https://igs.bkg.bund.de/root_ftp/IGS/BRDC/{YYYY}/{DDD}/",
-      "prod": "https://igs.bkg.bund.de/root_ftp/IGS/products/{GPSW}/",
-      "mgex": "https://igs.bkg.bund.de/root_ftp/IGS/products/mgex/{GPSW}/",
-      "ion": "https://igs.bkg.bund.de/root_ftp/IGS/products/ionex/{YYYY}/{DDD}/"
+      "note": "武汉大学 FTP（观测/产品全，含 MGEX/IONEX；可能连接用户过多而慢）",
+      "obs": "ftp://igs.gnsswhu.cn/pub/gps/data/daily/{YYYY}/{DDD}/{YY}d/",
+      "nav": "ftp://igs.gnsswhu.cn/pub/gps/data/daily/{YYYY}/brdc/",
+      "prod": "ftp://igs.gnsswhu.cn/pub/gps/products/{GPSW}/",
+      "mgex": "ftp://igs.gnsswhu.cn/pub/gps/products/mgex/{GPSW}/",
+      "ion": "ftp://igs.gnsswhu.cn/pub/gps/products/ionex/{YYYY}/{DDD}/",
+      "note_en": "Wuhan University FTP (all products incl. MGEX/IONEX; may be slow when busy)"
+    },
+    "CODE": {
+      "kind": "aiubweb",
+      "api": "https://code.aiub.unibe.ch/s3_script/aiub_s3_bucket_listing.php?path=",
+      "note": "CODE (AIUB) 产品中心：产品来自 aiub.unibe.ch；官网未发布标准 IGS 观测目录，观测路径为 IGS 标准模板（CDDIS 归档），可在数据源管理修改",
+      "obs": "https://cddis.nasa.gov/archive/gnss/data/daily/{YYYY}/{DDD}/{YY}d/",
+      "nav": "https://cddis.nasa.gov/archive/gnss/data/daily/{YYYY}/brdc/",
+      "prod": "https://www.aiub.unibe.ch/download/CODE/{YYYY}/",
+      "mgex": "https://www.aiub.unibe.ch/download/CODE_MGEX/CODE/{YYYY}/",
+      "ion": "",
+      "note_en": "CODE (AIUB) product center: products from aiub.unibe.ch. No standard IGS observation tree is published there; observation paths are standard IGS templates (CDDIS archive), editable in Data Sources"
     },
     "IGN": {
       "kind": "dir",
@@ -25,34 +62,31 @@
       "mgex": "ftp://igs.ign.fr/pub/igs/products/mgex/{GPSW}/",
       "ion": "ftp://igs.ign.fr/pub/igs/products/ionosphere/{YYYY}/{DDD}/"
     },
-    "CDDIS": {
+    "KASI": {
       "kind": "dir",
-      "obs": "https://cddis.nasa.gov/archive/gnss/data/daily/{YYYY}/{DDD}/{YY}d/",
-      "nav": "https://cddis.nasa.gov/archive/gnss/data/daily/{YYYY}/brdc/",
-      "prod": "https://cddis.nasa.gov/archive/gnss/products/{GPSW}/",
-      "mgex": "https://cddis.nasa.gov/archive/gnss/products/mgex/{GPSW}/",
-      "ion": "https://cddis.nasa.gov/archive/gnss/products/ionex/{YYYY}/{DDD}/"
-    },
-    "CODE(AIUB)": {
-      "kind": "aiubweb",
-      "api": "https://code.aiub.unibe.ch/s3_script/aiub_s3_bucket_listing.php?path=",
-      "obs": "",
-      "nav": "",
-      "prod": "https://www.aiub.unibe.ch/download/CODE/{YYYY}/",
-      "mgex": "https://www.aiub.unibe.ch/download/CODE_MGEX/CODE/{YYYY}/",
-      "ion": ""
+      "note": "韩国 KASI 全球数据中心：官网仅给裸地址 ftp://nfs.kasi.re.kr/，下列子目录为待校准模板，可在数据源管理修改",
+      "obs": "ftp://nfs.kasi.re.kr/gns/data/daily/{YYYY}/{DDD}/{YY}d/",
+      "nav": "ftp://nfs.kasi.re.kr/gns/data/daily/{YYYY}/brdc/",
+      "prod": "ftp://nfs.kasi.re.kr/gns/products/{GPSW}/",
+      "mgex": "ftp://nfs.kasi.re.kr/gns/products/mgex/{GPSW}/",
+      "ion": "ftp://nfs.kasi.re.kr/gns/products/ionex/{YYYY}/{DDD}/",
+      "note_en": "KASI global data center: the official site only lists the bare FTP address; subdirectories below are templates to be verified and can be edited in Sources."
     }
   },
   "auto_order": [
     "WHU",
-    "BKG",
+    "WHU-FTP",
+    "CODE",
+    "CDDIS",
+    "ESA",
+    "SOPAC",
     "IGN",
-    "CDDIS"
+    "KASI"
   ],
   "analysis_centers": [
     {
       "id": "igs",
-      "name": "IGS",
+      "name": "IGS(组合)",
       "mgex": false,
       "series": {
         "fin": [
@@ -71,7 +105,8 @@
           "orb",
           "erp"
         ]
-      }
+      },
+      "name_en": "IGS (combined)"
     },
     {
       "id": "cod",
@@ -98,7 +133,30 @@
     },
     {
       "id": "esa",
-      "name": "ESA",
+      "name": "ESA/ESOC",
+      "mgex": false,
+      "series": {
+        "fin": [
+          "orb",
+          "clk",
+          "erp",
+          "snx",
+          "bia"
+        ],
+        "rap": [
+          "orb",
+          "clk",
+          "erp"
+        ],
+        "ult": [
+          "orb",
+          "erp"
+        ]
+      }
+    },
+    {
+      "id": "gfz",
+      "name": "GFZ",
       "mgex": false,
       "series": {
         "fin": [
@@ -134,6 +192,10 @@
           "orb",
           "clk",
           "erp"
+        ],
+        "ult": [
+          "orb",
+          "erp"
         ]
       }
     },
@@ -146,6 +208,181 @@
           "orb",
           "clk",
           "erp",
+          "snx"
+        ]
+      }
+    },
+    {
+      "id": "whu",
+      "name": "WHU",
+      "mgex": false,
+      "series": {
+        "fin": [
+          "orb",
+          "clk",
+          "erp",
+          "snx",
+          "bia"
+        ],
+        "rap": [
+          "orb",
+          "clk",
+          "erp"
+        ],
+        "ult": [
+          "orb",
+          "erp"
+        ]
+      }
+    },
+    {
+      "id": "emr",
+      "name": "EMR",
+      "mgex": false,
+      "series": {
+        "fin": [
+          "orb",
+          "clk",
+          "erp",
+          "snx",
+          "bia"
+        ],
+        "rap": [
+          "orb",
+          "clk",
+          "erp"
+        ],
+        "ult": [
+          "orb",
+          "erp"
+        ]
+      }
+    },
+    {
+      "id": "ngs",
+      "name": "NGS",
+      "mgex": false,
+      "series": {
+        "fin": [
+          "orb",
+          "clk",
+          "erp",
+          "snx"
+        ],
+        "rap": [
+          "orb",
+          "clk",
+          "erp"
+        ],
+        "ult": [
+          "orb",
+          "erp"
+        ]
+      }
+    },
+    {
+      "id": "sio",
+      "name": "SIO",
+      "mgex": false,
+      "series": {
+        "fin": [
+          "orb",
+          "clk",
+          "erp",
+          "snx"
+        ],
+        "rap": [
+          "orb",
+          "clk",
+          "erp"
+        ]
+      }
+    },
+    {
+      "id": "usn",
+      "name": "USNO",
+      "mgex": false,
+      "series": {
+        "fin": [
+          "orb",
+          "clk",
+          "erp",
+          "snx"
+        ]
+      }
+    },
+    {
+      "id": "gop",
+      "name": "GOP",
+      "mgex": false,
+      "series": {
+        "fin": [
+          "orb",
+          "clk",
+          "erp",
+          "snx"
+        ],
+        "rap": [
+          "orb",
+          "clk",
+          "erp"
+        ]
+      }
+    },
+    {
+      "id": "grg",
+      "name": "GRG",
+      "mgex": false,
+      "series": {
+        "fin": [
+          "orb",
+          "clk",
+          "erp",
+          "bia"
+        ],
+        "rap": [
+          "orb",
+          "clk",
+          "erp"
+        ],
+        "ult": [
+          "orb",
+          "erp"
+        ]
+      }
+    },
+    {
+      "id": "jgx",
+      "name": "JGX",
+      "mgex": false,
+      "series": {
+        "fin": [
+          "orb",
+          "clk",
+          "erp",
+          "bia"
+        ],
+        "rap": [
+          "orb",
+          "clk",
+          "erp"
+        ],
+        "ult": [
+          "orb",
+          "erp"
+        ]
+      }
+    },
+    {
+      "id": "com",
+      "name": "CODE",
+      "mgex": true,
+      "series": {
+        "fin": [
+          "orb",
+          "clk",
+          "erp",
+          "bia",
           "snx"
         ]
       }
@@ -170,20 +407,6 @@
       }
     },
     {
-      "id": "com",
-      "name": "CODE",
-      "mgex": true,
-      "series": {
-        "fin": [
-          "orb",
-          "clk",
-          "erp",
-          "bia",
-          "snx"
-        ]
-      }
-    },
-    {
       "id": "gbm",
       "name": "GFZ",
       "mgex": true,
@@ -199,45 +422,6 @@
           "orb",
           "clk",
           "erp"
-        ]
-      }
-    },
-    {
-      "id": "grm",
-      "name": "GRGS",
-      "mgex": true,
-      "series": {
-        "fin": [
-          "orb",
-          "clk",
-          "erp",
-          "bia"
-        ]
-      }
-    },
-    {
-      "id": "jam",
-      "name": "JAXA",
-      "mgex": true,
-      "series": {
-        "fin": [
-          "orb",
-          "clk",
-          "erp",
-          "bia"
-        ]
-      }
-    },
-    {
-      "id": "shm",
-      "name": "SHAO",
-      "mgex": true,
-      "series": {
-        "fin": [
-          "orb",
-          "clk",
-          "erp",
-          "bia"
         ]
       }
     }
@@ -269,19 +453,23 @@
     "items": [
       {
         "id": "gim",
-        "name": "电离层 GIM (IONEX)"
+        "name": "电离层 GIM (IONEX)",
+        "name_en": "Ionospheric GIM (IONEX)"
       },
       {
         "id": "ion",
-        "name": "电离层 ION (Bernese)"
+        "name": "电离层 ION (Bernese)",
+        "name_en": "Ionospheric ION (Bernese)"
       },
       {
         "id": "bia",
-        "name": "BIA 偏差 (Bernese)"
+        "name": "BIA 偏差 (Bernese)",
+        "name_en": "BIA biases (Bernese)"
       },
       {
         "id": "dcb",
-        "name": "月度 DCB (P1C1/P1P2)"
+        "name": "月度 DCB (P1C1/P1P2)",
+        "name_en": "Monthly DCB (P1C1/P1P2)"
       }
     ]
   },
@@ -293,16 +481,19 @@
       "prefix": "igs",
       "urls": [
         "https://garner.ucsd.edu/pub/hfilesR20/{YYYY}/{DDD}/"
-      ]
+      ],
+      "name_en": "SOPAC ITRF2020 reprocessing (since 1992)"
     },
     {
       "id": "mit",
-      "name": "MIT(无前缀,服务器不稳时可在数据源管理改地址)",
+      "name": "MIT",
       "by": "day",
       "prefix": "",
+      "no_network": true,
       "urls": [
         "https://chandler.mit.edu/ftp/hfiles/{YYYY}/{DDD}/"
-      ]
+      ],
+      "name_en": "MIT"
     }
   ],
   "regional": [
@@ -332,7 +523,8 @@
         "hkws",
         "kyc1",
         "t430"
-      ]
+      ],
+      "name_en": "Hong Kong SatRef"
     },
     {
       "id": "sopac",
@@ -340,7 +532,8 @@
       "templates": [
         "https://garner.ucsd.edu/pub/rinex/{YYYY}/{DDD}/"
       ],
-      "stations": []
+      "stations": [],
+      "name_en": "SOPAC (USA)"
     },
     {
       "id": "nz",
@@ -348,7 +541,8 @@
       "templates": [
         "https://data.geonet.org.nz/gnss/rinex/{YYYY}/{DDD}/"
       ],
-      "stations": []
+      "stations": [],
+      "name_en": "GeoNet (New Zealand)"
     },
     {
       "id": "ga",
@@ -356,7 +550,8 @@
       "templates": [
         "https://ga-gnss-data-rinex-v1.s3.amazonaws.com/?list-type=2&max-keys=1000&prefix=public/daily/{YYYY}/{DDD}/"
       ],
-      "stations": []
+      "stations": [],
+      "name_en": "GA (Australia)"
     },
     {
       "id": "earthscope",
@@ -366,9 +561,10 @@
         "https://data.earthscope.org/archive/gnss/rinex/obs/{YYYY}/{DDD}/"
       ],
       "stations": [],
-      "user": "jiangzhsh@mail.sysu.edu.cn",
-      "pass": "SnpzQDg4NTIwMTMxNA==",
-      "es_token": "eyJhY2Nlc3MiOiAiZXlKaGJHY2lPaUpTVXpJMU5pSXNJblI1Y0NJNkltRjBLMnAzZENJc0ltdHBaQ0k2SW04MFdETk1NMXAwUWtONk1tWjVSa3RNVlc5bVdpSjkuZXlKcGMzTWlPaUpvZEhSd2N6b3ZMMnh2WjJsdUxtVmhjblJvYzJOdmNHVXViM0puTHlJc0luTjFZaUk2SW1GMWRHZ3dmRFk0T1RFM056TmtZalZsWmpNM01EaGxOMk15TUdJeE55SXNJbUYxWkNJNkltaDBkSEJ6T2k4dllYQnBMbVZoY25Sb2MyTnZjR1V1YjNKbklpd2lhV0YwSWpveE56azBNRFU0T0RneExDSmxlSEFpT2pFM09UUXhORFV5T0RFc0luTmpiM0JsSWpvaWIyWm1iR2x1WlY5aFkyTmxjM01pTENKcWRHa2lPaUp2TW1oVVlYSlNUVXBHUWxKaVpsbEdkakZDYVVSdklpd2lZMnhwWlc1MFgybGtJam9pWWpsRWRFRkdRbVEyVVhaTlp6YzJNWFpKTTFsb1dYRjFUbHBpU2xnMVJ6QWlmUS5tcUh5VklROVJuQ0lvdTRwc1ZJejljUnprWk9xdkoyaURhX1BPeWRmZjFHQ2pIcHRmMkhYcVkwejVLeDhvSWpmbkIyS3FsR3NZYkswa1loWjFOenM1TGdQT3dQOFFpX21zRUxWZUE3Xzlja1pjcHRTbzdhNllHcWNrRmJoVGM5end5aGdhMng5cVNNWS1vdGJGQnN3WFV6VUtRcGxqdG1kN3QydFJVTlROTjRSdFJQWEhDNTFWMHlscHdtaWZBUGlRdGFqRnZMejdXaGdUbURfLU5fbmVyRWJTdGVwRzBaQ29NQTFNYXE2MVYwLVpqNGllUHpGXzBTaWlvSnlYU2ptajBPaWlHWVhzalYwQ2JUZUpUb0hEMlpiZHpNZFdvY1plTGowM3dOMlcteHZNd1ZYNkNFTnpkdmRrOUQ2OG15OXVHNnBOX19mMm5EdXJLTnhlUHNPcWciLCAicmVmcmVzaCI6ICJraHExb0t2bzE3dVlIX1p3SFJCZXpMUTFlVWVPRjZhS3dvZGdEOHFoMHJMSzYiLCAiZXhwIjogMTc5NDE0NTE2Ni4wMjY4MDM1fQ=="
+      "user": "",
+      "pass": "",
+      "name_en": "EarthScope (USA, login required)"
     }
-  ]
+  ],
+  "_schema": "global6-acc"
 }

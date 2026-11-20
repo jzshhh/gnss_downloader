@@ -9,12 +9,12 @@ Email: jiangzhsh@mail.sysu.edu.cn
 1. Portable Edition
 -------------------
 - No installation required. Just double-click gnss_downloader.exe.
-- The single exe bundles everything (IGS station list, station
-  coordinates, map component, icon, gzip/crx2rnx utilities) and runs
-  from any folder.
-- To use your own station list / coordinates, place a newer
-  igs_stations.txt or igs_stations_geo.json beside the exe;
-  external files take precedence over the built-in ones.
+- The single exe bundles everything (map component, icon,
+  gzip/crx2rnx utilities) and runs from any folder.
+- Station list and coordinates come from the official
+  IGSNetworkWithFormer.json (downloaded to the program folder on first
+  launch; refresh it with "Refresh Status"). No separate station files
+  are shipped.
 - No registry writes, no online activation.
 - Single instance: only one window may run at a time; launching again
   shows a notice instead of opening a second window (which would
@@ -35,8 +35,8 @@ The top bar holds the GLOBAL date range (YYYY-MM-DD), shared by all tabs,
 with Yesterday / Last 7d / Last 30d shortcuts.
 
 Tabs:
-  1. IGS Obs + Nav     RINEX observation files and brdc broadcast ephemeris
-  2. AC Products       orbits / clocks / ERP / biases / ionosphere,
+  1. Observation Data  RINEX observation files and brdc broadcast ephemeris
+  2. Precise Products  orbits / clocks / ERP / biases / ionosphere,
                        Final / Rapid / Ultra-rapid series
   3. hfile             SOPAC and MIT h-files (for GAMIT)
   4. Regional          regional RINEX networks (Hong Kong built in;
@@ -53,23 +53,49 @@ failure reason, with one-click "Retry failed".
 
 3. Using Each Tab
 -----------------
-[1. IGS Obs + Nav]
+[1. Observation Data]
 - Check "Obs files" and/or "Broadcast nav (brdc)", then select stations.
-- Stations are grouped by continent (Asia first; Chinese stations
-  CHN/HKG/MAC/TWN lead the Asia block). The 3-letter IGS country code
-  follows each station name.
+- The station list comes directly from the official IGSNetworkWithFormer.json
+  (776 stations incl. retired ones), grouped by continent (Asia first;
+  Chinese stations CHN/HKG/MAC/TWN lead the Asia block). Names show the
+  4-char ID plus the 3-letter IGS country code.
 - Each continent row has a tri-state checkbox: one click selects/clears
   the whole continent; ▣ means partially selected.
 - "Map" opens an interactive map to pick stations; copy them and use
-  "Paste" back in the program.
-- Repository: pick one of WHU / BKG / IGN / CDDIS. If unsure, click
-  "Speed test" next to it and use "Use fastest" in the result window
-  (BKG may require a proxy in China).
-- Naming is automatic: RINEX 3 long names are preferred; RINEX 2 short
-  names are used when no RINEX 3 file exists.
+  "Paste" back in the program. Map points also come from the JSON's 776
+  stations (coords from its latitude/longitude fields).
+- Repository: eight channels are listed - the six IGS global data centers
+  CDDIS / ESA / SOPAC / WHU / IGN / KASI, plus WHU-FTP (Wuhan FTP beside
+  the WHU web API) and CODE (AIUB product center). Use "Speed test" and
+  "Use fastest" if unsure. CDDIS needs a NASA Earthdata account (Settings);
+  the others need no login. WHU web API is faster; WHU-FTP has the full set
+  (obs/products/ionosphere) but may be crowded.
+  CODE products come from aiub.unibe.ch (CODE / CODE_MGEX yearly folders);
+  its observation paths are standard IGS templates pointing at the CDDIS
+  archive and can be edited in Data Sources. AIUB does not publish a
+  standard IGS RINEX observation tree.
+  KASI (Korea) FTP is currently unusable; kept as an editable placeholder
+  (subdirectories need calibration in Data Sources).
+- Station status: the official IGSNetworkWithFormer.json is downloaded
+  in full on first launch and refreshed at most once per day; "Refresh
+  status" forces a full download any time. All stations (including retired
+  ones, merged into continent groups by country code) use one rule based
+  on the last data date: the Status column shows MM-DD colored by freshness
+  (green <=7d, amber <=30d, red older), and hovering shows the full date.
+  Click a station for receiver/systems/product details.
+- Naming priority per station/day: RINEX 3 long name (.crx.gz) > RINEX 2
+  short d-file (Hatanaka compressed, e.g. bjfs0010.26d.Z, smaller) >
+  RINEX 2 short o-file. With the WHU web interface (which only lists
+  short o-files), the app automatically checks WHU-FTP for a long name
+  or d-file.
+- Files are verified after download (can be disabled in Settings):
+  non-empty, HTML error-page detection for plain files, gzip CRC for .gz,
+  plus a final check of the decompressed/converted product when enabled.
+  Bad files are deleted and reported as retryable failures; the summary
+  report includes the verification pass/fail counts.
 - Output: rinex/obs/yyyy/ddd/, rinex/nav/yyyy/.
 
-[2. AC Products]
+[2. Precise Products]
 - Three-level tree: Repository -> AC + Series -> Product. Click the Sel
   column to check. Repository rows and AC rows have tri-state checkboxes
   that select/clear everything beneath them in one click; ▣ means
@@ -81,19 +107,22 @@ failure reason, with one-click "Retry failed".
   BeiDou/Galileo/QZSS and starts in 2014. Products before GPS week 2238
   (Nov 2022) use legacy short names; the software adapts automatically.
 - IONEX products (codg/igsg/whug/esag/jplg) sit under each repository.
-- The CODE(AIUB) repository offers the full CODE product line (including
-  the COD0MGXFIN multi-GNSS series) plus AIUB-specific products
-  (GIM ionosphere, Bernese ION/BIA, monthly DCB).
+- Analysis centers follow the official IGS ACC list (EMR/WHU/GOP/GRG/
+  ESA/GFZ/JGX/CODE/JPL/MIT/NGS/SIO/USNO) plus IGS combined products.
+- CODE-specific products (GIM ionosphere, Bernese ION/BIA, monthly DCB)
+  are a standalone top-level node, downloaded from
+  aiub.unibe.ch/download/CODE/<year>/ and independent of any data center.
+- The CODE data center also offers standard CODE final / CODE MGEX final
+  products read from AIUB yearly directories (since 1991).
 - Output: product/<ac>/<final|rapid|ultra>/yyyy/ddd/.
 
 [3. hfile]  Built in: SOPAC ITRF2020 reprocessing (hfilesR20, 1992–now)
-            and MIT. For SOPAC the Network field defaults to "igs" and
-            matches all IGS solutions (higs1a–9a, higsaa…; the daily count
-            varies) — enter another network (eu, ak…) or leave empty for
-            all; MIT has no network prefix, just leave it empty. The MIT
-            server (chandler.mit.edu) has been unstable lately; failures
-            are grouped as "network unreachable", and the URL can be
-            edited in Sources. Output: hfile/<agency>/yyyy/.
+            and MIT. The Network field filters by filename prefix: the
+            SOPAC directory holds several networks; "igs" (default)
+            matches all IGS solutions (higs1a–9a, higsaa…; daily count
+            varies) — enter eu, ak… for other networks. MIT has no prefix,
+            so no Network field is shown for it. The URL can be edited in
+            Sources. Output: hfile/<agency>/yyyy/.
 
 [4. Regional]
 - Built in: Hong Kong SatRef, US SOPAC, New Zealand GeoNet, Geoscience
@@ -130,24 +159,36 @@ failure reason, with one-click "Retry failed".
   unreachable. The account is stored locally only (config.json).
 - "Speed test" measures each repository's latency and shows the results
   in a window, where you can adopt the fastest one.
-- "Extract .gz/.Z after download": decompresses each archive in place
-  (original kept), using the bundled gzip.exe.
+- "Extract .gz/.Z after download": decompresses each archive in place and
+  removes the original archive. .gz uses the standard library (CRC checked
+  in the same pass); .Z uses the bundled gzip.exe.
 - "Convert .crx to .rnx": converts compact RINEX to plain RINEX with the
   bundled crx2rnx.exe (combine with the extract option).
+- "Verify downloads": on by default. Checks non-empty files, HTML error
+  pages for plain files, gzip CRC and the final decompressed/converted
+  output. Bad files are deleted and listed as retryable failures; use
+  "Retry failed" to download them again. Turn it off in Settings for speed.
 - All settings and check states are saved automatically when the window
   is closed.
 
 [7. About]  Developer and contact info; both manuals open with one click.
 
 
-4. Repositories
+4. Repositories (6 data centers + Wuhan dual channel + CODE)
 ---------------
-  WHU   Wuhan University IGS Data Center (web API; fast in China;
-        no IONEX, no MGEX-final products)
-  BKG   https://igs.bkg.bund.de/root_ftp/IGS/  (may require a proxy in China)
-  IGN   ftp://igs.ign.fr/pub/igs/
-  CDDIS https://cddis.nasa.gov/archive/gnss/  (Earthdata account required)
-  CODE(AIUB)  https://www.aiub.unibe.ch/download/  (old FTP retired)
+  CDDIS   https://cddis.nasa.gov/archive/gnss/  (Earthdata account required)
+  ESA     ftp://gssc.esa.int/gnss/  (ESA GSSC)
+  SOPAC   http://garner.ucsd.edu/pub/
+  WHU     http://www.igs.gnsswhu.cn/index.php/igs/  (web API; fast, no ionosphere)
+  WHU-FTP ftp://igs.gnsswhu.cn/pub/gps/  (FTP; full obs/products/ionosphere, may be crowded)
+  IGN     ftp://igs.ign.fr/pub/igs/
+  KASI    ftp://nfs.kasi.re.kr/  (Korea; FTP unusable, subdirectories are
+          placeholder templates to calibrate)
+  CODE    https://www.aiub.unibe.ch/download/  (products: CODE / CODE_MGEX
+          yearly folders; observations: editable standard IGS templates)
+  Note: regional data centers (e.g. BKG) are not listed as IGS repositories.
+  CODE is added as a product center; "CODE-specific products" also stay as
+  a separate top-level node under the Precise Products tab.
 
 
 5. FAQ
@@ -188,8 +229,6 @@ embedded — the exe alone runs on any machine):
     python -m pip install pyinstaller
     python -m PyInstaller --noconfirm --onefile --windowed ^
         --icon=gnss.ico --name gnss_downloader ^
-        --add-data "igs_stations.txt;." ^
-        --add-data "igs_stations_geo.json;." ^
         --add-data "leaflet;leaflet" ^
         --add-data "gnss.ico;." ^
         --add-data "gzip.exe;." ^

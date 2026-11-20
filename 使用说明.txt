@@ -9,10 +9,10 @@ GNSS 数据下载器 使用说明（中文版）
 一、绿色版说明
 --------------
 - 无需安装，双击 gnss_downloader.exe 即可运行。
-- 单个 exe 即包含全部资源（IGS 站表、测站坐标、地图组件、图标、
-  gzip/crx2rnx 解压转换工具），可随意复制到任何位置独立使用。
-- 如需自行更新站表/坐标：把新的 igs_stations.txt 或
-  igs_stations_geo.json 放到 exe 同目录，软件会优先读取外部文件。
+- 单个 exe 即包含全部资源（地图组件、图标、gzip/crx2rnx 解压转换工具），
+  可随意复制到任何位置独立使用。
+- 站表和测站坐标统一来自 IGS 官方 IGSNetworkWithFormer.json（首次启动自动
+  下载到程序目录，可点「刷新站点状态」整文件更新），不再附带旧的站表文件。
 - 程序只依赖系统本身，不联网激活、不写注册表。
 - 单实例：同一时刻只允许运行一个软件窗口，重复双击会提示
   "软件已在运行"，避免多窗口互相覆盖配置。
@@ -31,8 +31,8 @@ GNSS 数据下载器 使用说明（中文版）
 带「昨天 / 近7天 / 近30天」快捷按钮。
 
 页签：
-  1. IGS观测+广播星历   IGS 站 RINEX 观测文件、brdc 广播星历
-  2. 分析中心产品       轨道/钟差/ERP/BIA/电离层，分 最终/快速/超快速
+  1. 观测数据           IGS 站 RINEX 观测文件、brdc 广播星历
+  2. 精密产品           轨道/钟差/ERP/BIA/电离层，分 最终/快速/超快速
   3. hfile              SOPAC、MIT 的 h 文件（GAMIT 用）
   4. 区域网             香港等区域网 RINEX（可自行新增澳大利亚、新西兰等）
   5. 数据源管理         查看/修改各存储库地址，新增区域网、hfile 源
@@ -45,18 +45,37 @@ GNSS 数据下载器 使用说明（中文版）
 
 三、各页用法
 ------------
-【1. IGS观测+广播星历】
+【1. 观测数据】
 - 勾选「观测文件」「广播星历brdc」，在测站表中勾选测站。
-- 测站按洲分组（亚洲在最前，中国 CHN/HKG/MAC/TWN 排在亚洲最前面），
-  站名后括号内是 IGS 三字符国家码。
+- 测站表直接来自 IGS 官方 IGSNetworkWithFormer.json（776 站，含已退役站），
+  按洲分组（亚洲在最前，中国 CHN/HKG/MAC/TWN 排在亚洲最前面），
+  站名显示 4 位短名，括号内是 IGS 三字符国家码。
 - 洲分组行带三态勾选框：点一下整洲全选/全不选；组内部分选中时显示 ▣。
 - 「地图选站」按钮可在地图上点选测站，复制后回软件点「粘贴导入」。
-- 存储库下拉：指定 WHU/BKG/IGN/CDDIS 之一；拿不准选哪个就点旁边的
-  「存储库测速」，各库延迟测出来后一键「采用最快」（BKG 国内可能需代理）。
-- 命名自动判断：同一站同一天有 RINEX 3 长名先下 3，没有再下 RINEX 2 短名。
+  地图点位同样来自 JSON 的 776 站（含退役站，坐标取自 JSON 经纬度字段）。
+- 存储库下拉：列出 8 个通道——IGS 全球 6 大中心 CDDIS/ESA/SOPAC/WHU/IGN/KASI，
+  外加 WHU-FTP（武汉大学 FTP，与 WHU 网页接口并存）和 CODE（AIUB 产品中心）。
+  拿不准选哪个就点旁边的「存储库测速」，测完一键「采用最快」。
+  CDDIS 需要 NASA Earthdata 账号（设置页填写），其余免登录。
+  WHU 网页接口较快；WHU-FTP 观测/产品/电离层更全，但可能连接用户过多而慢。
+  CODE 中心的产品来自 aiub.unibe.ch（CODE/MGEX），观测为 IGS 标准路径模板
+  （指向 CDDIS 归档），可在「数据源管理」里改成自己的镜像。
+  KASI（韩国）FTP 暂不可用，保留为占位，子目录可在「数据源管理」校准。
+- 测站状态：首次启动自动从 IGS 官方源完整下载 IGSNetworkWithFormer.json，
+  以后每天更新一次；也可点「刷新站点状态」随时整文件覆盖。
+  全部站点（含已退役站，已按国家码并入各洲分组）统一按最后数据日期判定：
+  状态列显示月-日并按新鲜度上色（绿≤7天/黄≤30天/红更旧），
+  鼠标悬停看完整日期；点站名在下方看接收机、卫星系统和产品覆盖。
+- 命名自动判断：同一站同一天优先级 RINEX3 长名(.crx.gz) > RINEX2 短名 d
+  (Hatanaka 压缩，如 bjfs0010.26d.Z，更小) > RINEX2 短名 o。
+  选「WHU 网页接口」时网页只有短名 o，会自动去 WHU-FTP 目录补长名/d。
+- 下载后自动校验（可在设置关闭）：文件非空、普通文件识别 HTML 错误页；
+  .gz 在解压时校验 CRC；开启自动解压/转换后还会检查最终产物。
+  校验失败的坏文件会被删除并归入「失败(需重下)」，不会当成成功；
+  统计报告里列出校验通过/失败数。
 - 保存：rinex/obs/yyyy/ddd/站文件，rinex/nav/yyyy/brdc 文件。
 
-【2. 分析中心产品】
+【2. 精密产品】
 - 三级树：存储库 → 机构+系列 → 产品。点「下载」列勾选；
   存储库行和机构行都带三态勾选框，可一键全选/全不选该级全部产品，
   部分选中时显示 ▣。
@@ -65,16 +84,20 @@ GNSS 数据下载器 使用说明（中文版）
 - MGEX 系列（树中标注"MGEX 2014起·含北斗"）：含北斗/Galileo/QZSS，
   2014 年起才有。2022-11（GPS 周 2238）前的产品为短命名，软件自动适配。
 - 电离层 IONEX 挂在各存储库下（codg/igsg/whug/esag/jplg）。
-- CODE(AIUB) 库提供 CODE 全线产品（含 COD0MGXFIN 北斗系列）和
-  AIUB 专属产品（GIM 电离层、Bernese ION/BIA、月度 DCB）。
+- 产品机构按 IGS ACC 官方名单（EMR/WHU/GOP/GRG/ESA/GFZ/JGX/CODE/JPL/
+  MIT/NGS/SIO/USNO）加 IGS 组合产品。
+- CODE 专属产品（GIM 电离层、Bernese ION/BIA、月度 DCB）作为独立顶层节点，
+  不依赖任何全球数据中心；下载地址为 aiub.unibe.ch/download/CODE/年/。
+- CODE 数据中心下另有 CODE final / CODE MGEX final 标准产品，直接读
+  AIUB 的年目录（1991 年起），与专属产品节点互补。
 - 保存：product/机构缩写/系列(final|rapid|ultra)/yyyy/ddd/文件。
 
 【3. hfile】
 - 内置 SOPAC ITRF2020 重处理（hfilesR20，1992年至今）和 MIT。
-- 「网络」栏：SOPAC 默认 igs，匹配 higs1a–9a、higsaa 等全部 IGS 解
-  （每天个数不固定），改填 eu、ak 等可下其他网；MIT 无前缀，留空即可。
-- MIT 服务器（chandler.mit.edu）近年不稳定，连不上会归入"网络连不上"；
-  地址若变动可在「数据源管理」双击修改。保存 hfile/机构/yyyy/。
+- 「网络」栏按文件名前缀过滤：SOPAC 目录里含多个网络，默认 igs，匹配
+  higs1a–9a、higsaa 等全部 IGS 解（每天个数不固定），填 eu、ak 等可下其他网；
+  MIT 无前缀，不显示「网络」栏。
+- 地址若变动可在「数据源管理」双击修改。保存 hfile/机构/yyyy/。
 
 【4. 区域网】
 - 内置：香港 SatRef、美国 SOPAC、新西兰 GeoNet、澳大利亚 GA、
@@ -105,22 +128,31 @@ GNSS 数据下载器 使用说明（中文版）
   填好后点「测试 Earthdata 登录」，弹窗直接告知成功 / 密码错误 / 网络不通。
   账号只保存在本地 config.json。
 - 「存储库测速」立即测试各库延迟，弹窗显示结果，可直接采用最快的库。
-- 「下载后自动解压 .gz/.Z」：勾选后每下完一个压缩文件就地解压
-  （保留原压缩包），用内置 gzip.exe 完成。
+- 「下载后自动解压 .gz/.Z」：勾选后每下完一个压缩文件就地解压，
+  原压缩包会被移除；.gz 用标准库一遍完成校验和解压，.Z 用内置 gzip.exe。
 - 「下载后自动转换 .crx→.rnx」：勾选后 RINEX 3 压缩格式自动转成
   普通 RINEX（配合解压选项使用），用内置 crx2rnx.exe 完成。
+- 「下载后完整性校验」：默认开启。校验非空、普通文件是否为 HTML 错误页、
+  .gz 的 CRC，以及解压/转换产物；失败会删除坏文件并归入「失败(需重下)」，
+  点「重试失败」即可重下。追求速度可在设置里关闭。
 - 关闭窗口时自动保存全部设置与勾选状态，不会丢失未保存的输入。
 
 【7. 关于】开发者与联系方式，中/英文说明书可点击直接打开。
 
 
-四、存储库一览
+四、存储库一览（6 大数据中心 + 武大双通道 + CODE）
 --------------
-  WHU   武汉大学IGS数据中心（网页接口，国内速度快，无电离层和MGEX最终）
-  BKG   https://igs.bkg.bund.de/root_ftp/IGS/（国内可能需代理）
-  IGN   ftp://igs.ign.fr/pub/igs/
-  CDDIS https://cddis.nasa.gov/archive/gnss/（需 Earthdata 账号）
-  CODE(AIUB)  https://www.aiub.unibe.ch/download/（原 FTP 已停用）
+  CDDIS   https://cddis.nasa.gov/archive/gnss/（需 Earthdata 账号）
+  ESA     ftp://gssc.esa.int/gnss/（ESA GSSC）
+  SOPAC   http://garner.ucsd.edu/pub/
+  WHU     http://www.igs.gnsswhu.cn/index.php/igs/（网页接口，较快，无电离层）
+  WHU-FTP ftp://igs.gnsswhu.cn/pub/gps/（FTP，观测/产品/电离层全，可能拥堵）
+  IGN     ftp://igs.ign.fr/pub/igs/
+  KASI    ftp://nfs.kasi.re.kr/（韩国；FTP 暂不可用，子目录为待校准模板）
+  CODE    https://www.aiub.unibe.ch/download/（产品：CODE/CODE_MGEX 年目录；
+          观测：IGS 标准路径模板，可在数据源管理修改）
+  注：区域数据中心（BKG 等）不列为 IGS 存储库；CODE 既作为产品中心加入存储库，
+      「CODE 专属产品」仍单独保留在「精密产品」顶层节点。
 
 
 五、常见问题
@@ -157,8 +189,6 @@ A: 武大通道一次查询即可拿回全年文件清单；其他库有目录�
     python -m pip install pyinstaller
     python -m PyInstaller --noconfirm --onefile --windowed ^
         --icon=gnss.ico --name gnss_downloader ^
-        --add-data "igs_stations.txt;." ^
-        --add-data "igs_stations_geo.json;." ^
         --add-data "leaflet;leaflet" ^
         --add-data "gnss.ico;." ^
         --add-data "gzip.exe;." ^

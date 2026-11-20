@@ -1,14 +1,16 @@
 # -*- coding: utf-8 -*-
 """
-GNSS 数据下载器（绿色便携版 / Portable）
-GNSS Data Downloader
+GNSS 数据下载器 V 1.2
+GNSS Data Downloader V 1.2
 
   1) IGS 站观测数据 + 广播星历 brdc   -> rinex/obs/yyyy/ddd, rinex/nav/yyyy
   2) 分析中心产品（存储库 -> 机构+系列 -> 产品）-> product/<机构>/<系列>/yyyy/ddd
   3) hfile（SOPAC / MIT，可增删源）    -> hfile/<源>/yyyy
   4) 区域网 RINEX（默认香港，可增删源） -> rinex/obs/yyyy/ddd
 
-存储库：CDDIS / IGN / BKG / WHU(网页接口) / CODE-AIUB(网页接口)，
+存储库（IGS 全球 6 大数据中心）：CDDIS / ESA GSSC(FTP) / SOPAC / WHU(网页) / IGN / KASI(占位)，
+另有 WHU-FTP 双通道与 CODE (AIUB) 产品中心；产品机构对齐 IGS ACC 官方名单；
+测站状态来自官方 IGSNetworkWithFormer.json。
 地址模板可在「数据源管理」查看修改；占位符：
   {YYYY} 4位年  {YY} 2位年  {DDD} 年积日  {GPSW} GPS周  {GPSD} 周内日
   {SSSS} 4位站名小写  {SSSSSSSSS} 9位站名大写   （小写写法兼容）
@@ -26,6 +28,7 @@ import ssl
 import sys
 import json
 import time
+import gzip
 import base64
 import hashlib
 import queue
@@ -53,16 +56,13 @@ def _res_path(name):
     return os.path.join(base, name)
 
 
-def stations_txt_path():
-    """IGS 站表：exe 旁外部文件优先（便于用户自行更新），否则用 exe 内置。"""
-    ext = os.path.join(APP_DIR, 'igs_stations.txt')
-    return ext if os.path.exists(ext) else _res_path('igs_stations.txt')
+# IGS 官方测站元数据（含已退役站），整文件下载覆盖本地
+IGS_NETWORK_URL = 'https://files.igs.org/pub/station/general/IGSNetworkWithFormer.json'
+NETWORK_JSON_NAME = 'IGSNetworkWithFormer.json'
 
 
-def geo_json_path():
-    """测站坐标：exe 旁外部文件优先，否则用 exe 内置。"""
-    ext = os.path.join(APP_DIR, 'igs_stations_geo.json')
-    return ext if os.path.exists(ext) else _res_path('igs_stations_geo.json')
+def network_json_path():
+    return os.path.join(APP_DIR, NETWORK_JSON_NAME)
 
 # ----------------------------------------------------------------------
 # 界面语言（中文/English）
@@ -71,9 +71,9 @@ def geo_json_path():
 _LANG = ['zh']           # 'zh' | 'en'
 
 _STR = {
-    'app_title': ('GNSS 数据下载器 (绿色便携版)', 'GNSS Data Downloader (Portable)'),
-    'tab_igs': (' IGS观测+广播星历 ', ' IGS Obs + Nav '),
-    'tab_prod': (' 分析中心产品 ', ' AC Products '),
+    'app_title': ('GNSS 数据下载器 V 1.2', 'GNSS Data Downloader V 1.2'),
+    'tab_igs': (' 观测数据 ', ' Observation Data '),
+    'tab_prod': (' 精密产品 ', ' Precise Products '),
     'tab_hfile': (' hfile ', ' hfile '),
     'tab_region': (' 区域网 ', ' Regional '),
     'tab_sources': (' 数据源管理 ', ' Sources '),
@@ -93,6 +93,21 @@ _STR = {
                   'Click the Sel column; MGEX since 2014 (incl. BDS); long names auto-adapted'),
     'col_station': ('测站名(4位或9位)', 'Station (4/9-char)'),
     'col_dl': ('下载', 'Sel'),
+    'col_status': ('状态', 'Status'),
+    'btn_refresh_status': ('刷新站点状态', 'Refresh status'),
+    'tip_last': ('最近数据', 'Latest data'),
+    'tip_unknown': ('日期未知', 'Date unknown'),
+    'detail_rx': ('接收机', 'Receiver'),
+    'detail_sys': ('卫星系统', 'Satellite system'),
+    'detail_noprod': ('无产品记录', 'No product records'),
+    'detail_none': ('无站点状态信息（可点「刷新站点状态」从 IGS 官方源完整下载）',
+                    'No status info (click "Refresh status" to download from IGS)'),
+    'sts_none': ('站点状态未加载：点「刷新站点状态」从 IGS 官方源完整下载（%s）',
+                 'Status not loaded: click "Refresh status" to download from IGS (%s)'),
+    'sts_summary': ('站点状态：%d 站 | 数据截至 %s | 本地更新 %s | 悬停看最近数据日期；'
+                    '绿≤7天 黄≤30天 红更旧',
+                    'Status: %d stations | data through %s | local update %s | '
+                    'hover for latest data date; green≤7d yellow≤30d red older'),
     'col_repo_prod': ('存储库 / 机构+系列 / 产品', 'Repository / AC+Series / Product'),
     'btn_add': ('添加', 'Add'),
     'hf_net': ('网络:', 'Network:'),
@@ -116,6 +131,10 @@ _STR = {
     'btn_map': ('地图选站', 'Map'),
     'btn_start': ('开始下载', 'Start'),
     'btn_stop': ('停止', 'Stop'),
+    'btn_modify': ('修改', 'Modify'),
+    'btn_new': ('新增', 'Add new'),
+    'btn_reset': ('恢复默认', 'Reset default'),
+    'btn_save': ('保存', 'Save'),
     'threads': ('线程:', 'Threads:'),
     'ready': ('就绪', 'Ready'),
     'tab_log': (' 日志 ', ' Log '),
@@ -152,6 +171,8 @@ _STR = {
                    'Auto-decompress .gz/.Z (built-in gzip.exe)'),
     'set_crx2rnx': ('下载后自动转换 .crx → .rnx (内置 crx2rnx.exe)',
                     'Auto-convert .crx to .rnx (built-in crx2rnx.exe)'),
+    'set_verify': ('下载后完整性校验 (非空/错误页/gzip/产物，失败归入「重试失败」)',
+                   'Verify downloads (size/error page/gzip/output; failures go to "Retry failed")'),
     'set_save': ('保存设置', 'Save settings'),
     'set_proxy_hint': ('留空 = 直连（不使用系统代理）；连不上时可填入代理地址，如 http://127.0.0.1:7890',
                        'Blank = direct connection (system proxy NOT used); enter e.g. http://127.0.0.1:7890 if needed'),
@@ -177,15 +198,20 @@ _STR = {
                   'Developer: Zhongshan Jiang (姜中山)'),
     'about_aff': ('单位：中山大学遥感科学与技术学院',
                   'Affiliation: School of Geospatial Engineering and Science, Sun Yat-sen University'),
-    'about_src': ('数据源：CDDIS / IGN / BKG / 武汉大学(WHU) / CODE(AIUB)',
-                  'Sources: CDDIS / IGN / BKG / WHU / CODE(AIUB)'),
+    'about_src': ('IGS 全球数据中心(6大)：CDDIS / ESA GSSC / SOPAC / 武汉大学(WHU) / IGN / KASI；另含 CODE (AIUB) 产品中心',
+                  'IGS global data centers (6): CDDIS / ESA GSSC / SOPAC / WHU / IGN / KASI; plus CODE (AIUB) product center'),
+    'about_ac': ('IGS 产品分析中心：CODE / EMR / ESA / GFZ / GOP / GRG / JGX / JPL / MIT / '
+                 'NGS / SIO / USNO / WHU / IGS(组合)',
+                 'IGS analysis centers: CODE / EMR / ESA / GFZ / GOP / GRG / JGX / JPL / MIT / '
+                 'NGS / SIO / USNO / WHU / IGS (combined)'),
     'about_manuals': ('说明书(点击打开)：', 'Manuals (click to open):'),
+    'about_email': ('邮箱:', 'Email:'),
     'msg_pick_source': ('请先在树中选中一个数据源条目', 'Select a source item first'),
     'msg_tip': ('提示', 'Info'),
     'msg_err': ('错误', 'Error'),
     'msg_running': ('正在下载中', 'Download in progress'),
-    'msg_need_ed': ('CDDIS 必须登录 NASA Earthdata 账号才能访问（未登录时文件会被误报为"不存在"）。\n\n请在「设置」页填写账号，或把存储库换成 WHU / IGN / BKG（均免账号）。',
-                    'CDDIS requires a NASA Earthdata account; without it files are misreported as "missing".\n\nEnter the account in Settings, or switch the repository to WHU / IGN / BKG (no account needed).'),
+    'msg_need_ed': ('CDDIS 必须登录 NASA Earthdata 账号才能访问（未登录时文件会被误报为"不存在"）。\n\n请在「设置」页填写账号，或把存储库换成 WHU / SOPAC / IGN / ESA（免账号）。',
+                    'CDDIS requires a NASA Earthdata account; without it files are misreported as "missing".\n\nEnter the account in Settings, or switch to WHU / SOPAC / IGN / ESA (no account needed).'),
     'msg_err_date': ('日期格式错误', 'Bad date format'),
     'msg_need_sta': ('请至少勾选一个测站', 'Select at least one station'),
     'msg_need_obsnav': ('请勾选「观测文件」或「广播星历brdc」',
@@ -196,8 +222,8 @@ _STR = {
                         'Enable a regional network and select stations'),
     'msg_no_retry': ('没有可重下的失败项（"不存在"的文件请在设置页打开强制重查）',
                      'Nothing retryable (for "missing" files enable re-check in Settings)'),
-    'msg_map_missing': ('未找到 igs_stations_geo.json（应与程序放在同一目录）',
-                        'igs_stations_geo.json not found (place it beside the program)'),
+    'msg_map_missing': ('尚无站点状态数据，请先点「刷新站点状态」下载 IGSNetworkWithFormer.json',
+                        'No station status data yet. Click "Refresh Status" to download IGSNetworkWithFormer.json first'),
     'msg_confirm_del': ('删除选中的数据源？', 'Delete the selected source?'),
     'msg_confirm': ('确认', 'Confirm'),
     'msg_reset_src': ('恢复全部数据源为默认值？（你的修改和新增将丢失）',
@@ -209,7 +235,7 @@ _STR = {
     'grp_ionex': ('电离层 IONEX', 'IONEX'),
     'grp_hfile': ('hfile', 'hfile'),
     'grp_region': ('区域网', 'Regional networks'),
-    'grp_aiub': ('CODE/AIUB', 'CODE/AIUB'),
+    'grp_aiub': ('CODE 专属产品', 'CODE-specific products'),
     'src_tip': ('占位符: {YYYY}=年 {YY}=2位年 {DDD}=年积日 {GPSW}=GPS周 {GPSD}=周内日 '
                 '{SSSS}=4位站名 {SSSSSSSSS}=9位站名；双击或点「修改」编辑',
                 'Placeholders: {YYYY} {YY} {DDD} {GPSW} {GPSD} {SSSS} {SSSSSSSSS}; double-click to edit'),
@@ -242,6 +268,18 @@ def tr(key):
     if not s:
         return key
     return s[0] if _LANG[0] == 'zh' else s[1]
+
+
+def src_name(item):
+    """数据源显示名。英文界面优先 name_en；没有时去掉中文括号说明与国别前缀。"""
+    name = item.get('name') or item.get('id') or ''
+    if _LANG[0] == 'zh':
+        return name
+    if item.get('name_en'):
+        return item['name_en']
+    cleaned = re.sub(r'[（(][^（）()]*[\u4e00-\u9fff][^（）()]*[）)]', '', name).strip()
+    cleaned = re.sub(r'^(香港|美国|新西兰|澳大利亚|韩国|日本|德国|法国)\s*', '', cleaned)
+    return cleaned.strip() or name
 
 
 # ----------------------------------------------------------------------
@@ -362,42 +400,232 @@ _fill_cc()
 
 CONT_ORDER = ['asia', 'europe', 'na', 'sa', 'africa', 'oceania', 'antarctica', 'other']
 CHINA_CODES = ['CHN', 'HKG', 'MAC', 'TWN']
+# JSON 里少数国家码是英文全称或岛屿码，归一化到 3 位 ISO 码
+_CC_ALIAS = {
+    'Turkey': 'TUR', 'United Kingdom': 'GBR', 'Netherlands': 'NLD',
+    'South Korea': 'KOR', 'United States': 'USA', 'Cape Verde': 'CPV',
+    'MDV': 'MDV',  # 马尔代夫 -> asia（下面补映射）
+    'MYT': 'MYT',  # 马约特 -> africa
+}
+_CC_CONT.setdefault('MDV', 'asia')
+_CC_CONT.setdefault('MYT', 'africa')
 
 
-def load_stations_grouped(path):
-    """读取 igs_stations.txt -> [(continent, [(line, cc), ...]), ...]
-    中国(CHN/HKG/MAC/TWN)排在亚洲最前。"""
-    try:
-        with open(path, 'r', encoding='utf-8') as f:
-            lines = f.read().splitlines()
-    except OSError:
-        return []
-    rows = []
-    for line in lines:
-        line = line.strip()
-        if not line or line.startswith('#'):
-            continue
-        m = re.search(r'\(([A-Z]{3})\)\s*$', line)
-        cc = m.group(1) if m else ''
-        rows.append((line, cc))
-    groups = {c: [] for c in CONT_ORDER}
-    for line, cc in rows:
-        groups[_CC_CONT.get(cc, 'other')].append((line, cc))
-    out = []
-    for cont in CONT_ORDER:
-        items = groups[cont]
-        if not items:
-            continue
-        if cont == 'asia':
-            china = [it for it in items if it[1] in CHINA_CODES]
-            china.sort(key=lambda it: (CHINA_CODES.index(it[1]), it[0]))
-            rest = sorted((it for it in items if it[1] not in CHINA_CODES),
-                          key=lambda it: (it[1], it[0]))
-            items = china + rest
-        else:
-            items.sort(key=lambda it: (it[1], it[0]))
-        out.append((cont, items))
-    return out
+def norm_cc(cc):
+    """国家码归一化：英文全称 -> ISO 3 位。"""
+    cc = str(cc or '').strip()
+    return _CC_ALIAS.get(cc, cc)
+
+
+# ----------------------------------------------------------------------
+# IGS 测站状态（官方 IGSNetworkWithFormer.json 快照，整文件刷新）
+# ----------------------------------------------------------------------
+
+class NetworkStatus:
+    """站点元数据：最后数据日期、接收机/卫星系统、各分析中心产品覆盖。
+
+    所有站点统一按 LastData 判定状态：状态列显示月-日并按新鲜度上色，
+    鼠标悬停显示完整日期。不再区分“运行/退役”，也不显示实时流。
+    """
+
+    def __init__(self, cfg):
+        self.cfg = cfg
+        self.by4 = {}
+        self.by9 = {}
+        self._lock = threading.Lock()
+        self.date = ''
+        self.snapshot = ''
+        self.count = 0
+        self.load()
+
+    def load(self):
+        p = network_json_path()
+        if not os.path.exists(p):
+            return
+        try:
+            with open(p, 'r', encoding='utf-8') as f:
+                self._ingest(json.load(f))
+        except Exception:
+            pass
+
+    def _ingest(self, data):
+        if not isinstance(data, dict):
+            return
+        by4, by9, dates = {}, {}, []
+        for n9, rec in data.items():
+            if not isinstance(rec, dict):
+                continue
+            key9 = str(n9).strip().upper()
+            key4 = key9[:4].lower()
+            rx = rec.get('Receiver') or {}
+            info = {
+                'n9': key9,
+                'cc': str(rec.get('CountryOrRegion') or ''),
+                'lat': rec.get('Latitude'), 'lon': rec.get('Longitude'),
+                'last': str(rec.get('LastData') or ''),
+                'receiver': str(rx.get('Name') or ''),
+                'systems': str(rx.get('SatelliteSystem') or ''),
+                'product': rec.get('Product') or {},
+            }
+            by9[key9] = info
+            by4.setdefault(key4, info)
+            if info['last']:
+                dates.append(info['last'])
+        self.by4, self.by9 = by4, by9
+        self.count = len(by9)
+        self.date = max(dates) if dates else ''
+        try:
+            self.snapshot = time.strftime(
+                '%Y-%m-%d %H:%M', time.localtime(os.path.getmtime(network_json_path())))
+        except Exception:
+            self.snapshot = ''
+
+    def grouped_stations(self):
+        """由 JSON(776 站)生成按洲分组站表：[(洲, [(站名, 国家码, 状态), ...]), ...]。
+
+        显示 9 位站名的前 4 位(唯一)+国家码；中国港澳台排在亚洲最前。
+        """
+        groups = {c: [] for c in CONT_ORDER}
+        for key9, info in self.by9.items():
+            cc = norm_cc(info.get('cc'))
+            line = '%s (%s)' % (key9[:4].lower(), cc) if cc else key9[:4].lower()
+            groups[_CC_CONT.get(cc, 'other')].append((line, cc, key9))
+        out = []
+        for cont in CONT_ORDER:
+            items = groups[cont]
+            if not items:
+                continue
+            if cont == 'asia':
+                china = [it for it in items if it[1] in CHINA_CODES]
+                china.sort(key=lambda it: (CHINA_CODES.index(it[1]), it[0]))
+                rest = sorted((it for it in items if it[1] not in CHINA_CODES),
+                              key=lambda it: (it[1], it[0]))
+                items = china + rest
+            else:
+                items.sort(key=lambda it: (it[1], it[0]))
+            out.append((cont, items))
+        return out
+
+    def map_stations(self):
+        """由 JSON(776 站)生成地图点位：[{s, n9, lat, lon, cc}, ...]。
+
+        坐标字段在 JSON 里是字符串，这里转 float 并剔除无效值。
+        """
+        out = []
+        for key9, info in self.by9.items():
+            try:
+                lat = float(info.get('lat'))
+                lon = float(info.get('lon'))
+                if not (-90 <= lat <= 90 and -180 <= lon <= 180):
+                    continue
+            except (TypeError, ValueError):
+                continue
+            out.append({'s': key9[:4].lower(), 'n9': key9,
+                        'lat': lat, 'lon': lon, 'cc': info.get('cc') or ''})
+        return out
+
+    def refresh(self):
+        """串行化刷新请求，避免自动/手动同时抢同一个本地文件。"""
+        if not self._lock.acquire(blocking=False):
+            return False, '站点状态正在更新中，请稍后再试'
+        try:
+            return self._refresh_unlocked()
+        finally:
+            self._lock.release()
+
+    def _refresh_unlocked(self):
+        """每次从官方源完整下载并覆盖本地；下载后做完整性校验，失败保留原文件。"""
+        p = network_json_path()
+        tmp = '%s.%d.tmp' % (p, threading.get_ident())
+        old_count, old_date = self.count, self.date
+        try:
+            proxy_str = _norm_proxy(self.cfg.data.get('proxy', ''))
+            proxy = {'http': proxy_str, 'https': proxy_str} if proxy_str else {}
+            handlers = [urllib.request.ProxyHandler(proxy)]
+            op = urllib.request.build_opener(*handlers)
+            req = urllib.request.Request(IGS_NETWORK_URL, headers={'User-Agent': _UA})
+            with op.open(req, timeout=int(self.cfg.data.get('timeout', 60))) as r:
+                raw = r.read()
+                declared = r.headers.get('Content-Length')
+            if declared and declared.isdigit() and int(declared) != len(raw):
+                raise ValueError('下载不完整：收到 %d / 应有 %s 字节' % (len(raw), declared))
+            if len(raw) < 100000:
+                raise ValueError('下载内容过小，疑似失败')
+            data = json.loads(raw.decode('utf-8'))
+            if not isinstance(data, dict) or len(data) < 100:
+                raise ValueError('JSON 结构异常')
+            required = ('X', 'Y', 'Z', 'Latitude', 'Longitude', 'LastData')
+            good = sum(1 for v in data.values()
+                       if isinstance(v, dict) and all(k in v for k in required))
+            if good < len(data) * 0.95:
+                raise ValueError('站点记录字段缺失过多：%d/%d' % (good, len(data)))
+            new_dates = [str(v.get('LastData') or '') for v in data.values()
+                         if isinstance(v, dict) and v.get('LastData')]
+            new_date = max(new_dates) if new_dates else ''
+            if old_count and len(data) < old_count * 0.9:
+                raise ValueError('站点数异常减少：%d -> %d' % (old_count, len(data)))
+            if old_date and new_date and new_date < old_date:
+                raise ValueError('数据日期回退：%s -> %s' % (old_date, new_date))
+            with open(tmp, 'wb') as f:
+                f.write(raw)
+            with open(tmp, 'rb') as f:
+                if f.read() != raw:
+                    raise ValueError('写入磁盘后内容不一致')
+            os.replace(tmp, p)
+            self._ingest(data)
+            return True, ('站点状态已完整更新并校验通过：%d 站，数据截至 %s（%d 字节）'
+                          % (len(data), self.date, len(raw)))
+        except Exception as e:
+            try:
+                if os.path.exists(tmp):
+                    os.remove(tmp)
+            except Exception:
+                pass
+            return False, '站点状态更新失败（已保留原文件）：%s' % str(e)[:120]
+
+    def get(self, name):
+        """兼容 4 位 / 9 位站名，以及站表里带 ' (CC)' 国家码后缀的写法。"""
+        key = re.sub(r'\s*\([A-Z]{3}\)\s*$', '', str(name or '').strip()).upper()
+        return self.by9.get(key) or self.by4.get(key[:4].lower())
+
+    def short(self, name):
+        """状态列短文本（月-日）与颜色 tag；无日期留空，不写“无数据”误导。"""
+        info = self.get(name)
+        if not info:
+            return '', ''
+        last = info.get('last') or ''
+        if not last:
+            return '', ''
+        try:
+            days = (dt.date.today() - dt.date(*[int(x) for x in last.split('-')])).days
+        except Exception:
+            days = 999
+        tag = 'fresh' if days <= 7 else ('warn' if days <= 30 else 'stale')
+        return last[5:], tag
+
+    def tip(self, name):
+        """鼠标悬停文本：所有站点统一显示最后数据完整日期。"""
+        info = self.get(name)
+        if not info:
+            return ''
+        last = info.get('last') or ''
+        return ('%s %s' % (tr('tip_last'), last)) if last else tr('tip_unknown')
+
+    def detail(self, name):
+        """点选详情：接收机 / 卫星系统 / 最后数据 / 产品覆盖（双语）。"""
+        info = self.get(name)
+        if not info:
+            return tr('detail_none')
+        prods = []
+        for series, acs in sorted((info.get('product') or {}).items()):
+            if acs:
+                prods.append('%s %s' % (series, max(acs.values())))
+        return ('%s  %s | %s %s | %s %s | %s %s | %s'
+                % (info['n9'], info['cc'],
+                   tr('detail_rx'), info['receiver'] or '-',
+                   tr('detail_sys'), info['systems'] or '-',
+                   tr('tip_last'), info['last'] or tr('tip_unknown'),
+                   '  '.join(prods) or tr('detail_noprod')))
 
 
 # ----------------------------------------------------------------------
@@ -419,6 +647,7 @@ class Config:
         'lang': 'zh',
         'auto_gunzip': False,    # 下载后自动解压 .gz/.Z
         'auto_crx2rnx': False,   # 下载后自动 .crx -> .rnx
+        'verify_downloads': True,  # 下载后完整性校验（非空/错误页/gzip CRC/产物）
         'ui': {},                # 界面勾选记忆
     }
 
@@ -484,28 +713,15 @@ class History:
 
 # 存储库 kind：
 #   dir    - 传统目录型（HTTP/FTP 列目录，模板含占位符）
-#   whuweb - 武大网页 JSON 接口（obsList/gbxlList/jmxlList + download?year=&id=）
-#   aiubweb- AIUB 新站（php 列目录 + download 直链）
+#   whuweb - 武大网页 JSON 接口（实测比 FTP 快；FTP 常报连接用户过多）
+#   aiubweb- CODE(AIUB) 产品通道：S3 列目录 + www.aiub.unibe.ch/download 直链
+# IGS 官方全球数据中心 6 家：CDDIS / ESA GSSC / SOPAC / WHU / IGN / KASI
+# 另含 CODE (AIUB) 产品中心（产品走 AIUB，观测用 IGS 标准路径模板）。
+# KASI(韩国) FTP 暂不可用，保留为可编辑占位（子目录待校准）。
+AIUB_API = 'https://code.aiub.unibe.ch/s3_script/aiub_s3_bucket_listing.php?path='
+
 DEFAULT_SOURCES = {
     'centers': {
-        'WHU': {
-            'kind': 'whuweb',
-            'api': 'http://www.igs.gnsswhu.cn/index.php/igs/',
-            'obs': '', 'nav': '', 'prod': '', 'mgex': '', 'ion': ''},
-        'BKG': {
-            'kind': 'dir',
-            'obs': 'https://igs.bkg.bund.de/root_ftp/IGS/obs/{YYYY}/{DDD}/',
-            'nav': 'https://igs.bkg.bund.de/root_ftp/IGS/BRDC/{YYYY}/{DDD}/',
-            'prod': 'https://igs.bkg.bund.de/root_ftp/IGS/products/{GPSW}/',
-            'mgex': 'https://igs.bkg.bund.de/root_ftp/IGS/products/mgex/{GPSW}/',
-            'ion': 'https://igs.bkg.bund.de/root_ftp/IGS/products/ionex/{YYYY}/{DDD}/'},
-        'IGN': {
-            'kind': 'dir',
-            'obs': 'ftp://igs.ign.fr/pub/igs/data/{YYYY}/{DDD}/',
-            'nav': 'ftp://igs.ign.fr/pub/igs/data/{YYYY}/brdc/',
-            'prod': 'ftp://igs.ign.fr/pub/igs/products/{GPSW}/',
-            'mgex': 'ftp://igs.ign.fr/pub/igs/products/mgex/{GPSW}/',
-            'ion': 'ftp://igs.ign.fr/pub/igs/products/ionosphere/{YYYY}/{DDD}/'},
         'CDDIS': {
             'kind': 'dir',
             'obs': 'https://cddis.nasa.gov/archive/gnss/data/daily/{YYYY}/{DDD}/{YY}d/',
@@ -513,48 +729,112 @@ DEFAULT_SOURCES = {
             'prod': 'https://cddis.nasa.gov/archive/gnss/products/{GPSW}/',
             'mgex': 'https://cddis.nasa.gov/archive/gnss/products/mgex/{GPSW}/',
             'ion': 'https://cddis.nasa.gov/archive/gnss/products/ionex/{YYYY}/{DDD}/'},
-        'CODE(AIUB)': {
+        'ESA': {
+            'kind': 'dir',
+            'obs': 'ftp://gssc.esa.int/gnss/data/daily/{YYYY}/{DDD}/{YY}d/',
+            'nav': 'ftp://gssc.esa.int/gnss/data/daily/{YYYY}/brdc/',
+            'prod': 'ftp://gssc.esa.int/gnss/products/{GPSW}/',
+            'mgex': 'ftp://gssc.esa.int/gnss/products/mgex/{GPSW}/',
+            'ion': 'ftp://gssc.esa.int/gnss/products/ionex/{YYYY}/{DDD}/'},
+        'SOPAC': {
+            'kind': 'dir',
+            'obs': 'http://garner.ucsd.edu/pub/rinex/{YYYY}/{DDD}/',
+            'nav': 'http://garner.ucsd.edu/pub/rinex/{YYYY}/brdc/',
+            'prod': 'http://garner.ucsd.edu/pub/products/{GPSW}/',
+            'mgex': 'http://garner.ucsd.edu/pub/products/mgex/{GPSW}/',
+            'ion': 'http://garner.ucsd.edu/pub/products/ionex/{YYYY}/{DDD}/'},
+        'WHU': {
+            'kind': 'whuweb',
+            'api': 'http://www.igs.gnsswhu.cn/index.php/igs/',
+            'obs': '', 'nav': '', 'prod': '', 'mgex': '', 'ion': ''},
+        'WHU-FTP': {
+            'kind': 'dir',
+            'note': '武汉大学 FTP（观测/产品全，含 MGEX/IONEX；可能连接用户过多而慢）',
+            'obs': 'ftp://igs.gnsswhu.cn/pub/gps/data/daily/{YYYY}/{DDD}/{YY}d/',
+            'nav': 'ftp://igs.gnsswhu.cn/pub/gps/data/daily/{YYYY}/brdc/',
+            'prod': 'ftp://igs.gnsswhu.cn/pub/gps/products/{GPSW}/',
+            'mgex': 'ftp://igs.gnsswhu.cn/pub/gps/products/mgex/{GPSW}/',
+            'ion': 'ftp://igs.gnsswhu.cn/pub/gps/products/ionex/{YYYY}/{DDD}/'},
+        'CODE': {
             'kind': 'aiubweb',
-            'api': 'https://code.aiub.unibe.ch/s3_script/aiub_s3_bucket_listing.php?path=',
-            'obs': '', 'nav': '',
+            'api': AIUB_API,
+            'note': 'CODE (AIUB) 产品中心：产品来自 aiub.unibe.ch；官网未发布标准 IGS 观测目录，'
+                    '观测路径为 IGS 标准模板（CDDIS 归档），可在数据源管理修改',
+            'note_en': 'CODE (AIUB) product center: products from aiub.unibe.ch. No standard IGS '
+                       'observation tree is published there; observation paths are standard IGS '
+                       'templates (CDDIS archive), editable in Data Sources',
+            'obs': 'https://cddis.nasa.gov/archive/gnss/data/daily/{YYYY}/{DDD}/{YY}d/',
+            'nav': 'https://cddis.nasa.gov/archive/gnss/data/daily/{YYYY}/brdc/',
             'prod': 'https://www.aiub.unibe.ch/download/CODE/{YYYY}/',
             'mgex': 'https://www.aiub.unibe.ch/download/CODE_MGEX/CODE/{YYYY}/',
             'ion': ''},
+        'IGN': {
+            'kind': 'dir',
+            'obs': 'ftp://igs.ign.fr/pub/igs/data/{YYYY}/{DDD}/',
+            'nav': 'ftp://igs.ign.fr/pub/igs/data/{YYYY}/brdc/',
+            'prod': 'ftp://igs.ign.fr/pub/igs/products/{GPSW}/',
+            'mgex': 'ftp://igs.ign.fr/pub/igs/products/mgex/{GPSW}/',
+            'ion': 'ftp://igs.ign.fr/pub/igs/products/ionosphere/{YYYY}/{DDD}/'},
+        'KASI': {
+            'kind': 'dir',
+            'note': '韩国 KASI 全球数据中心：官网仅给裸地址 ftp://nfs.kasi.re.kr/，'
+                    '下列子目录为待校准模板，可在数据源管理修改',
+            'obs': 'ftp://nfs.kasi.re.kr/gns/data/daily/{YYYY}/{DDD}/{YY}d/',
+            'nav': 'ftp://nfs.kasi.re.kr/gns/data/daily/{YYYY}/brdc/',
+            'prod': 'ftp://nfs.kasi.re.kr/gns/products/{GPSW}/',
+            'mgex': 'ftp://nfs.kasi.re.kr/gns/products/mgex/{GPSW}/',
+            'ion': 'ftp://nfs.kasi.re.kr/gns/products/ionex/{YYYY}/{DDD}/'},
     },
-    'auto_order': ['WHU', 'BKG', 'IGN', 'CDDIS'],
-    # 产品机构（封闭集合，可修改不可新增）。series: fin/rap/ult -> 产品列表
+    'auto_order': ['WHU', 'WHU-FTP', 'CODE', 'CDDIS', 'ESA', 'SOPAC', 'IGN', 'KASI'],
+    # 产品机构：ACC 官方 13 家分析中心 + IGS 组合产品；3 位 id 与长文件名前缀一致
+    # series: fin/rap/ult -> 产品列表；mgex=True 为多系统产品线
     'analysis_centers': [
-        {'id': 'igs', 'name': 'IGS', 'mgex': False,
+        {'id': 'igs', 'name': 'IGS(组合)', 'name_en': 'IGS (combined)', 'mgex': False,
          'series': {'fin': ['orb', 'clk', 'erp', 'snx', 'bia'],
-                    'rap': ['orb', 'clk', 'erp'],
-                    'ult': ['orb', 'erp']}},
+                    'rap': ['orb', 'clk', 'erp'], 'ult': ['orb', 'erp']}},
         {'id': 'cod', 'name': 'CODE', 'mgex': False,
          'series': {'fin': ['orb', 'clk', 'erp', 'snx', 'bia'],
-                    'rap': ['orb', 'clk', 'erp'],
-                    'ult': ['orb', 'erp']}},
-        {'id': 'esa', 'name': 'ESA', 'mgex': False,
+                    'rap': ['orb', 'clk', 'erp'], 'ult': ['orb', 'erp']}},
+        {'id': 'esa', 'name': 'ESA/ESOC', 'mgex': False,
          'series': {'fin': ['orb', 'clk', 'erp', 'snx', 'bia'],
-                    'rap': ['orb', 'clk', 'erp'],
-                    'ult': ['orb', 'erp']}},
+                    'rap': ['orb', 'clk', 'erp'], 'ult': ['orb', 'erp']}},
+        {'id': 'gfz', 'name': 'GFZ', 'mgex': False,
+         'series': {'fin': ['orb', 'clk', 'erp', 'snx', 'bia'],
+                    'rap': ['orb', 'clk', 'erp'], 'ult': ['orb', 'erp']}},
         {'id': 'jpl', 'name': 'JPL', 'mgex': False,
          'series': {'fin': ['orb', 'clk', 'erp', 'snx'],
-                    'rap': ['orb', 'clk', 'erp']}},
+                    'rap': ['orb', 'clk', 'erp'], 'ult': ['orb', 'erp']}},
         {'id': 'mit', 'name': 'MIT', 'mgex': False,
          'series': {'fin': ['orb', 'clk', 'erp', 'snx']}},
+        {'id': 'whu', 'name': 'WHU', 'mgex': False,
+         'series': {'fin': ['orb', 'clk', 'erp', 'snx', 'bia'],
+                    'rap': ['orb', 'clk', 'erp'], 'ult': ['orb', 'erp']}},
+        {'id': 'emr', 'name': 'EMR', 'mgex': False,
+         'series': {'fin': ['orb', 'clk', 'erp', 'snx', 'bia'],
+                    'rap': ['orb', 'clk', 'erp'], 'ult': ['orb', 'erp']}},
+        {'id': 'ngs', 'name': 'NGS', 'mgex': False,
+         'series': {'fin': ['orb', 'clk', 'erp', 'snx'],
+                    'rap': ['orb', 'clk', 'erp'], 'ult': ['orb', 'erp']}},
+        {'id': 'sio', 'name': 'SIO', 'mgex': False,
+         'series': {'fin': ['orb', 'clk', 'erp', 'snx'], 'rap': ['orb', 'clk', 'erp']}},
+        {'id': 'usn', 'name': 'USNO', 'mgex': False,
+         'series': {'fin': ['orb', 'clk', 'erp', 'snx']}},
+        {'id': 'gop', 'name': 'GOP', 'mgex': False,
+         'series': {'fin': ['orb', 'clk', 'erp', 'snx'], 'rap': ['orb', 'clk', 'erp']}},
+        {'id': 'grg', 'name': 'GRG', 'mgex': False,
+         'series': {'fin': ['orb', 'clk', 'erp', 'bia'],
+                    'rap': ['orb', 'clk', 'erp'], 'ult': ['orb', 'erp']}},
+        {'id': 'jgx', 'name': 'JGX', 'mgex': False,
+         'series': {'fin': ['orb', 'clk', 'erp', 'bia'],
+                    'rap': ['orb', 'clk', 'erp'], 'ult': ['orb', 'erp']}},
+        {'id': 'com', 'name': 'CODE', 'mgex': True,
+         'series': {'fin': ['orb', 'clk', 'erp', 'bia', 'snx']}},
         {'id': 'wum', 'name': 'WHU', 'mgex': True,
          'series': {'fin': ['orb', 'clk', 'erp', 'snx', 'bia'],
                     'rap': ['orb', 'clk', 'erp']}},
-        {'id': 'com', 'name': 'CODE', 'mgex': True,
-         'series': {'fin': ['orb', 'clk', 'erp', 'bia', 'snx']}},
         {'id': 'gbm', 'name': 'GFZ', 'mgex': True,
          'series': {'fin': ['orb', 'clk', 'erp', 'snx', 'bia'],
                     'rap': ['orb', 'clk', 'erp']}},
-        {'id': 'grm', 'name': 'GRGS', 'mgex': True,
-         'series': {'fin': ['orb', 'clk', 'erp', 'bia']}},
-        {'id': 'jam', 'name': 'JAXA', 'mgex': True,
-         'series': {'fin': ['orb', 'clk', 'erp', 'bia']}},
-        {'id': 'shm', 'name': 'SHAO', 'mgex': True,
-         'series': {'fin': ['orb', 'clk', 'erp', 'bia']}},
     ],
     'ionex': [
         {'id': 'igsg', 'name': 'IGS'},
@@ -566,37 +846,39 @@ DEFAULT_SOURCES = {
     'aiub': {
         'url': 'https://www.aiub.unibe.ch/download/CODE/{YYYY}/',
         'items': [
-            {'id': 'gim', 'name': '电离层 GIM (IONEX)'},
-            {'id': 'ion', 'name': '电离层 ION (Bernese)'},
-            {'id': 'bia', 'name': 'BIA 偏差 (Bernese)'},
-            {'id': 'dcb', 'name': '月度 DCB (P1C1/P1P2)'},
+        {'id': 'gim', 'name': '电离层 GIM (IONEX)', 'name_en': 'Ionospheric GIM (IONEX)'},
+        {'id': 'ion', 'name': '电离层 ION (Bernese)', 'name_en': 'Ionospheric ION (Bernese)'},
+        {'id': 'bia', 'name': 'BIA 偏差 (Bernese)', 'name_en': 'BIA biases (Bernese)'},
+        {'id': 'dcb', 'name': '月度 DCB (P1C1/P1P2)', 'name_en': 'Monthly DCB (P1C1/P1P2)'},
         ]},
     'hfile': [
-        {'id': 'sopacr20', 'name': 'SOPAC ITRF2020重处理(1992起)', 'by': 'day',
+        {'id': 'sopacr20', 'name': 'SOPAC ITRF2020重处理(1992起)',
+         'name_en': 'SOPAC ITRF2020 reprocessing (since 1992)', 'by': 'day',
          'prefix': 'igs',
          'urls': ['https://garner.ucsd.edu/pub/hfilesR20/{YYYY}/{DDD}/']},
-        {'id': 'mit', 'name': 'MIT(无前缀,服务器不稳时可在数据源管理改地址)', 'by': 'day',
-         'prefix': '',
+        {'id': 'mit', 'name': 'MIT', 'name_en': 'MIT', 'by': 'day',
+         'prefix': '', 'no_network': True,
          'urls': ['https://chandler.mit.edu/ftp/hfiles/{YYYY}/{DDD}/']},
     ],
     'regional': [
-        {'id': 'hk', 'name': '香港 SatRef',
+        {'id': 'hk', 'name': '香港 SatRef', 'name_en': 'Hong Kong SatRef',
          'templates': ['https://rinex.geodetic.gov.hk/rinex3/{YYYY}/{DDD}/{SSSS}/30s/',
                        'https://rinex.geodetic.gov.hk/rinex2/{YYYY}/{DDD}/{SSSS}/30s/'],
          'stations': ['hkcl', 'hkfn', 'hkkt', 'hklm', 'hkmw', 'hknp', 'hkpc',
                       'hkqt', 'hksc', 'hksl', 'hkss', 'hkst', 'hktb', 'hkth',
                       'hktw', 'hkws', 'kyc1', 't430']},
-        {'id': 'sopac', 'name': '美国 SOPAC',
+        {'id': 'sopac', 'name': '美国 SOPAC', 'name_en': 'SOPAC (USA)',
          'templates': ['https://garner.ucsd.edu/pub/rinex/{YYYY}/{DDD}/'],
          'stations': []},
-        {'id': 'nz', 'name': '新西兰 GeoNet',
+        {'id': 'nz', 'name': '新西兰 GeoNet', 'name_en': 'GeoNet (New Zealand)',
          'templates': ['https://data.geonet.org.nz/gnss/rinex/{YYYY}/{DDD}/'],
          'stations': []},
-        {'id': 'ga', 'name': '澳大利亚 GA',
+        {'id': 'ga', 'name': '澳大利亚 GA', 'name_en': 'GA (Australia)',
          'templates': ['https://ga-gnss-data-rinex-v1.s3.amazonaws.com/'
                        '?list-type=2&max-keys=1000&prefix=public/daily/{YYYY}/{DDD}/'],
          'stations': []},
-        {'id': 'earthscope', 'name': '美国 EarthScope(需登录授权)', 'auth': 'esdevice',
+        {'id': 'earthscope', 'name': '美国 EarthScope(需登录授权)',
+         'name_en': 'EarthScope (USA, login required)', 'auth': 'esdevice',
          'templates': ['https://data.earthscope.org/archive/gnss/rinex/obs/{YYYY}/{DDD}/'],
          'stations': [], 'user': '', 'pass': ''},
     ],
@@ -641,12 +923,44 @@ class Sources:
         self.save()
 
     def _upgrade_dead_defaults(self):
-        """老配置自动迁移：WHU/AIUB 的 FTP 地址已失效，升级为网页通道。"""
+        """老配置自动迁移：存储库=6大DC(WHU网页/ESA FTP/KASI占位)，产品机构=ACC 名单。"""
         changed = False
-        c = self.data.get('centers', {}).get('WHU')
-        if c and c.get('kind') != 'whuweb':
-            c.clear()
-            c.update(json.loads(json.dumps(DEFAULT_SOURCES['centers']['WHU'])))
+        if self.data.get('_schema') != 'global6-acc':
+            self.data['centers'] = json.loads(json.dumps(DEFAULT_SOURCES['centers']))
+            self.data['auto_order'] = list(DEFAULT_SOURCES['auto_order'])
+            self.data['analysis_centers'] = json.loads(
+                json.dumps(DEFAULT_SOURCES['analysis_centers']))
+            self.data['_schema'] = 'global6-acc'
+            changed = True
+        # 增量迁移（老配置已带 global6-acc 标记时也要纠正这几处）
+        centers = self.data.setdefault('centers', {})
+        if 'KASI' not in centers:                   # 韩国站先保留（路径待校准）
+            centers['KASI'] = json.loads(json.dumps(DEFAULT_SOURCES['centers']['KASI']))
+            changed = True
+        if 'WHU-FTP' not in centers:                # 武大 FTP 通道，与网页通道并存
+            centers['WHU-FTP'] = json.loads(json.dumps(DEFAULT_SOURCES['centers']['WHU-FTP']))
+            changed = True
+        if 'CODE' not in centers:                   # CODE (AIUB) 产品中心
+            centers['CODE'] = json.loads(json.dumps(DEFAULT_SOURCES['centers']['CODE']))
+            changed = True
+        code = centers.get('CODE')                  # 旧配置里残留的 FTP 基址改回官网
+        if code is not None and 'ftp.aiub.unibe.ch' in str(code.get('prod', '')):
+            code['prod'] = DEFAULT_SOURCES['centers']['CODE']['prod']
+            changed = True
+        whu = centers.get('WHU')
+        if whu is not None and whu.get('kind') != 'whuweb':   # FTP 拥堵，回网页接口
+            centers['WHU'] = json.loads(json.dumps(DEFAULT_SOURCES['centers']['WHU']))
+            changed = True
+        esa = centers.get('ESA')
+        if esa is not None and not str(esa.get('obs', '')).startswith('ftp:'):
+            centers['ESA'] = json.loads(json.dumps(DEFAULT_SOURCES['centers']['ESA']))
+            changed = True
+        want_order = list(DEFAULT_SOURCES['auto_order'])
+        if self.data.get('auto_order') != want_order:
+            self.data['auto_order'] = [k for k in self.data.get('auto_order', []) if k in want_order]
+            for k in want_order:                     # 补齐缺失的中心，保持既定顺序
+                if k not in self.data['auto_order']:
+                    self.data['auto_order'].append(k)
             changed = True
         a = self.data.get('aiub', {})
         if 'ftp.aiub.unibe.ch' in str(a.get('url', '')):
@@ -679,6 +993,30 @@ class Sources:
             self.data['analysis_centers'] = json.loads(
                 json.dumps(DEFAULT_SOURCES['analysis_centers']))
             changed = True
+        hf_ids = {h.get('id') for h in self.data.get('hfile', [])}
+        for h0 in DEFAULT_SOURCES['hfile']:            # 缺失的内置 hfile 源补回
+            if h0['id'] not in hf_ids:
+                self.data['hfile'].append(json.loads(json.dumps(h0)))
+                changed = True
+        for h in self.data.get('hfile', []):           # MIT 无网络前缀，不显示网络框
+            if h.get('id') == 'mit' and h.get('no_network') is not True:
+                h['no_network'] = True
+                changed = True
+        # 英文界面名称：内置条目缺失 name_en 时补齐，不覆盖用户自定义名称
+        groups = [('analysis_centers', self.data.get('analysis_centers', [])),
+                  ('aiub.items', a.get('items', [])),
+                  ('hfile', self.data.get('hfile', [])),
+                  ('regional', rg)]
+        for gname, items in groups:
+            defaults = DEFAULT_SOURCES
+            for part in gname.split('.'):
+                defaults = defaults.get(part, {})
+            by_id = {x.get('id'): x for x in defaults if isinstance(x, dict)}
+            for item in items:
+                ref = by_id.get(item.get('id'))
+                if ref and ref.get('name_en') and not item.get('name_en'):
+                    item['name_en'] = ref['name_en']
+                    changed = True
         if changed:
             self.save()
 
@@ -686,10 +1024,31 @@ class Sources:
     def centers(self):
         return self.data.get('centers', {})
 
+    @staticmethod
+    def _legacy_aiub(c):
+        """历史遗留的纯产品 AIUB 库：无观测路径，不列入中心列表。
+        CODE 中心有 obs 模板，属于正式数据中心，需要正常显示。"""
+        return c.get('kind') == 'aiubweb' and not c.get('obs')
+
     def auto_order(self):
         order = [c for c in (self.data.get('auto_order') or [])
-                 if self.data['centers'].get(c, {}).get('kind') != 'aiubweb']
-        return order or [k for k, v in self.centers().items() if v.get('kind') != 'aiubweb']
+                 if not self._legacy_aiub(self.data['centers'].get(c, {}))]
+        return order or [k for k, v in self.centers().items()
+                         if not self._legacy_aiub(v)]
+
+    def ordered_centers(self, skip_aiub=True):
+        """按配置顺序返回 [(key, dict), ...]；未列入顺序的排在末尾。
+
+        存储库下拉、产品树、数据源树统一用此方法，保证武大等排在前面。
+        skip_aiub 只隐藏历史遗留的纯产品 AIUB 库，不隐藏 CODE 中心。
+        """
+        centers = self.centers()
+        order = self.data.get('auto_order') or []
+        keys = [k for k in order if k in centers]
+        keys += [k for k in centers if k not in keys]
+        if skip_aiub:
+            keys = [k for k in keys if not self._legacy_aiub(centers.get(k, {}))]
+        return [(k, centers[k]) for k in keys]
 
     def analysis_centers(self):
         return self.data.get('analysis_centers', [])
@@ -848,6 +1207,12 @@ class FtpClient:
                 total = ftp.size(path)
             except Exception:
                 pass
+            if total is not None and offset >= total:   # 过期断点，整文件重下
+                try:
+                    os.remove(tmp)
+                except OSError:
+                    pass
+                offset = 0
             done = offset
             t0 = time.time()
             with open(tmp, 'ab' if offset else 'wb') as f:
@@ -862,6 +1227,12 @@ class FtpClient:
                         progress(done, total, done / el)
                 ftp.retrbinary('RETR %s' % path, _w, blocksize=65536,
                                rest=offset if offset else None)
+            if total is not None and done != total:
+                try:
+                    os.remove(tmp)
+                except OSError:
+                    pass
+                raise IOError('FTP 下载不完整: %d/%d 字节' % (done, total))
             os.replace(tmp, dest)
             return True, ''
         except _Stopped:
@@ -1125,6 +1496,30 @@ class Http:
             self._cache_put(url, names)
         return names
 
+    @staticmethod
+    def _trim_gzip_trailer(path):
+        """裁掉 gzip 数据尾部附加的非 gzip 内容（如 WHU 接口的 HTML 调试片段）。
+
+        只在文件以 gzip 魔数开头、且 gzip 流已完整结束（eof=True）但尾部还有
+        多余数据时才裁剪，保证落盘的 .gz 是纯净标准 gzip；正常情况下不动文件。
+        """
+        try:
+            import zlib
+            with open(path, 'rb') as f:
+                head = f.read(2)
+            if head != b'\x1f\x8b':                # 不是 gzip，直接跳过
+                return
+            with open(path, 'rb') as f:
+                data = f.read()
+            dec = zlib.decompressobj(31)
+            dec.decompress(data)
+            if dec.eof and dec.unused_data:         # gzip 流已结束，尾部有多余数据
+                keep = len(data) - len(dec.unused_data)
+                with open(path, 'wb') as f:
+                    f.write(data[:keep])
+        except Exception:
+            pass                                    # 裁剪失败不影响正常落盘
+
     def download(self, url, dest, timeout=None, stop_check=None, progress=None):
         """统一下载入口（http/ftp），支持 .part 断点续传。返回 (ok, err)。"""
         if url.startswith('ftp://'):
@@ -1157,6 +1552,14 @@ class Http:
                 offset = 0
             total = r.headers.get('Content-Length')
             total = (int(total) + offset) if total else None
+            if offset and total is not None and offset >= total:   # 过期断点
+                r.close()
+                try:
+                    os.remove(tmp)
+                except OSError:
+                    pass
+                return self.download(url, dest, timeout=timeout,
+                                     stop_check=stop_check, progress=progress)
             done = offset
             with r, open(tmp, 'ab' if offset else 'wb') as f:
                 if head:
@@ -1173,11 +1576,28 @@ class Http:
                     if progress:
                         el = max(time.time() - t0, 0.01)
                         progress(done, total, done / el)
+            if total is not None and done != total:
+                try:
+                    os.remove(tmp)
+                except OSError:
+                    pass
+                raise IOError('HTTP 下载不完整: %d/%d 字节' % (done, total))
+            # 落盘前裁掉 gzip 尾部附加的 HTML（WHU 网页接口会附加 page-trace 调试片段），
+            # 让保存的 .gz 是纯净的标准 gzip；无附加数据时不动，避免影响其他源。
+            if dest.lower().endswith('.gz'):
+                self._trim_gzip_trailer(tmp)
             os.replace(tmp, dest)
             return True, ''
         except _Stopped:
             return False, '已停止'
         except urllib.error.HTTPError as e:
+            if e.code == 416 and 'Range' in headers and os.path.exists(tmp):
+                try:
+                    os.remove(tmp)
+                except OSError:
+                    pass
+                return self.download(url, dest, timeout=timeout,
+                                     stop_check=stop_check, progress=progress)
             return False, 'HTTP %s' % e.code
         except Exception as e:
             return False, '%s: %s' % (type(e).__name__, str(e)[:80])
@@ -1320,6 +1740,7 @@ class Engine:
         self.fprog = fprog_cb          # (label, done, total, speed)
         self.stop_event = threading.Event()
         self.results = {'ok': [], 'failed': [], 'notexist': [], 'skipped': []}
+        self.verify = {'ok': 0, 'failed': 0}
         self.task_map = {}             # rel -> Task（供重下失败项）
         self._fprog_last = {}
 
@@ -1330,16 +1751,56 @@ class Engine:
         low = dest.lower()
         if low.endswith('.crx.gz') or low.endswith('.crx.z'):
             if self.cfg.data.get('auto_gunzip'):
-                dest = self._gunzip(dest)
+                dest = self._gunzip_py(dest) if low.endswith('.gz') else self._gunzip(dest)
             if dest and self.cfg.data.get('auto_crx2rnx') and dest.lower().endswith('.crx'):
                 self._crx2rnx(dest)
             return
         if low.endswith('.gz') or low.endswith('.z'):
             if self.cfg.data.get('auto_gunzip'):
-                self._gunzip(dest)
+                self._gunzip_py(dest) if low.endswith('.gz') else self._gunzip(dest)
             return
         if low.endswith('.crx') and self.cfg.data.get('auto_crx2rnx'):
             self._crx2rnx(dest)
+
+    @staticmethod
+    def _gunzip_py(path):
+        """用标准库解压 .gz：一遍完成 CRC 校验 + 写盘，避免再跑外部 gzip。
+
+        用 zlib 增量解压而非 gzip.open：部分服务器（如 WHU 网页下载接口）会在
+        gzip 数据尾部附加 HTML 调试片段，gzip.open 会因尾部非 gzip 内容报错；
+        zlib.decompressobj(31) 以 eof 判定 gzip 流结束，忽略尾部附加数据，且
+        仍在 eof 时校验 CRC（数据损坏会抛 zlib.error）。
+        """
+        out = os.path.splitext(path)[0]
+        try:
+            import zlib
+            with open(path, 'rb') as src:
+                data = src.read()
+            dec = zlib.decompressobj(31)          # 31 = gzip 格式
+            with open(out, 'wb') as dst:
+                pending = data
+                while pending and not dec.eof:
+                    chunk = dec.decompress(pending, 1024 * 1024)
+                    if chunk:
+                        dst.write(chunk)
+                    pending = dec.unconsumed_tail
+            if not dec.eof:                        # gzip 流未完整结束 -> 数据损坏
+                raise IOError('gzip 流不完整')
+            os.remove(path)
+            return out
+        except Exception:
+            try:
+                if os.path.exists(out):
+                    os.remove(out)
+            except OSError:
+                pass
+            return None
+
+    @staticmethod
+    def _no_window_flags():
+        """调用外部 exe 时不弹出控制台窗口（Windows --windowed 下尤其明显）。"""
+        import subprocess
+        return subprocess.CREATE_NO_WINDOW if os.name == 'nt' else 0
 
     @staticmethod
     def _gunzip(path):
@@ -1349,7 +1810,8 @@ class Engine:
         try:
             import subprocess
             r = subprocess.run([gz, '-d', '-f', path],
-                               capture_output=True, timeout=120)
+                               capture_output=True, timeout=120,
+                               creationflags=Engine._no_window_flags())
             out = os.path.splitext(path)[0]
             if r.returncode == 0 and os.path.exists(out):
                 return out
@@ -1364,12 +1826,90 @@ class Engine:
             return
         try:
             import subprocess
-            subprocess.run([exe, path], capture_output=True, timeout=60)
+            subprocess.run([exe, path], capture_output=True, timeout=60,
+                           creationflags=Engine._no_window_flags())
         except Exception:
             pass
 
+    @staticmethod
+    def _error_page(path):
+        try:
+            with open(path, 'rb') as f:
+                head = f.read(1024).lower()
+        except OSError:
+            return True
+        return any(x in head for x in (b'<html', b'<!doctype', b'<?xml',
+                                       b'access denied', b'not found',
+                                       b'error 40', b'error 50'))
+
+    def _verify_raw(self, t):
+        """下载落盘后立即校验：非空、非错误页、gzip 数据完整。"""
+        if not os.path.exists(t.dest):
+            return False, '文件未落盘'
+        size = os.path.getsize(t.dest)
+        if size <= 0:
+            return False, '文件为空'
+        low = t.dest.lower()
+        if low.endswith('.gz') and not self.cfg.data.get('auto_gunzip'):
+            # 不自动解压时在此校验 CRC。用 zlib 增量解压而非 gzip.open：
+            # WHU 等服务器会在 gzip 数据后附加 HTML 调试片段，gzip.open 会误判损坏。
+            if not self._check_gzip(t.dest):
+                return False, 'gzip 数据损坏'
+        elif not low.endswith(('.z', '.crx')):
+            if self._error_page(t.dest):
+                return False, '内容疑似错误页'
+        return True, size
+
+    @staticmethod
+    def _check_gzip(path):
+        """校验 gzip 流完整（CRC 正确），忽略尾部附加的非 gzip 数据。"""
+        try:
+            import zlib
+            with open(path, 'rb') as f:
+                data = f.read()
+            dec = zlib.decompressobj(31)
+            pending = data
+            while pending and not dec.eof:
+                dec.decompress(pending, 1024 * 1024)
+                pending = dec.unconsumed_tail
+            return bool(dec.eof)          # eof=True 表示 gzip 流完整且 CRC 通过
+        except Exception:
+            return False
+
+    def _verify_final(self, t):
+        """解压/转换后校验最终产物存在且非空。"""
+        low = t.dest.lower()
+        out = t.dest
+        if self.cfg.data.get('auto_gunzip') and low.endswith(('.gz', '.z')):
+            out = os.path.splitext(t.dest)[0]
+        if not os.path.exists(out) or os.path.getsize(out) <= 0:
+            return False, '解压产物缺失或为空'
+        if self.cfg.data.get('auto_crx2rnx') and out.lower().endswith('.crx'):
+            rnx = out[:-4] + '.rnx'
+            if not os.path.exists(rnx) or os.path.getsize(rnx) <= 0:
+                return False, 'RINEX 转换产物缺失或为空'
+            out = rnx
+        return True, out
+
+    @staticmethod
+    def _drop_bad(t):
+        """校验失败时删掉坏文件，确保重试会真正重新下载。"""
+        outs = [t.dest]
+        low = t.dest.lower()
+        if low.endswith(('.gz', '.z')):
+            outs.append(os.path.splitext(t.dest)[0])
+            if os.path.splitext(t.dest)[0].lower().endswith('.crx'):
+                outs.append(os.path.splitext(t.dest)[0][:-4] + '.rnx')
+        for p in outs:
+            try:
+                if os.path.exists(p):
+                    os.remove(p)
+            except OSError:
+                pass
+
     def run(self, tasks):
         self.stop_event.clear()
+        self.verify = {'ok': 0, 'failed': 0}
         self.task_map = {t.rel: t for t in tasks}
         todo = []
         n_skip = 0
@@ -1411,9 +1951,28 @@ class Engine:
             if self.fprog:
                 self.fprog(t.label, -1, -1, 0)       # 结束标记
             if status == 'ok':
-                self.results['ok'].append(t.label)
-                self.log('[成功] %s  <-  %s' % (t.label, src))
-                self._post_process(t.dest)
+                verify_on = self.cfg.data.get('verify_downloads', True)
+                ok, why = True, ''
+                if verify_on:
+                    ok, why = self._verify_raw(t)
+                    if ok:
+                        self._post_process(t.dest)
+                        ok, why = self._verify_final(t)
+                else:
+                    self._post_process(t.dest)
+                if ok:
+                    if verify_on:
+                        self.verify['ok'] += 1
+                    self.results['ok'].append(t.label)
+                    self.log('[成功] %s  <-  %s  (%s)'
+                             % (t.label, src, '校验通过' if verify_on else '未校验'))
+                else:
+                    self.verify['failed'] += 1
+                    self._drop_bad(t)
+                    self.hist.set(t.rel, 'failed', '校验失败')
+                    src = '校验失败: %s' % why
+                    self.results['failed'].append((t.label, src, t.rel))
+                    self.log('[失败] %s  (%s)' % (t.label, src))
             elif status == 'notexist':
                 self.results['notexist'].append(t.label)
                 self.log('[不存在] %s' % t.label)
@@ -1424,9 +1983,10 @@ class Engine:
         with ThreadPoolExecutor(max_workers=max(1, int(self.cfg.data.get('threads', 4)))) as ex:
             list(ex.map(work, todo))
         self.write_report()
-        self.log('完成：成功 %d / 失败 %d / 不存在 %d / 跳过 %d'
+        self.log('完成：成功 %d / 失败 %d / 不存在 %d / 跳过 %d；完整性校验通过 %d，失败 %d'
                  % (len(self.results['ok']), len(self.results['failed']),
-                    len(self.results['notexist']), len(self.results['skipped'])))
+                    len(self.results['notexist']), len(self.results['skipped']),
+                    self.verify['ok'], self.verify['failed']))
 
     def _fetch(self, t):
         retry = int(self.cfg.data.get('retry', 2))
@@ -1485,6 +2045,8 @@ class Engine:
                                                  int(time.time() * 1000) % 1000))
         with open(p, 'w', encoding='utf-8') as f:
             f.write('GNSS 数据下载统计报告  %s\n' % time.strftime('%Y-%m-%d %H:%M:%S'))
+            f.write('完整性校验：通过 %d / 失败 %d\n'
+                    % (self.verify['ok'], self.verify['failed']))
             f.write('=' * 60 + '\n')
             for title, key in (('成功', 'ok'), ('不存在(服务器无此文件)', 'notexist'),
                                ('失败(需重下)', 'failed'), ('跳过', 'skipped')):
@@ -1518,6 +2080,20 @@ def is_r3_obs(name):
     return len(name) > 20 and bool(RE_R3_OBS.search(name.upper()))
 
 
+def is_r2_compressed_obs(name):
+    """RINEX2 短名 Hatanaka 压缩观测（.26d / .26d.Z / .26d.gz），比 .26o 更小。"""
+    return bool(re.match(r'^[a-z0-9]{4}\d{3}0\.\d{2}d(\.(z|gz))?$', name, re.I))
+
+
+def obs_quality(name):
+    """观测文件优先级：长名 RINEX3(3) > 短名 d 压缩(2) > 短名 o(1)。"""
+    if is_r3_obs(name):
+        return 3
+    if is_r2_compressed_obs(name):
+        return 2
+    return 1
+
+
 class TaskBuilder:
     def __init__(self, http, cfg, src, log, stop_event=None):
         self.http = http
@@ -1537,10 +2113,10 @@ class TaskBuilder:
             self._whu[ck] = WhuWeb(self.http, self.src.centers()[ck].get('api', ''))
         return self._whu[ck]
 
-    def aiub(self, ck='CODE(AIUB)'):
+    def aiub(self, ck='AIUB'):
         if ck not in self._aiub:
-            c = self.src.centers().get(ck, {})
-            self._aiub[ck] = AiubWeb(self.http, c.get('api', ''))
+            api = self.src.aiub().get('api') or AIUB_API
+            self._aiub[ck] = AiubWeb(self.http, api)
         return self._aiub[ck]
 
     def _cks(self, center):
@@ -1577,17 +2153,21 @@ class TaskBuilder:
 
     # ================= 模块1: IGS 观测 + brdc =================
     def _find_obs_in_listing(self, names, sta):
+        """选观测文件：长名 RINEX3 > 短名 d(Hatanaka压缩) > 短名 o。"""
         sta4 = sta[:4].lower()
         sta9 = sta.upper() if len(sta.strip()) >= 9 else None
-        r2 = None
+        r2d, r2o = None, None
         for n in names:
             nu = n.upper()
             if is_r3_obs(n):
                 if (sta9 and n.startswith(sta9)) or (not sta9 and nu.startswith(sta4.upper())):
                     return n
             elif RE_R2_OBS.match(n) and n[:4].lower() == sta4:
-                r2 = r2 or n
-        return r2
+                if is_r2_compressed_obs(n):
+                    r2d = r2d or n
+                else:
+                    r2o = r2o or n
+        return r2d or r2o
 
     def build_igs(self, d1, d2, stations, want_obs, want_nav, center):
         cks = self._cks(center)
@@ -1605,7 +2185,9 @@ class TaskBuilder:
             kind = centers.get(ck, {}).get('kind', 'dir')
             if kind == 'whuweb':
                 self._igs_whu(ck, d1, d2, pending, nav_pending, tasks, sta_disp)
-            elif kind == 'dir':
+            elif kind == 'dir' or (kind == 'aiubweb'
+                                   and centers.get(ck, {}).get('obs')):
+                # CODE 中心：产品走 AIUB 列目录，观测用标准 IGS 路径模板
                 self._igs_dir(ck, cks, dates, pending, nav_pending, tasks)
 
         for sta4, d in sorted(pending, key=lambda x: (x[1], x[0])):
@@ -1619,8 +2201,9 @@ class TaskBuilder:
         api = self.whu(ck)
         if pending:
             sta4s = sorted({s for s, _ in pending})
-            self.log('WHU 查询观测文件: %d 站 %s ~ %s ...' % (len(sta4s), d1, d2))
+            self.log('WHU 网页查询观测: %d 站 %s ~ %s ...' % (len(sta4s), d1, d2))
             rows = api.obs(sta4s, d1, d2)
+            # 网页接口只有短名 o；按 (sta4,date) 收集，质量取最高（兼容未来返回长名）
             best = {}                                # (sta4, date) -> row
             for r in rows:
                 try:
@@ -1631,13 +2214,33 @@ class TaskBuilder:
                 if key not in pending:
                     continue
                 cur = best.get(key)
-                if cur is None or (is_r3_obs(r['filename']) and not is_r3_obs(cur['filename'])):
+                if cur is None or obs_quality(r['filename']) > obs_quality(cur['filename']):
                     best[key] = r
+            web_hit = len(best)
+            # 网页+FTP 双通道互补：网页命中的站若只有短名 o，去 WHU-FTP 目录找长名 crx / 短名 d
+            fc = self.src.centers().get('WHU-FTP')
+            ftp_added = 0
+            if fc:
+                for (sta4, d), row in list(best.items()):
+                    if obs_quality(row['filename']) >= 3:      # 已是长名，无需补
+                        continue
+                    ph = placeholders(d)
+                    url = fmt_url(fc.get('obs', ''), ph)
+                    if not url:
+                        continue
+                    names = self.http.listing(url)
+                    fname = self._find_obs_in_listing(names, sta4)
+                    if fname and obs_quality(fname) > obs_quality(row['filename']):
+                        best[(sta4, d)] = {'filename': fname, '_url': url + fname,
+                                           '_src': 'WHU-FTP'}
+                        ftp_added += 1
+            self.log('WHU 网页命中 %d，FTP 补长名/d %d' % (web_hit, ftp_added))
             for (sta4, d), row in sorted(best.items(), key=lambda kv: (kv[0][1], kv[0][0])):
                 fname = row['filename']
                 yyyy, ddd = str(d.year), '%03d' % d.timetuple().tm_yday
                 rel = 'rinex/obs/%s/%s/%s' % (yyyy, ddd, fname)
-                tasks.append(Task([api.url_of(row)],
+                src_url = row.get('_url') or api.url_of(row)
+                tasks.append(Task([src_url],
                                   os.path.join(self.root, 'rinex', 'obs', yyyy, ddd, fname),
                                   rel, '%s %s/%s %s' % (sta_disp.get(sta4, sta4), yyyy, ddd, fname)))
                 pending.discard((sta4, d))
@@ -1689,8 +2292,10 @@ class TaskBuilder:
                                 continue
                             urls = []
                             for k in cks:
-                                if self.src.centers().get(k, {}).get('kind') == 'dir':
-                                    u = fmt_url(self.src.centers()[k].get('obs', ''), ph)
+                                kc = self.src.centers().get(k, {})
+                                if kc.get('kind') == 'dir' or (kc.get('kind') == 'aiubweb'
+                                                               and kc.get('obs')):
+                                    u = fmt_url(kc.get('obs', ''), ph)
                                     if u:
                                         urls.append(u + fname)
                             if not urls:
@@ -1966,7 +2571,7 @@ class TaskBuilder:
             if (sub_tpl, y) in store:
                 continue
             sub = sub_tpl.replace('{YYYY}', str(y))
-            self.log('AIUB 读取目录: %s ...' % sub)
+            self.log('CODE 读取目录: %s ...' % sub)
             store[(sub_tpl, y)] = api.listing(sub) or []
 
     # ================= 模块2b: 电离层 IONEX（目录型库） =================
@@ -2016,16 +2621,13 @@ class TaskBuilder:
     # ================= 模块2c: CODE/AIUB 专属产品 =================
     def build_aiub(self, d1, d2, items):
         """items: ['gim','ion','bia','dcb']。存 product/cod/final/yyyy[/ddd]"""
-        ck = 'CODE(AIUB)'
-        if ck not in self.src.centers():
-            return [], ['AIUB 存储库不存在']
-        api = self.aiub(ck)
+        api = self.aiub()
         tasks, missing = [], []
         names_cache = {}
 
         def year_names(y):
             if y not in names_cache:
-                self.log('AIUB 读取目录: CODE/%d ...' % y)
+                self.log('CODE 读取目录: CODE/%d ...' % y)
                 names_cache[y] = api.listing('CODE/%d' % y)
             return names_cache[y]
 
@@ -2038,7 +2640,7 @@ class TaskBuilder:
             yyyy, ddd, yy = str(date.year), '%03d' % date.timetuple().tm_yday, str(date.year)[2:]
             names = year_names(date.year)
             if names is None:
-                ms.append('AIUB %s (目录不可达)' % yyyy)
+                ms.append('CODE %s (目录不可达)' % yyyy)
                 return ts, ms
             for it in daily_items:
                 fname = None
@@ -2059,12 +2661,12 @@ class TaskBuilder:
                                  and 'MGX' not in n.upper()]
                     fname = sorted(cands)[0] if cands else None
                 if not fname:
-                    ms.append('AIUB %s %s/%s (未找到)' % (it.upper(), yyyy, ddd))
+                    ms.append('CODE %s %s/%s (未找到)' % (it.upper(), yyyy, ddd))
                     continue
                 rel = 'product/cod/final/%s/%s/%s' % (yyyy, ddd, fname)
                 dest = os.path.join(self.root, 'product', 'cod', 'final', yyyy, ddd, fname)
                 ts.append(Task([api.file_url('CODE/%d' % date.year, fname)], dest, rel,
-                               'AIUB %s %s/%s %s' % (it.upper(), yyyy, ddd, fname)))
+                               'CODE %s %s/%s %s' % (it.upper(), yyyy, ddd, fname)))
             return ts, ms
 
         if daily_items:
@@ -2233,19 +2835,30 @@ class StationTable(ttk.Frame):
 
     def __init__(self, master, height=8, on_map=None):
         super().__init__(master)
-        self.tree = ttk.Treeview(self, columns=('sel',), show='tree headings',
+        self.status = None                     # NetworkStatus，由 App 注入
+        self._tip_win = None                   # 悬停提示窗口（全表共用一个）
+        self._tip_last = ('', '')
+        self._group_pids = {}                  # 洲名 -> 父节点 iid
+        self.tree = ttk.Treeview(self, columns=('sel', 'st'), show='tree headings',
                                  height=height, selectmode='extended')
         self.tree.heading('#0', text=tr('col_station'))
         self.tree.heading('sel', text=tr('col_dl'))
+        self.tree.heading('st', text=tr('col_status'))
         self.tree.column('#0', width=240)
         self.tree.column('sel', width=40, anchor='center', stretch=False)
+        self.tree.column('st', width=60, anchor='center', stretch=False)
         sb = ttk.Scrollbar(self, orient='vertical', command=self.tree.yview)
         self.tree.configure(yscrollcommand=sb.set)
         self.tree.pack(side='left', fill='both', expand=True)
         sb.pack(side='left', fill='y')
         self.tree.tag_configure('header', background='#e8eef7',
                                 font=('TkDefaultFont', 9, 'bold'))
+        self.tree.tag_configure('fresh', foreground='#1d7a34')
+        self.tree.tag_configure('warn', foreground='#a06a00')
+        self.tree.tag_configure('stale', foreground='#a32d2d')
         self.tree.bind('<Button-1>', self._toggle)
+        self.tree.bind('<Motion>', self._on_motion)
+        self.tree.bind('<Leave>', self._hide_tip)
         btns = ttk.Frame(self)
         btns.pack(side='left', fill='y', padx=4)
         items = [(tr('btn_add'), self.add), (tr('btn_del'), self.remove),
@@ -2256,6 +2869,44 @@ class StationTable(ttk.Frame):
             items.insert(4, (tr('btn_map'), on_map))
         for txt, cmd in items:
             ttk.Button(btns, text=txt, width=9, command=cmd).pack(pady=1)
+
+    # ---------- 悬停提示 ----------
+    def _on_motion(self, ev):
+        """悬停止流行时显示最后数据日期；全表共用一个轻量窗口，按行节流。"""
+        if not self.status:
+            return
+        iid = self.tree.identify_row(ev.y)
+        if not iid or self.tree.item(iid, 'text').startswith('# '):
+            self._hide_tip()
+            return
+        text = self.status.tip(self.tree.item(iid, 'text'))
+        if not text:
+            self._hide_tip()
+            return
+        if self._tip_last == (iid, text):
+            return
+        self._hide_tip(reset=False)
+        self._tip_last = (iid, text)
+        tip = tk.Toplevel(self)
+        tip.wm_overrideredirect(True)
+        tip.wm_geometry('+%d+%d' % (ev.x_root + 18, ev.y_root + 20))
+        try:
+            tip.attributes('-topmost', True)
+        except Exception:
+            pass
+        tk.Label(tip, text=text, background='#ffffe0', relief='solid', borderwidth=1,
+                 font=('TkDefaultFont', 9), padx=5, pady=2).pack()
+        self._tip_win = tip
+
+    def _hide_tip(self, _ev=None, reset=True):
+        if self._tip_win is not None:
+            try:
+                self._tip_win.destroy()
+            except Exception:
+                pass
+            self._tip_win = None
+        if reset:
+            self._tip_last = ('', '')
 
     # ---------- 行工具 ----------
     def _station_rows(self):
@@ -2300,8 +2951,12 @@ class StationTable(ttk.Frame):
             self.tree.set(gid, 'sel', st)
 
     def _insert_station(self, name, checked=False, parent=''):
+        st, tag = ('', '')
+        if self.status:
+            st, tag = self.status.short(name)
         self.tree.insert(parent, 'end', text=name.strip(),
-                         values=(CHK_ON if checked else CHK_OFF,))
+                         values=(CHK_ON if checked else CHK_OFF, st),
+                         tags=((tag,) if tag else ()))
 
     # ---------- 按钮动作 ----------
     def add(self):
@@ -2385,20 +3040,39 @@ class StationTable(ttk.Frame):
             self.tree.set(iid, 'sel', CHK_ON if hit else CHK_OFF)
         self._refresh_groups()
 
-    def set_grouped(self, path):
-        """按洲分块加载（可折叠；中国站在亚洲块最前，默认只展开亚洲）"""
-        groups = load_stations_grouped(path)
-        if not groups:
-            return False
+    def _fill_groups(self, groups):
+        """按 [(cont, [(line, cc, key9), ...]), ...] 填充可折叠洲分组。"""
         self.clear()
+        self._group_pids = {}
         for cont, items in groups:
             pid = self.tree.insert('', 'end', text='# ' + tr('cont_' + cont),
                                    values=(CHK_OFF,), tags=('header',),
                                    open=(cont == 'asia'))
-            for line, cc in items:
+            self._group_pids[cont] = pid
+            for it in items:
+                line, cc = it[0], it[1]
                 self._insert_station(line, parent=pid)
-        return True
 
+    def set_grouped(self):
+        """站表数据源：仅用 IGS 官方 JSON(776 站)。
+
+        中国站在亚洲块最前，默认只展开亚洲。无 JSON 时返回 False。
+        """
+        if self.status and self.status.count:
+            self._fill_groups(self.status.grouped_stations())
+            return True
+        return False
+
+    def set_from_status(self):
+        """状态 JSON 刷新后重建整张站表（保留原勾选）。返回是否成功。"""
+        if not self.status or not self.status.count:
+            return False
+        checked = {self.tree.item(i, 'text')[:4].lower() for i in self._station_rows()
+                   if self.tree.set(i, 'sel') == CHK_ON}
+        self._fill_groups(self.status.grouped_stations())
+        if checked:
+            self.set_checked(checked)
+        return True
 
 class DateRange(ttk.Frame):
     """全局日期栏：所有页签联动共用。"""
@@ -2494,6 +3168,7 @@ class App(tk.Tk):
         self.hist = History()
         self.src = Sources()
         self.http = Http(self.cfg, self.src)
+        self.net_status = NetworkStatus(self.cfg)
         self.q = queue.Queue()
         self.worker = None
         self._active = {}
@@ -2501,16 +3176,47 @@ class App(tk.Tk):
         self._restore_ui()
         self.protocol('WM_DELETE_WINDOW', self._on_close)
         self.after(150, self._pump)
+        self.after(600, self._auto_refresh_status)
 
     def _build_ui(self):
         """构建（或语言切换后重建）整个界面"""
         for w in self.winfo_children():
             w.destroy()
+        # 旧控件已销毁：清空指向它们的缓存，重建时改从 cfg['ui'] 恢复，
+        # 否则 _rg_snapshot() 会操作已销毁的 Treeview 抛 TclError。
+        self.rg_enable = {}
+        self.rg_tables = {}
+        self._rg_blocks = {}
+        self._prd_nodes = {}
+        self.hf_vars = {}
+        self._src_map = {}
         self.title(tr('app_title'))
-        try:
-            self.iconbitmap(_res_path('gnss.ico'))
-        except Exception:
-            pass
+        self._set_window_icon()
+        self._build_ui_body()
+
+    def _set_window_icon(self):
+        """设置窗口/任务栏图标：多路径尝试，确保打包后也能显示地球卫星图标，
+        而不是 Windows 默认的 .ico 羽毛笔图标。"""
+        candidates = []
+        ico = _res_path('gnss.ico')
+        if os.path.exists(ico):
+            candidates.append(ico)
+        base = getattr(sys, '_MEIPASS', '')
+        if base:
+            p = os.path.join(base, 'gnss.ico')
+            if p not in candidates and os.path.exists(p):
+                candidates.append(p)
+        # 最后回退到 exe 自身（Windows 会从 exe 资源取第一个图标）
+        if getattr(sys, 'frozen', False):
+            candidates.append(sys.executable)
+        for path in candidates:
+            try:
+                self.iconbitmap(path)
+                return
+            except Exception:
+                continue
+
+    def _build_ui_body(self):
         self.geometry('1020x780')
         # 全局日期栏（所有页签联动）
         top = ttk.Frame(self)
@@ -2540,7 +3246,7 @@ class App(tk.Tk):
         ttk.Checkbutton(top, text=tr('obs_files'), variable=self.igs_obs).pack(side='left', padx=4)
         ttk.Checkbutton(top, text=tr('nav_brdc'), variable=self.igs_nav).pack(side='left')
         ttk.Label(top, text=tr('repo')).pack(side='left', padx=(14, 2))
-        repos = [k for k, v in self.src.centers().items() if v.get('kind') != 'aiubweb']
+        repos = [k for k, _ in self.src.ordered_centers()]
         self.igs_center = ttk.Combobox(top, width=10, state='readonly',
                                        values=repos)
         if repos:
@@ -2549,11 +3255,86 @@ class App(tk.Tk):
         ttk.Button(top, text=tr('set_speed'),
                    command=lambda: self._speed_test(
                        on_pick=lambda k: self.igs_center.set(k))).pack(side='left', padx=4)
+        ttk.Button(top, text=tr('btn_refresh_status'),
+                   command=self._refresh_status).pack(side='left', padx=4)
         ttk.Label(top, text=tr('hint_igs'), foreground='gray').pack(side='left', padx=10)
         self.igs_table = StationTable(f, on_map=self._open_station_map)
+        self.igs_table.status = self.net_status
         self.igs_table.pack(fill='both', expand=True, pady=4)
-        if not self.igs_table.set_grouped(stations_txt_path()):
+        if not self.igs_table.set_grouped():
             self.igs_table.set_stations(IGS_DEFAULT_STATIONS)
+        self.igs_table.tree.bind('<<TreeviewSelect>>', self._on_station_select)
+        self.igs_info = ttk.Label(
+            f, text=self._status_hint(), foreground='#444444',
+            wraplength=980, justify='left')
+        self.igs_info.pack(fill='x', pady=(0, 4))
+
+    # ---------------- 站点状态 ----------------
+    def _status_hint(self):
+        ns = self.net_status
+        if not ns.count:
+            return tr('sts_none') % IGS_NETWORK_URL
+        return tr('sts_summary') % (ns.count, ns.date or '-', ns.snapshot or '-')
+
+    def _apply_status(self):
+        if not hasattr(self, 'igs_table'):
+            return
+        tb = self.igs_table
+        tb._hide_tip()
+        tb.status = self.net_status
+        # 站表即 JSON 本身：刷新后重建整张表（保留勾选），确保站点与状态同源
+        if not tb.set_from_status():
+            for iid in tb._station_rows():
+                txt, tag = self.net_status.short(tb.tree.item(iid, 'text'))
+                tb.tree.set(iid, 'st', txt)
+                tb.tree.item(iid, tags=((tag,) if tag else ()))
+        if hasattr(self, 'igs_info'):
+            self.igs_info.config(text=self._status_hint())
+
+    def _refresh_status(self):
+        if getattr(self, '_status_busy', False):
+            self.log('站点状态正在更新中，请稍候')
+            return
+        self._status_busy = True
+        self.log('正在从 IGS 官方源完整下载站点状态 ...')
+
+        def work():
+            ok, msg = self.net_status.refresh()
+            self.q.put(('log', msg))
+            self.q.put(('status_updated' if ok else 'status_failed', None))
+
+        threading.Thread(target=work, daemon=True).start()
+
+    def _auto_refresh_status(self):
+        """本地缺失或超过 1 天时后台完整下载；失败时用已有本地快照。"""
+        p = network_json_path()
+        need = not os.path.exists(p)
+        if not need:
+            try:
+                need = (time.time() - os.path.getmtime(p)) > 24 * 3600
+            except Exception:
+                need = True
+        if not need:
+            return
+        self._status_busy = True
+
+        def work():
+            ok, msg = self.net_status.refresh()
+            self.q.put(('log', msg))
+            if ok:
+                self.q.put(('status_updated', None))
+
+        threading.Thread(target=work, daemon=True).start()
+
+    def _on_station_select(self, _evt=None):
+        if not hasattr(self, 'igs_info'):
+            return
+        sel = self.igs_table.tree.selection()
+        if not sel:
+            self.igs_info.config(text=self._status_hint())
+            return
+        name = self.igs_table.tree.item(sel[0], 'text')
+        self.igs_info.config(text=self.net_status.detail(name))
 
     # ---------------- 产品页（存储库 -> 机构+系列 -> 产品） ----------------
     def _tab_product(self):
@@ -2583,8 +3364,8 @@ class App(tk.Tk):
         acs = self.src.analysis_centers()
         ions = self.src.ionex()
         centers = self.src.centers()
-        # 第一层：各存储库
-        repos = [(k, k) for k, v in centers.items() if v.get('kind') != 'aiubweb']
+        # 第一层：各存储库（按配置顺序，武大在前）
+        repos = [(k, k) for k, _ in self.src.ordered_centers()]
         for i, (key, label) in enumerate(repos):
             kind = centers.get(key, {}).get('kind', '')
             addr = centers[key].get('api') or centers[key].get('prod', '')
@@ -2600,7 +3381,10 @@ class App(tk.Tk):
                         # 武大网页库实测只索引 WUM 快速，MGEX 最终不显示
                         if not (ac['id'] == 'wum' and series == 'rap'):
                             continue
-                    name = '%s %s' % (ac['name'], tr(series))
+                    if kind == 'aiubweb' and ac['id'] not in ('cod', 'com'):
+                        # CODE (AIUB) 中心只发 CODE 自家产品
+                        continue
+                    name = '%s %s' % (src_name(ac), tr(series))
                     if ac.get('mgex'):
                         name += '   ' + tr('mgex_tail')
                     aid = self.prd_tree.insert(pid, 'end', text=name, values=(CHK_OFF,))
@@ -2609,37 +3393,18 @@ class App(tk.Tk):
                                                    text=tr(PRODUCT_NAMES.get(pt, 'pt_erp')),
                                                    values=(CHK_OFF,))
                         self._prd_nodes[cid] = ('prod', key, ac['id'], series, pt)
-            if kind != 'whuweb' and ions:               # 武大库无电离层
+            if kind not in ('whuweb', 'aiubweb') and ions:  # 武大库/CODE 中心无 IONEX 目录
                 inode = self.prd_tree.insert(pid, 'end', text=tr('pt_ionex'), values=(CHK_OFF,))
                 for ion in ions:
                     cid = self.prd_tree.insert(inode, 'end',
-                                               text='%s  %s' % (ion['id'], ion['name']),
+                                               text='%s  %s' % (ion['id'], src_name(ion)),
                                                values=(CHK_OFF,))
                     self._prd_nodes[cid] = ('ionex', key, ion['id'])
-        # CODE(AIUB) 库：CODE 产品 + AIUB 专属
-        if 'CODE(AIUB)' in centers:
-            c = centers['CODE(AIUB)']
-            pid = self.prd_tree.insert('', 'end', text='CODE(AIUB)    %s' % c.get('prod', ''),
-                                       values=(CHK_OFF,))
-            for ac in acs:
-                if ac['id'] not in ('cod', 'com'):
-                    continue
-                for series in SERIES_IDS:
-                    pts = ac.get('series', {}).get(series)
-                    if not pts:
-                        continue
-                    name = '%s %s' % (ac['name'], tr(series))
-                    if ac.get('mgex'):
-                        name += '   ' + tr('mgex_tail')
-                    aid = self.prd_tree.insert(pid, 'end', text=name, values=(CHK_OFF,))
-                    for pt in pts:
-                        cid = self.prd_tree.insert(aid, 'end',
-                                                   text=tr(PRODUCT_NAMES.get(pt, 'pt_erp')),
-                                                   values=(CHK_OFF,))
-                        self._prd_nodes[cid] = ('prod', 'CODE(AIUB)', ac['id'], series, pt)
-            anode = self.prd_tree.insert(pid, 'end', text='AIUB', values=(CHK_OFF,))
+        # AIUB 专属产品：独立于全球数据中心，作为顶层节点保留
+        if self.src.aiub().get('items'):
+            anode = self.prd_tree.insert('', 'end', text=tr('grp_aiub'), values=(CHK_OFF,))
             for it in self.src.aiub().get('items', []):
-                cid = self.prd_tree.insert(anode, 'end', text=it['name'], values=(CHK_OFF,))
+                cid = self.prd_tree.insert(anode, 'end', text=src_name(it), values=(CHK_OFF,))
                 self._prd_nodes[cid] = ('aiub', it['id'])
 
     def _prd_toggle(self, ev):
@@ -2697,14 +3462,17 @@ class App(tk.Tk):
         for src in self.src.hfile():
             g = ttk.LabelFrame(self.hf_body,
                                text='%s (%s) -> hfile/%s/yyyy'
-                                    % (src['name'], src.get('by', 'day'), src['id']))
+                                    % (src_name(src), src.get('by', 'day'), src['id']))
             g.pack(fill='x', pady=4, padx=4)
             v = tk.BooleanVar(value=False)
             ttk.Checkbutton(g, variable=v).pack(side='left', padx=4)
-            ttk.Label(g, text=tr('hf_net')).pack(side='left', padx=(12, 2))
             e = ttk.Entry(g, width=16)
             e.insert(0, src.get('prefix', ''))
-            e.pack(side='left')
+            # SOPAC 等源的目录含多个网络（igs/eu/ak...），显示网络框供切换；
+            # MIT 无前缀（no_network），不显示标签和输入框，但保留隐藏 Entry 供下载逻辑读取。
+            if not src.get('no_network'):
+                ttk.Label(g, text=tr('hf_net')).pack(side='left', padx=(12, 2))
+                e.pack(side='left')
             ttk.Label(g, text=(src.get('urls') or [''])[0],
                       foreground='gray').pack(side='left', padx=12)
             self.hf_vars[src['id']] = (v, e)
@@ -2725,11 +3493,15 @@ class App(tk.Tk):
                 'stations': {},
                 'collapsed': dict(getattr(self, '_rg_collapsed', None)
                                   or ui.get('rg_collapsed') or {})}
-        for rid, v in getattr(self, 'rg_enable', {}).items():
-            snap['enable'][rid] = bool(v.get())
-        for rid, tb in getattr(self, 'rg_tables', {}).items():
-            snap['checked'][rid] = tb.get_selected()
-            snap['stations'][rid] = [tb.tree.item(i, 'text') for i in tb._station_rows()]
+        try:
+            for rid, v in getattr(self, 'rg_enable', {}).items():
+                snap['enable'][rid] = bool(v.get())
+            for rid, tb in getattr(self, 'rg_tables', {}).items():
+                snap['checked'][rid] = tb.get_selected()
+                snap['stations'][rid] = [tb.tree.item(i, 'text') for i in tb._station_rows()]
+        except tk.TclError:
+            # 控件已销毁（语言切换重建中）：保留上面从 cfg['ui'] 读到的状态
+            pass
         return snap
 
     def _build_region_body(self, from_src=False):
@@ -2766,7 +3538,7 @@ class App(tk.Tk):
             tog = ttk.Button(head, width=2,
                              command=lambda r=rid: self._rg_toggle_block(r))
             tog.pack(side='left')
-            ttk.Label(head, text='%s -> rinex/obs/yyyy/ddd' % src['name'],
+            ttk.Label(head, text='%s -> rinex/obs/yyyy/ddd' % src_name(src),
                       font=('TkDefaultFont', 9, 'bold')).pack(side='left', padx=4)
             if src.get('auth') == 'esdevice':
                 ok = self._es_token_ok(rid)
@@ -2932,9 +3704,9 @@ class App(tk.Tk):
         self.src_tree.bind('<Double-1>', lambda e: self._src_edit())
         btns = ttk.Frame(f)
         btns.pack(side='left', fill='y', padx=4)
-        for txt, cmd in ((tr('btn_modify') if False else '修改', self._src_edit),
-                         ('新增', self._src_add), ('删除', self._src_del),
-                         ('恢复默认', self._src_reset), ('保存', self._src_save)):
+        for txt, cmd in ((tr('btn_modify'), self._src_edit),
+                         (tr('btn_new'), self._src_add), (tr('btn_del'), self._src_del),
+                         (tr('btn_reset'), self._src_reset), (tr('btn_save'), self._src_save)):
             ttk.Button(btns, text=txt, width=10, command=cmd).pack(pady=2)
         self._src_btn_labels = True
         self._build_sources_tree()
@@ -2944,7 +3716,7 @@ class App(tk.Tk):
         self._src_map = {}
         d = self.src.data
         p = self.src_tree.insert('', 'end', text=tr('grp_repo'), values=('',), open=True)
-        for name, c in d.get('centers', {}).items():
+        for name, c in self.src.ordered_centers(skip_aiub=False):
             iid = self.src_tree.insert(p, 'end', text=name,
                                        values=(c.get('kind', ''),), open=True)
             self._src_map[iid] = ('center', name)
@@ -2955,24 +3727,24 @@ class App(tk.Tk):
         p = self.src_tree.insert('', 'end', text=tr('grp_ac'), values=('',), open=False)
         for i, ac in enumerate(d.get('analysis_centers', [])):
             series = '/'.join(tr(s) for s in SERIES_IDS if ac.get('series', {}).get(s))
-            iid = self.src_tree.insert(p, 'end', text='%s (%s)' % (ac['name'], ac['id']),
+            iid = self.src_tree.insert(p, 'end', text='%s (%s)' % (src_name(ac), ac['id']),
                                        values=(('MGEX ' if ac.get('mgex') else '') + series,))
             self._src_map[iid] = ('ac', i)
         p = self.src_tree.insert('', 'end', text=tr('grp_ionex'), values=('',), open=False)
         for i, ion in enumerate(d.get('ionex', [])):
-            iid = self.src_tree.insert(p, 'end', text='%s %s' % (ion['id'], ion['name']),
+            iid = self.src_tree.insert(p, 'end', text='%s %s' % (ion['id'], src_name(ion)),
                                        values=('',))
             self._src_map[iid] = ('ionex', i)
         p = self.src_tree.insert('', 'end', text=tr('grp_hfile'), values=('',), open=True)
         for i, h in enumerate(d.get('hfile', [])):
-            iid = self.src_tree.insert(p, 'end', text=h['name'],
+            iid = self.src_tree.insert(p, 'end', text=src_name(h),
                                        values=('',), open=len(h.get('urls', [])) > 1)
             self._src_map[iid] = ('hfile', i)
             for j, u in enumerate(h.get('urls', [])):
                 self.src_tree.insert(iid, 'end', text='  url%d' % (j + 1), values=(u,))
         p = self.src_tree.insert('', 'end', text=tr('grp_region'), values=('',), open=True)
         for i, r in enumerate(d.get('regional', [])):
-            iid = self.src_tree.insert(p, 'end', text=r['name'],
+            iid = self.src_tree.insert(p, 'end', text=src_name(r),
                                        values=('',), open=len(r.get('templates', [])) > 1)
             self._src_map[iid] = ('regional', i)
             for j, t in enumerate(r.get('templates', [])):
@@ -3012,7 +3784,7 @@ class App(tk.Tk):
             flat = {'fin': '', 'rap': '', 'ult': ''}
             for s_ in SERIES_IDS:
                 flat[s_] = ','.join(ac.get('series', {}).get(s_, []))
-            r = FormDialog(self, ac['name'], [
+            r = FormDialog(self, src_name(ac), [
                 ('id', 'id', 'entry'), ('name', 'name', 'entry'),
                 ('mgex', 'MGEX', 'check'),
                 ('fin', tr('fin') + ' (orb,clk,erp,snx,bia)', 'entry'),
@@ -3053,7 +3825,7 @@ class App(tk.Tk):
                 self._after_sources_changed()
         elif kind == 'regional':
             rg = d['regional'][key]
-            r = FormDialog(self, rg['name'], [
+            r = FormDialog(self, src_name(rg), [
                 ('id', 'id', 'entry'), ('name', 'name', 'entry'),
                 ('templates', 'templates ({SSSS})', 'text'),
                 ('stations', 'stations', 'text'),
@@ -3153,7 +3925,7 @@ class App(tk.Tk):
         self._build_product_tree()
         self._build_hfile_body()
         self._build_region_body(True)
-        repos = [k for k, v in self.src.centers().items() if v.get('kind') != 'aiubweb']
+        repos = [k for k, _ in self.src.ordered_centers()]
         self.igs_center['values'] = repos
         if self.igs_center.get() not in repos and repos:
             self.igs_center.set(repos[0])
@@ -3179,7 +3951,7 @@ class App(tk.Tk):
         r.pack(fill='x', pady=3)
         ttk.Label(r, text=tr('set_root'), width=26).pack(side='left')
         self.set_root = ttk.Entry(r, width=42)
-        self.set_root.insert(0, self.cfg.data['root_dir'])
+        self.set_root.insert(0, self.cfg.data['root_dir'] or APP_DIR)
         self.set_root.pack(side='left')
         ttk.Button(r, text=tr('set_browse'), command=self._browse_root).pack(side='left', padx=4)
 
@@ -3206,6 +3978,8 @@ class App(tk.Tk):
         ttk.Checkbutton(g, text=tr('set_gunzip'), variable=self.gunzip_var).pack(anchor='w', pady=2)
         self.crx2rnx_var = tk.BooleanVar(value=bool(self.cfg.data.get('auto_crx2rnx')))
         ttk.Checkbutton(g, text=tr('set_crx2rnx'), variable=self.crx2rnx_var).pack(anchor='w', pady=2)
+        self.verify_var = tk.BooleanVar(value=bool(self.cfg.data.get('verify_downloads', True)))
+        ttk.Checkbutton(g, text=tr('set_verify'), variable=self.verify_var).pack(anchor='w', pady=2)
         self.force_var = tk.BooleanVar(value=bool(self.cfg.data.get('force_recheck_missing')))
         ttk.Checkbutton(g, text=tr('set_force'), variable=self.force_var).pack(anchor='w', pady=6)
         br = ttk.Frame(g)
@@ -3249,6 +4023,7 @@ class App(tk.Tk):
         d['force_recheck_missing'] = bool(self.force_var.get())
         d['auto_gunzip'] = bool(self.gunzip_var.get())
         d['auto_crx2rnx'] = bool(self.crx2rnx_var.get())
+        d['verify_downloads'] = bool(self.verify_var.get())
         self.thr_var.set(str(d.get('threads', 4)))
         d['ui'] = self._collect_ui()
         self.cfg.save()
@@ -3266,15 +4041,15 @@ class App(tk.Tk):
 
         def work():
             try:
-                # 用一个确定存在的小数据文件：认证成功返回二进制，失败才跳登录页
-                url = 'https://cddis.nasa.gov/archive/gnss/products/ionex/2024/001/codg0010.24i.Z'
+                # 用固定存在的观测目录判断：认证成功停在 cddis.nasa.gov（返回目录列表），
+                # 失败会被 302 到 URS 登录页。不依赖会过期下线的具体数据文件。
+                url = 'https://cddis.nasa.gov/archive/gnss/data/daily/2026/001/26d/'
                 req = urllib.request.Request(url, headers={'User-Agent': _UA})
                 r = self.http._opener().open(req, timeout=self.http._tmo(url, 30))
-                head = r.read(64)
                 final = r.geturl()
+                r.read(32)
                 r.close()
-                if ('/login' in final or 'urs.earthdata.nasa.gov' in final
-                        or head.lstrip()[:1] == b'<'):
+                if '/login' in final or 'urs.earthdata.nasa.gov' in final:
                     # 被 302 到登录页：账号密码错或未生效（不是真成功）
                     self.log('Earthdata 认证未生效（跳到登录页）')
                     self.after(0, lambda: messagebox.showerror(tr('set_test'), tr('test_badauth')))
@@ -3302,15 +4077,15 @@ class App(tk.Tk):
         ttk.Label(g, text=tr('app_title'), font=('', 12, 'bold')).pack(anchor='w', pady=(0, 8))
         ttk.Label(g, text=tr('about_dev')).pack(anchor='w', pady=2)
         ttk.Label(g, text=tr('about_aff')).pack(anchor='w', pady=2)
-        ttk.Label(g, text='邮箱/Email: jiangzhsh@mail.sysu.edu.cn').pack(anchor='w', pady=2)
+        ttk.Label(g, text=tr('about_email') + ' jiangzhsh@mail.sysu.edu.cn').pack(anchor='w', pady=2)
         ttk.Label(g, text=tr('about_src')).pack(anchor='w', pady=(10, 2))
+        ttk.Label(g, text=tr('about_ac')).pack(anchor='w', pady=(2, 2))
         ttk.Label(g, text=tr('about_manuals')).pack(anchor='w', pady=(10, 2))
         br = ttk.Frame(g)
         br.pack(anchor='w')
-        ttk.Button(br, text='使用说明.txt',
-                   command=lambda: self._open_file('使用说明.txt')).pack(side='left', padx=(0, 8))
-        ttk.Button(br, text='User Manual.txt',
-                   command=lambda: self._open_file('User Manual.txt')).pack(side='left')
+        manual = '使用说明.txt' if _LANG[0] == 'zh' else 'User Manual.txt'
+        ttk.Button(br, text=manual,
+                   command=lambda: self._open_file(manual)).pack(side='left')
 
     def _open_file(self, name):
         p = _res_path(name)          # exe 同目录优先，否则用 exe 内置
@@ -3382,7 +4157,7 @@ class App(tk.Tk):
             ok = sorted([r for r in results if r[1] is not None], key=lambda r: r[1])
             bad = [r for r in results if r[1] is None]
             self.cfg.data['_order'] = [c for c, _ in ok + bad
-                                       if centers.get(c, {}).get('kind') != 'aiubweb']
+                                       if not self.src._legacy_aiub(centers.get(c, {}))]
             self.cfg.save()
 
             def fill():
@@ -3542,6 +4317,10 @@ class App(tk.Tk):
                     self._update_file_line()
                 elif kind == 'stats':
                     self._fill_stats(val)
+                elif kind in ('status_updated', 'status_failed'):
+                    self._status_busy = False
+                    if kind == 'status_updated':
+                        self._apply_status()
                 elif kind == 'done':
                     self.btn_start.config(state='normal')
                     self.btn_stop.config(state='disabled')
@@ -3655,14 +4434,19 @@ class App(tk.Tk):
 
     # ---------------- 地图选站 ----------------
     def _open_station_map(self):
-        p_geo = geo_json_path()
-        if not os.path.exists(p_geo):
+        # 地图点位来自官方 JSON 的 776 站（含退役站），无状态数据时提示刷新
+        stations = self.net_status.map_stations() if self.net_status.count else []
+        if not stations:
             messagebox.showinfo(tr('msg_tip'), tr('msg_map_missing'))
             return
         try:
-            with open(p_geo, 'r', encoding='utf-8') as f:
-                data = f.read()
-            json.loads(data)
+            if isinstance(stations, list):
+                for st in stations:
+                    name = st.get('s') or st.get('n9', '')
+                    txt, _tag = self.net_status.short(name)
+                    st['st'] = txt
+                    st['tip'] = self.net_status.tip(name) or ''
+            data = json.dumps(stations, ensure_ascii=False)
             html = _build_map_html(data)
             out = os.path.join(APP_DIR, 'igs_map.html')
             with open(out, 'w', encoding='utf-8') as f:
@@ -3942,7 +4726,7 @@ function toggle(st, m){
 STATIONS.forEach(function(st){
   var m = L.circleMarker([st.lat, st.lon], {radius: 6, weight: 1.5,
       color: '#2166d1', fillColor: '#3a7bd5', fillOpacity: 0.75});
-  m.bindTooltip(st.n9 + ' (' + st.cc + ')', {direction: 'top'});
+  m.bindTooltip(st.n9 + ' (' + st.cc + ')' + (st.tip ? ' | ' + st.tip : ''), {direction: 'top'});
   m.on('click', function(){ toggle(st, m); });
   m.addTo(map);
   markers[st.s] = {st: st, m: m};
@@ -3973,7 +4757,7 @@ document.getElementById('search').addEventListener('keydown', function(e){
     var st = markers[k].st;
     if (st.s === q || st.n9.toLowerCase().indexOf(q) === 0 || st.cc.toLowerCase() === q) {
       map.setView([st.lat, st.lon], 8);
-      markers[k].m.bindTooltip(st.n9 + ' (' + st.cc + ')').openTooltip();
+      markers[k].m.bindTooltip(st.n9 + ' (' + st.cc + ')' + (st.tip ? ' | ' + st.tip : '')).openTooltip();
       return;
     }
   }
