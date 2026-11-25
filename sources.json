@@ -5,24 +5,28 @@
       "obs": "https://cddis.nasa.gov/archive/gnss/data/daily/{YYYY}/{DDD}/{YY}d/",
       "nav": "https://cddis.nasa.gov/archive/gnss/data/daily/{YYYY}/brdc/",
       "prod": "https://cddis.nasa.gov/archive/gnss/products/{GPSW}/",
-      "mgex": "https://cddis.nasa.gov/archive/gnss/products/mgex/{GPSW}/",
+      "mgex": "https://cddis.nasa.gov/archive/gnss/products/{GPSW}/",
       "ion": "https://cddis.nasa.gov/archive/gnss/products/ionex/{YYYY}/{DDD}/"
     },
     "ESA": {
       "kind": "dir",
-      "obs": "ftp://gssc.esa.int/gnss/data/daily/{YYYY}/{DDD}/{YY}d/",
+      "obs": "ftp://gssc.esa.int/gnss/data/daily/{YYYY}/{DDD}/",
       "nav": "ftp://gssc.esa.int/gnss/data/daily/{YYYY}/brdc/",
       "prod": "ftp://gssc.esa.int/gnss/products/{GPSW}/",
-      "mgex": "ftp://gssc.esa.int/gnss/products/mgex/{GPSW}/",
-      "ion": "ftp://gssc.esa.int/gnss/products/ionex/{YYYY}/{DDD}/"
+      "mgex": "ftp://gssc.esa.int/gnss/products/{GPSW}/",
+      "ion": "ftp://gssc.esa.int/gnss/products/ionex/{YYYY}/{DDD}/",
+      "note": "ESA 短名 25d/ 子目录不存在，观测在日目录（长名 crx）；MGEX 产品并入 prod 周目录",
+      "note_en": "ESA has no 25d/ subdir; obs are in the day directory (long-name crx); MGEX products are merged into prod weekly dir"
     },
     "SOPAC": {
       "kind": "dir",
       "obs": "http://garner.ucsd.edu/pub/rinex/{YYYY}/{DDD}/",
-      "nav": "http://garner.ucsd.edu/pub/rinex/{YYYY}/brdc/",
+      "nav": "https://garner.ucsd.edu/pub/rinex/{YYYY}/{DDD}/",
       "prod": "http://garner.ucsd.edu/pub/products/{GPSW}/",
-      "mgex": "http://garner.ucsd.edu/pub/products/mgex/{GPSW}/",
-      "ion": "http://garner.ucsd.edu/pub/products/ionex/{YYYY}/{DDD}/"
+      "mgex": "http://garner.ucsd.edu/pub/products/{GPSW}/",
+      "ion": "",
+      "note": "SOPAC 无独立 MGEX/IONEX 目录；MGEX 产品并入 prod 周目录，IONEX 无数据",
+      "note_en": "SOPAC has no separate MGEX/IONEX dir; MGEX products are in prod weekly dir, no IONEX"
     },
     "WHU": {
       "kind": "whuweb",
@@ -57,10 +61,12 @@
     "IGN": {
       "kind": "dir",
       "obs": "ftp://igs.ign.fr/pub/igs/data/{YYYY}/{DDD}/",
-      "nav": "ftp://igs.ign.fr/pub/igs/data/{YYYY}/brdc/",
+      "nav": "ftp://igs.ign.fr/pub/igs/data/{YYYY}/{DDD}/",
       "prod": "ftp://igs.ign.fr/pub/igs/products/{GPSW}/",
-      "mgex": "ftp://igs.ign.fr/pub/igs/products/mgex/{GPSW}/",
-      "ion": "ftp://igs.ign.fr/pub/igs/products/ionosphere/{YYYY}/{DDD}/"
+      "mgex": "ftp://igs.ign.fr/pub/igs/products/{GPSW}/",
+      "ion": "ftp://igs.ign.fr/pub/igs/products/ionosphere/{YYYY}/{DDD}/",
+      "note": "IGN 广播星历在日目录（BRDC00IGS/IGN _MN）；MGEX 产品并入 prod 周目录",
+      "note_en": "IGN broadcast nav is in the day directory (BRDC00IGS/IGN _MN); MGEX products are merged into prod weekly dir"
     },
     "KASI": {
       "kind": "dir",
@@ -87,14 +93,13 @@
     {
       "id": "igs",
       "name": "IGS(组合)",
+      "name_en": "IGS (combined)",
       "mgex": false,
       "series": {
         "fin": [
           "orb",
           "clk",
-          "erp",
-          "snx",
-          "bia"
+          "erp"
         ],
         "rap": [
           "orb",
@@ -105,8 +110,7 @@
           "orb",
           "erp"
         ]
-      },
-      "name_en": "IGS (combined)"
+      }
     },
     {
       "id": "cod",
@@ -117,13 +121,13 @@
           "orb",
           "clk",
           "erp",
-          "snx",
           "bia"
         ],
         "rap": [
           "orb",
           "clk",
-          "erp"
+          "erp",
+          "bia"
         ],
         "ult": [
           "orb",
@@ -140,7 +144,6 @@
           "orb",
           "clk",
           "erp",
-          "snx",
           "bia"
         ],
         "rap": [
@@ -162,9 +165,7 @@
         "fin": [
           "orb",
           "clk",
-          "erp",
-          "snx",
-          "bia"
+          "erp"
         ],
         "rap": [
           "orb",
@@ -185,16 +186,11 @@
         "fin": [
           "orb",
           "clk",
-          "erp",
-          "snx"
+          "erp"
         ],
         "rap": [
           "orb",
           "clk",
-          "erp"
-        ],
-        "ult": [
-          "orb",
           "erp"
         ]
       }
@@ -207,8 +203,7 @@
         "fin": [
           "orb",
           "clk",
-          "erp",
-          "snx"
+          "erp"
         ]
       }
     },
@@ -220,9 +215,7 @@
         "fin": [
           "orb",
           "clk",
-          "erp",
-          "snx",
-          "bia"
+          "erp"
         ],
         "rap": [
           "orb",
@@ -243,9 +236,7 @@
         "fin": [
           "orb",
           "clk",
-          "erp",
-          "snx",
-          "bia"
+          "erp"
         ],
         "rap": [
           "orb",
@@ -265,9 +256,42 @@
       "series": {
         "fin": [
           "orb",
+          "erp"
+        ],
+        "rap": [
+          "orb",
+          "erp"
+        ]
+      }
+    },
+    {
+      "id": "sio",
+      "name": "SIO",
+      "mgex": false,
+      "series": {
+        "fin": [
+          "orb",
+          "erp"
+        ],
+        "rap": [
+          "orb",
+          "erp"
+        ],
+        "ult": [
+          "orb",
+          "erp"
+        ]
+      }
+    },
+    {
+      "id": "usn",
+      "name": "USNO",
+      "mgex": false,
+      "series": {
+        "fin": [
+          "orb",
           "clk",
-          "erp",
-          "snx"
+          "erp"
         ],
         "rap": [
           "orb",
@@ -281,37 +305,6 @@
       }
     },
     {
-      "id": "sio",
-      "name": "SIO",
-      "mgex": false,
-      "series": {
-        "fin": [
-          "orb",
-          "clk",
-          "erp",
-          "snx"
-        ],
-        "rap": [
-          "orb",
-          "clk",
-          "erp"
-        ]
-      }
-    },
-    {
-      "id": "usn",
-      "name": "USNO",
-      "mgex": false,
-      "series": {
-        "fin": [
-          "orb",
-          "clk",
-          "erp",
-          "snx"
-        ]
-      }
-    },
-    {
       "id": "gop",
       "name": "GOP",
       "mgex": false,
@@ -319,8 +312,7 @@
         "fin": [
           "orb",
           "clk",
-          "erp",
-          "snx"
+          "erp"
         ],
         "rap": [
           "orb",
@@ -343,10 +335,12 @@
         "rap": [
           "orb",
           "clk",
-          "erp"
+          "erp",
+          "bia"
         ],
         "ult": [
           "orb",
+          "clk",
           "erp"
         ]
       }
@@ -359,8 +353,7 @@
         "fin": [
           "orb",
           "clk",
-          "erp",
-          "bia"
+          "erp"
         ],
         "rap": [
           "orb",
@@ -374,20 +367,6 @@
       }
     },
     {
-      "id": "com",
-      "name": "CODE",
-      "mgex": true,
-      "series": {
-        "fin": [
-          "orb",
-          "clk",
-          "erp",
-          "bia",
-          "snx"
-        ]
-      }
-    },
-    {
       "id": "wum",
       "name": "WHU",
       "mgex": true,
@@ -396,32 +375,7 @@
           "orb",
           "clk",
           "erp",
-          "snx",
           "bia"
-        ],
-        "rap": [
-          "orb",
-          "clk",
-          "erp"
-        ]
-      }
-    },
-    {
-      "id": "gbm",
-      "name": "GFZ",
-      "mgex": true,
-      "series": {
-        "fin": [
-          "orb",
-          "clk",
-          "erp",
-          "snx",
-          "bia"
-        ],
-        "rap": [
-          "orb",
-          "clk",
-          "erp"
         ]
       }
     }
@@ -566,5 +520,6 @@
       "name_en": "EarthScope (USA, login required)"
     }
   ],
-  "_schema": "global6-acc"
+  "_schema": "global6-acc",
+  "_schema_prod": "no-snx-2025w2347"
 }

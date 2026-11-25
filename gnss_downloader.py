@@ -719,6 +719,8 @@ class History:
 # 另含 CODE (AIUB) 产品中心（产品走 AIUB，观测用 IGS 标准路径模板）。
 # KASI(韩国) FTP 暂不可用，保留为可编辑占位（子目录待校准）。
 AIUB_API = 'https://code.aiub.unibe.ch/s3_script/aiub_s3_bucket_listing.php?path='
+# WHU 网页 nav 查询单次跨度上限：服务器对整年(365天)等大跨度返回空，按此切成短段
+NAV_CHUNK = 180
 
 DEFAULT_SOURCES = {
     'centers': {
@@ -727,22 +729,26 @@ DEFAULT_SOURCES = {
             'obs': 'https://cddis.nasa.gov/archive/gnss/data/daily/{YYYY}/{DDD}/{YY}d/',
             'nav': 'https://cddis.nasa.gov/archive/gnss/data/daily/{YYYY}/brdc/',
             'prod': 'https://cddis.nasa.gov/archive/gnss/products/{GPSW}/',
-            'mgex': 'https://cddis.nasa.gov/archive/gnss/products/mgex/{GPSW}/',
+            'mgex': 'https://cddis.nasa.gov/archive/gnss/products/{GPSW}/',
             'ion': 'https://cddis.nasa.gov/archive/gnss/products/ionex/{YYYY}/{DDD}/'},
         'ESA': {
             'kind': 'dir',
-            'obs': 'ftp://gssc.esa.int/gnss/data/daily/{YYYY}/{DDD}/{YY}d/',
+            'note': 'ESA 短名 25d/ 子目录不存在，观测在日目录（长名 crx）；MGEX 产品并入 prod 周目录',
+            'obs': 'ftp://gssc.esa.int/gnss/data/daily/{YYYY}/{DDD}/',
             'nav': 'ftp://gssc.esa.int/gnss/data/daily/{YYYY}/brdc/',
             'prod': 'ftp://gssc.esa.int/gnss/products/{GPSW}/',
-            'mgex': 'ftp://gssc.esa.int/gnss/products/mgex/{GPSW}/',
-            'ion': 'ftp://gssc.esa.int/gnss/products/ionex/{YYYY}/{DDD}/'},
+            'mgex': 'ftp://gssc.esa.int/gnss/products/{GPSW}/',
+            'ion': 'ftp://gssc.esa.int/gnss/products/ionex/{YYYY}/{DDD}/',
+            'note_en': 'ESA has no 25d/ subdir; obs are in the day directory (long-name crx); MGEX products are merged into prod weekly dir'},
         'SOPAC': {
             'kind': 'dir',
+            'note': 'SOPAC 无独立 MGEX/IONEX 目录；MGEX 产品并入 prod 周目录，IONEX 无数据',
             'obs': 'http://garner.ucsd.edu/pub/rinex/{YYYY}/{DDD}/',
-            'nav': 'http://garner.ucsd.edu/pub/rinex/{YYYY}/brdc/',
+            'nav': 'https://garner.ucsd.edu/pub/rinex/{YYYY}/{DDD}/',
             'prod': 'http://garner.ucsd.edu/pub/products/{GPSW}/',
-            'mgex': 'http://garner.ucsd.edu/pub/products/mgex/{GPSW}/',
-            'ion': 'http://garner.ucsd.edu/pub/products/ionex/{YYYY}/{DDD}/'},
+            'mgex': 'http://garner.ucsd.edu/pub/products/{GPSW}/',
+            'ion': '',
+            'note_en': 'SOPAC has no separate MGEX/IONEX dir; MGEX products are in prod weekly dir, no IONEX'},
         'WHU': {
             'kind': 'whuweb',
             'api': 'http://www.igs.gnsswhu.cn/index.php/igs/',
@@ -770,11 +776,13 @@ DEFAULT_SOURCES = {
             'ion': ''},
         'IGN': {
             'kind': 'dir',
+            'note': 'IGN 广播星历在日目录（BRDC00IGS/IGN _MN）；MGEX 产品并入 prod 周目录',
             'obs': 'ftp://igs.ign.fr/pub/igs/data/{YYYY}/{DDD}/',
-            'nav': 'ftp://igs.ign.fr/pub/igs/data/{YYYY}/brdc/',
+            'nav': 'ftp://igs.ign.fr/pub/igs/data/{YYYY}/{DDD}/',
             'prod': 'ftp://igs.ign.fr/pub/igs/products/{GPSW}/',
-            'mgex': 'ftp://igs.ign.fr/pub/igs/products/mgex/{GPSW}/',
-            'ion': 'ftp://igs.ign.fr/pub/igs/products/ionosphere/{YYYY}/{DDD}/'},
+            'mgex': 'ftp://igs.ign.fr/pub/igs/products/{GPSW}/',
+            'ion': 'ftp://igs.ign.fr/pub/igs/products/ionosphere/{YYYY}/{DDD}/',
+            'note_en': 'IGN broadcast nav is in the day directory (BRDC00IGS/IGN _MN); MGEX products are merged into prod weekly dir'},
         'KASI': {
             'kind': 'dir',
             'note': '韩国 KASI 全球数据中心：官网仅给裸地址 ftp://nfs.kasi.re.kr/，'
@@ -786,56 +794,51 @@ DEFAULT_SOURCES = {
             'ion': 'ftp://nfs.kasi.re.kr/gns/products/ionex/{YYYY}/{DDD}/'},
     },
     'auto_order': ['WHU', 'WHU-FTP', 'CODE', 'CDDIS', 'ESA', 'SOPAC', 'IGN', 'KASI'],
-    # 产品机构：ACC 官方 13 家分析中心 + IGS 组合产品；3 位 id 与长文件名前缀一致
+    # 产品机构：按 2025/2347 周实测收敛，只列各中心实际发布的产品类型；
+    # SNX(SINEX坐标) 基线解算用不到，默认不列；MGEX 仅 WUM 仍有独立产品线。
     # series: fin/rap/ult -> 产品列表；mgex=True 为多系统产品线
     'analysis_centers': [
         {'id': 'igs', 'name': 'IGS(组合)', 'name_en': 'IGS (combined)', 'mgex': False,
-         'series': {'fin': ['orb', 'clk', 'erp', 'snx', 'bia'],
-                    'rap': ['orb', 'clk', 'erp'], 'ult': ['orb', 'erp']}},
+         'series': {'fin': ['orb', 'clk', 'erp'], 'rap': ['orb', 'clk', 'erp'],
+                    'ult': ['orb', 'erp']}},
         {'id': 'cod', 'name': 'CODE', 'mgex': False,
-         'series': {'fin': ['orb', 'clk', 'erp', 'snx', 'bia'],
-                    'rap': ['orb', 'clk', 'erp'], 'ult': ['orb', 'erp']}},
+         'series': {'fin': ['orb', 'clk', 'erp', 'bia'], 'rap': ['orb', 'clk', 'erp', 'bia'],
+                    'ult': ['orb', 'erp']}},
         {'id': 'esa', 'name': 'ESA/ESOC', 'mgex': False,
-         'series': {'fin': ['orb', 'clk', 'erp', 'snx', 'bia'],
-                    'rap': ['orb', 'clk', 'erp'], 'ult': ['orb', 'erp']}},
+         'series': {'fin': ['orb', 'clk', 'erp', 'bia'], 'rap': ['orb', 'clk', 'erp'],
+                    'ult': ['orb', 'erp']}},
         {'id': 'gfz', 'name': 'GFZ', 'mgex': False,
-         'series': {'fin': ['orb', 'clk', 'erp', 'snx', 'bia'],
-                    'rap': ['orb', 'clk', 'erp'], 'ult': ['orb', 'erp']}},
+         'series': {'fin': ['orb', 'clk', 'erp'], 'rap': ['orb', 'clk', 'erp'],
+                    'ult': ['orb', 'erp']}},
         {'id': 'jpl', 'name': 'JPL', 'mgex': False,
-         'series': {'fin': ['orb', 'clk', 'erp', 'snx'],
-                    'rap': ['orb', 'clk', 'erp'], 'ult': ['orb', 'erp']}},
+         'series': {'fin': ['orb', 'clk', 'erp'], 'rap': ['orb', 'clk', 'erp']}},
         {'id': 'mit', 'name': 'MIT', 'mgex': False,
-         'series': {'fin': ['orb', 'clk', 'erp', 'snx']}},
+         'series': {'fin': ['orb', 'clk', 'erp']}},
         {'id': 'whu', 'name': 'WHU', 'mgex': False,
-         'series': {'fin': ['orb', 'clk', 'erp', 'snx', 'bia'],
-                    'rap': ['orb', 'clk', 'erp'], 'ult': ['orb', 'erp']}},
+         'series': {'fin': ['orb', 'clk', 'erp'], 'rap': ['orb', 'clk', 'erp'],
+                    'ult': ['orb', 'erp']}},
         {'id': 'emr', 'name': 'EMR', 'mgex': False,
-         'series': {'fin': ['orb', 'clk', 'erp', 'snx', 'bia'],
-                    'rap': ['orb', 'clk', 'erp'], 'ult': ['orb', 'erp']}},
+         'series': {'fin': ['orb', 'clk', 'erp'], 'rap': ['orb', 'clk', 'erp'],
+                    'ult': ['orb', 'erp']}},
         {'id': 'ngs', 'name': 'NGS', 'mgex': False,
-         'series': {'fin': ['orb', 'clk', 'erp', 'snx'],
-                    'rap': ['orb', 'clk', 'erp'], 'ult': ['orb', 'erp']}},
+         'series': {'fin': ['orb', 'erp'], 'rap': ['orb', 'erp']}},
         {'id': 'sio', 'name': 'SIO', 'mgex': False,
-         'series': {'fin': ['orb', 'clk', 'erp', 'snx'], 'rap': ['orb', 'clk', 'erp']}},
+         'series': {'fin': ['orb', 'erp'], 'rap': ['orb', 'erp'], 'ult': ['orb', 'erp']}},
         {'id': 'usn', 'name': 'USNO', 'mgex': False,
-         'series': {'fin': ['orb', 'clk', 'erp', 'snx']}},
+         'series': {'fin': ['orb', 'clk', 'erp'], 'rap': ['orb', 'clk', 'erp'],
+                    'ult': ['orb', 'erp']}},
         {'id': 'gop', 'name': 'GOP', 'mgex': False,
-         'series': {'fin': ['orb', 'clk', 'erp', 'snx'], 'rap': ['orb', 'clk', 'erp']}},
+         'series': {'fin': ['orb', 'clk', 'erp'], 'rap': ['orb', 'clk', 'erp']}},
         {'id': 'grg', 'name': 'GRG', 'mgex': False,
-         'series': {'fin': ['orb', 'clk', 'erp', 'bia'],
-                    'rap': ['orb', 'clk', 'erp'], 'ult': ['orb', 'erp']}},
+         'series': {'fin': ['orb', 'clk', 'erp', 'bia'], 'rap': ['orb', 'clk', 'erp', 'bia'],
+                    'ult': ['orb', 'clk', 'erp']}},
         {'id': 'jgx', 'name': 'JGX', 'mgex': False,
-         'series': {'fin': ['orb', 'clk', 'erp', 'bia'],
-                    'rap': ['orb', 'clk', 'erp'], 'ult': ['orb', 'erp']}},
-        {'id': 'com', 'name': 'CODE', 'mgex': True,
-         'series': {'fin': ['orb', 'clk', 'erp', 'bia', 'snx']}},
+         'series': {'fin': ['orb', 'clk', 'erp'], 'rap': ['orb', 'clk', 'erp'],
+                    'ult': ['orb', 'erp']}},
         {'id': 'wum', 'name': 'WHU', 'mgex': True,
-         'series': {'fin': ['orb', 'clk', 'erp', 'snx', 'bia'],
-                    'rap': ['orb', 'clk', 'erp']}},
-        {'id': 'gbm', 'name': 'GFZ', 'mgex': True,
-         'series': {'fin': ['orb', 'clk', 'erp', 'snx', 'bia'],
-                    'rap': ['orb', 'clk', 'erp']}},
+         'series': {'fin': ['orb', 'clk', 'erp', 'bia']}},
     ],
+    '_schema_prod': 'no-snx-2025w2347',
     'ionex': [
         {'id': 'igsg', 'name': 'IGS'},
         {'id': 'codg', 'name': 'CODE'},
@@ -955,6 +958,33 @@ class Sources:
         if esa is not None and not str(esa.get('obs', '')).startswith('ftp:'):
             centers['ESA'] = json.loads(json.dumps(DEFAULT_SOURCES['centers']['ESA']))
             changed = True
+        # 已知死路径自动纠正（只纠正仍指向死路径的配置，不动用户自定义的其他值）
+        fix_map = {
+            'SOPAC': {'nav': '/brdc/'},
+            'ESA': {'obs': '/{YY}d/'},
+        }
+        for ck, rules in fix_map.items():
+            c = centers.get(ck)
+            if not c:
+                continue
+            for field, dead in rules.items():
+                if dead in str(c.get(field, '')):
+                    c[field] = DEFAULT_SOURCES['centers'][ck][field]
+                    changed = True
+        # MGEX 周目录（/products/mgex/WWWW/）各库均为空，产品实际并入 prod 周目录
+        for ck in ('CDDIS', 'ESA', 'SOPAC', 'IGN'):
+            c = centers.get(ck)
+            if c is not None and '/products/mgex/' in str(c.get('mgex', '')):
+                c['mgex'] = DEFAULT_SOURCES['centers'][ck]['mgex']
+                changed = True
+        sopac = centers.get('SOPAC')
+        if sopac is not None and 'ionex' in str(sopac.get('ion', '')).lower():
+            sopac['ion'] = ''                      # SOPAC 无 IONEX 目录
+            changed = True
+        ign = centers.get('IGN')
+        if ign is not None and '/brdc/' in str(ign.get('nav', '')):
+            ign['nav'] = DEFAULT_SOURCES['centers']['IGN']['nav']
+            changed = True
         want_order = list(DEFAULT_SOURCES['auto_order'])
         if self.data.get('auto_order') != want_order:
             self.data['auto_order'] = [k for k in self.data.get('auto_order', []) if k in want_order]
@@ -992,6 +1022,13 @@ class Sources:
         if acs and 'series' not in acs[0]:
             self.data['analysis_centers'] = json.loads(
                 json.dumps(DEFAULT_SOURCES['analysis_centers']))
+            changed = True
+        # 产品矩阵按实测收敛（去 SNX、去无效 MGEX 节点、只列实际有的产品类型）
+        # 用独立标记，避免覆盖用户在数据源管理里对 URL 等的自定义
+        if self.data.get('_schema_prod') != DEFAULT_SOURCES['_schema_prod']:
+            self.data['analysis_centers'] = json.loads(
+                json.dumps(DEFAULT_SOURCES['analysis_centers']))
+            self.data['_schema_prod'] = DEFAULT_SOURCES['_schema_prod']
             changed = True
         hf_ids = {h.get('id') for h in self.data.get('hfile', [])}
         for h0 in DEFAULT_SOURCES['hfile']:            # 缺失的内置 hfile 源补回
@@ -1649,8 +1686,26 @@ class WhuWeb:
         return out
 
     def nav(self, d1, d2):
-        return self._query('gbxlList', {'type': 'gbxl', 'filename': 'brdc',
-                                        'start_time': d1, 'end_time': d2})
+        """查询广播星历：先按自然年切，年内再按 NAV_CHUNK 天切片。
+
+        服务器两个限制：① 跨年区间 + filename 过滤会返回空；② 跨度过大
+        （整年 365 天）也返回空。因此每段必须既在同一年内、又不超 NAV_CHUNK 天。
+        可输入任意多年范围，自动拆成满足两条件的连续区间逐段查询合并。
+        """
+        out = []
+        start = dt.date.fromisoformat(d1)
+        end = dt.date.fromisoformat(d2)
+        for y in range(start.year, end.year + 1):
+            y_start = max(start, dt.date(y, 1, 1))
+            y_end = min(end, dt.date(y, 12, 31))
+            cur = y_start
+            while cur <= y_end:
+                seg_end = min(cur + dt.timedelta(days=NAV_CHUNK - 1), y_end)
+                out += self._query('gbxlList', {
+                    'type': 'gbxl', 'filename': 'brdc',
+                    'start_time': cur.isoformat(), 'end_time': seg_end.isoformat()})
+                cur = seg_end + dt.timedelta(days=1)
+        return out
 
     def products(self, prefix, d1, d2):
         """跨年拆分查询：跨年区间+filename 过滤会触发服务器 500。"""
@@ -2094,6 +2149,28 @@ def obs_quality(name):
     return 1
 
 
+RE_BRDC_SHORT = re.compile(r'^brdc\d{3}0\.\d{2}n(\.(z|gz))?$', re.I)
+
+
+def brdc_quality(name, yyyy=None, ddd=None):
+    """广播星历优先级：只认 BRDC，不认 BRDM/BRD4/单系统 .g/.p。
+
+    返回 0=BRDC 长名(BRDC00IGS 等)，1=RINEX2 短名 brdcDDD0.yyn，None=非 brdc。
+    yyyy/ddd 给定时同时校验日期，避免同名历史文件串日。
+    """
+    nu = name.upper()
+    if nu.startswith('BRDC00') and '_MN.' in nu:
+        if yyyy and ddd and ('%s%s' % (yyyy, ddd)) not in nu:
+            return None
+        return 0
+    if RE_BRDC_SHORT.match(name):
+        if yyyy and ddd and not name.lower().startswith(
+                'brdc%s0.%s' % (ddd, str(yyyy)[2:])):
+            return None
+        return 1
+    return None
+
+
 class TaskBuilder:
     def __init__(self, http, cfg, src, log, stop_event=None):
         self.http = http
@@ -2255,9 +2332,11 @@ class TaskBuilder:
                     continue
                 if d not in nav_pending:
                     continue
-                fn = r['filename'].upper()
-                pri = 0 if fn.startswith('BRDC00IGS') else (1 if fn.startswith('BRDM') else
-                        (2 if fn.endswith('N.GZ') or fn.endswith('N.Z') else 3))
+                fname = r['filename']
+                yyyy, ddd = str(d.year), '%03d' % d.timetuple().tm_yday
+                pri = brdc_quality(fname, yyyy, ddd)
+                if pri is None:
+                    continue                          # 跳过 BRDM/BRD4/单系统 .g/.p
                 cur = best.get(d)
                 if cur is None or pri < cur[0]:
                     best[d] = (pri, r)
@@ -2311,18 +2390,14 @@ class TaskBuilder:
                 url = fmt_url(tpl, ph)
                 if url:
                     names = self.http.listing(url)
+                    candidates = []
                     for n in names:
-                        nu = n.upper()
-                        if nu.startswith(('BRDC00IGS', 'BRDM00DLR')) and ('%s%s' % (yyyy, ddd)) in nu:
-                            fname = n
-                            break
-                    if not fname:
-                        r2name = ('brdc%s0.%sn' % (ddd, yy)).lower()
-                        for n in names:
-                            if re.match(r'^brdc\d{3}0\.\d{2}n(\.(z|gz))?$', n, re.I) and \
-                                    n.lower().startswith(r2name):
-                                fname = n
-                                break
+                        pri = brdc_quality(n, yyyy, ddd)
+                        if pri is not None:
+                            candidates.append((pri, n))
+                    if candidates:
+                        candidates.sort(key=lambda x: x[0])   # BRDC 长名优先，其次短名
+                        fname = candidates[0][1]
                     if fname:
                         urls = [url + fname]
                         rel = 'rinex/nav/%s/%s' % (yyyy, fname)

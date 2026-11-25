@@ -103,12 +103,22 @@ failure reason, with one-click "Retry failed".
 - Series: Final (~2 weeks latency), Rapid, Ultra-rapid (4 epochs/day,
   00/06/12/18 UTC). Ultra-rapid clocks are embedded in the orbit files,
   so only orbit + ERP are offered.
+- The product tree lists only product types each AC actually publishes
+  (verified against the latest weekly directory): orbit SP3, clock CLK,
+  ERP, plus BIA for some centers. SINEX coordinates (SNX) are not needed
+  for baseline processing and have been removed from the default tree.
 - MGEX series (marked "MGEX since 2014, incl. BDS") contains
   BeiDou/Galileo/QZSS and starts in 2014. Products before GPS week 2238
   (Nov 2022) use legacy short names; the software adapts automatically.
-- IONEX products (codg/igsg/whug/esag/jplg) sit under each repository.
+  Only WUM still has a standalone MGEX directory (CODE/GFZ MGEX products
+  are now merged into the prod weekly directory).
+- IONEX products (codg/igsg/whug/esag/jplg) sit under repositories that
+  have such a directory; SOPAC has none, so its node is hidden.
 - Analysis centers follow the official IGS ACC list (EMR/WHU/GOP/GRG/
   ESA/GFZ/JGX/CODE/JPL/MIT/NGS/SIO/USNO) plus IGS combined products.
+- Repository paths were verified and fixed: CDDIS/ESA/SOPAC/IGN MGEX
+  products are in the prod weekly dir; ESA obs are in the day dir (no
+  25d/ subdir); IGN and SOPAC broadcast nav are in the day dir.
 - CODE-specific products (GIM ionosphere, Bernese ION/BIA, monthly DCB)
   are a standalone top-level node, downloaded from
   aiub.unibe.ch/download/CODE/<year>/ and independent of any data center.

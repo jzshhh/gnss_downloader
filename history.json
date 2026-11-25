@@ -1,8 +1,8 @@
 {
  "rinex/nav/2026/BRDC00IGS_R_20260010000_01D_MN.rnx.gz": {
   "status": "ok",
-  "time": "2026-11-19 21:38:59",
-  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2026&id=4654"
+  "time": "2026-11-25 01:06:10",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2026/brdc/BRDC00IGS_R_20260010000_01D_MN.rnx.gz"
  },
  "rinex/obs/2026/001/bjfs0010.26o.gz": {
   "status": "ok",
@@ -138,5 +138,1850 @@
   "status": "ok",
   "time": "2026-11-19 22:16:52",
   "src": "https://www.aiub.unibe.ch/download/CODE/2026/COD0OPSFIN_20260170000_01D_01H_GIM.ION.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250010000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:26:25",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250010000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250030000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:27:05",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250030000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250040000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:27:14",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250040000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250050000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:18:04",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250050000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250020000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:27:36",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250020000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250070000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:29:43",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250070000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250080000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:29:44",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250080000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250060000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:29:52",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250060000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250090000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:30:02",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250090000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250130000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:31:25",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250130000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250100000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:31:50",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250100000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250120000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:31:55",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250120000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250110000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:32:22",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250110000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250140000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:33:43",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250140000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250150000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:33:50",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250150000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250160000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:34:48",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250160000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250170000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:35:15",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250170000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250180000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:35:31",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250180000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250200000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:37:02",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250200000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250190000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:37:37",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250190000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250210000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:37:42",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250210000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250220000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:38:25",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250220000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250230000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:38:53",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250230000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250250000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:39:31",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250250000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250240000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:39:41",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250240000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250260000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:40:30",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250260000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250270000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:41:21",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250270000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250290000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:41:42",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250290000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250280000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:41:57",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250280000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250300000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:42:49",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250300000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250320000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:43:42",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250320000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250310000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:43:43",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250310000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250330000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:44:03",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250330000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250340000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:44:42",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250340000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250360000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:45:21",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250360000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250350000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:45:40",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250350000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250370000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:46:29",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250370000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250380000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:47:05",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250380000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250400000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:47:53",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250400000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250410000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:48:56",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250410000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250390000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:48:57",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250390000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250420000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:49:03",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250420000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250430000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:50:14",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250430000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250440000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:50:33",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250440000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250450000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:50:53",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250450000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250460000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:51:04",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250460000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250470000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:52:23",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250470000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250480000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:52:26",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250480000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250490000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:52:35",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250490000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250500000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:53:15",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250500000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250520000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:54:30",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250520000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250510000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:54:51",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250510000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250530000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:55:12",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250530000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250540000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:55:25",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250540000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250550000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:56:26",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250550000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250560000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:56:41",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250560000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250580000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:57:11",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250580000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250570000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:57:34",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250570000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250590000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:58:33",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250590000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250600000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:58:47",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250600000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250610000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:59:09",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250610000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250620000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 21:59:38",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250620000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250640000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:00:42",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250640000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250630000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:00:57",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250630000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250650000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:01:11",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250650000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250660000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:01:39",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250660000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250670000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:03:04",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250670000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250680000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:03:23",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250680000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250700000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:03:55",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250700000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250690000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:03:56",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250690000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250710000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:19:49",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250710000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250720000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:16:55",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250720000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250730000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:18:11",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250730000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250740000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:18:42",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250740000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250750000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:20:02",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250750000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250760000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:20:43",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250760000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250770000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:20:51",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250770000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250780000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:23:23",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250780000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250790000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:23:40",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250790000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250810000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:23:44",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250810000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250800000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:24:26",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250800000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250830000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:25:27",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250830000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250820000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:25:56",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250820000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250840000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:26:04",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250840000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250850000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:27:13",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250850000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250860000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:27:47",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250860000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250880000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:27:55",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250880000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250900000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:29:33",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250900000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250870000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:29:57",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250870000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250890000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:30:14",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250890000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250910000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:30:56",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250910000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250920000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:31:23",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250920000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250930000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:32:02",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250930000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250940000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:32:35",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250940000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250950000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:33:05",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250950000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250970000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:34:29",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250970000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250960000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:34:29",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250960000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250980000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:34:48",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250980000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20250990000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:35:44",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20250990000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251010000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:36:36",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251010000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251000000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:36:57",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251000000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251030000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:37:52",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251030000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251020000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:38:22",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251020000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251040000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:38:57",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251040000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251050000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:39:23",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251050000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251060000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:40:16",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251060000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251070000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:40:38",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251070000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251080000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:41:43",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251080000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251090000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:41:54",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251090000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251110000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:44:03",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251110000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251100000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 07:00:30",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251100000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251150000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 07:00:36",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251150000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251160000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 07:00:31",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251160000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251170000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 07:00:35",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251170000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251180000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 07:00:38",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251180000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251130000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:44:46",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251130000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251120000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:45:00",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251120000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251140000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:46:06",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251140000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251200000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:47:05",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251200000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251210000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:47:25",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251210000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251190000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:47:43",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251190000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251220000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:48:04",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251220000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251230000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:49:13",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251230000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251250000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:49:52",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251250000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251240000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:49:58",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251240000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251260000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:50:17",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251260000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251270000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:51:48",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251270000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251290000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:52:01",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251290000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251280000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:52:07",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251280000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251300000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:52:34",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251300000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251340000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 11:06:43",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=158776"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251310000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:53:57",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251310000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251320000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:54:26",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251320000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251350000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:55:42",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251350000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251360000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:56:01",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251360000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251330000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:56:09",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251330000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251370000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:56:24",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251370000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251380000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:57:53",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251380000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251390000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:58:06",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251390000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251400000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:58:08",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251400000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251410000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 22:58:41",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251410000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251420000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:00:09",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251420000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251440000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:00:35",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251440000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251430000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:00:37",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251430000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251450000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:00:46",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251450000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251460000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:02:00",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251460000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251480000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:02:41",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251480000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251490000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:02:50",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251490000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251470000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:03:14",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251470000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251500000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:04:17",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251500000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251520000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:05:01",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251520000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251510000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:05:05",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251510000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251530000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:05:29",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251530000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251540000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:06:17",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251540000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251560000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:07:07",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251560000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251550000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:07:17",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251550000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251570000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:07:35",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251570000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251580000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:08:46",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251580000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251600000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:09:06",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251600000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251590000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:09:44",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251590000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251610000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:10:02",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251610000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251620000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:10:48",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251620000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251630000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:11:18",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251630000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251650000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:12:09",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251650000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251640000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:12:14",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251640000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251670000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:13:39",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251670000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251660000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:13:43",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251660000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251690000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:14:26",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251690000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251680000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:15:30",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251680000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251710000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:15:52",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251710000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251700000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:15:55",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251700000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251720000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:16:07",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251720000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251730000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:18:17",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251730000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251750000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:18:33",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251750000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251760000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:18:37",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251760000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251740000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:18:53",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251740000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251800000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:20:32",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251800000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251780000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:20:42",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251780000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251770000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:20:48",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251770000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251790000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:20:50",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251790000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251810000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:22:19",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251810000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251820000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:23:07",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251820000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251840000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:23:09",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251840000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251830000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:23:29",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251830000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251850000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:24:24",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251850000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251870000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:25:15",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251870000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251860000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:25:16",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251860000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251880000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:25:36",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251880000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251890000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:26:31",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251890000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251900000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:26:58",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251900000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251910000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:27:16",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251910000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251920000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:27:49",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251920000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251930000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:28:43",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251930000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251940000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:29:03",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251940000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251950000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:29:42",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251950000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251960000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:30:21",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251960000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251970000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:31:11",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251970000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251980000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:31:35",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251980000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20251990000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:31:57",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20251990000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252000000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:32:33",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252000000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252010000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:33:07",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252010000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252020000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:33:39",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252020000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252030000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:34:09",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252030000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252040000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:35:08",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252040000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252060000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:35:18",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252060000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252050000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:35:40",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252050000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252070000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:36:26",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252070000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252080000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:37:26",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252080000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252090000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:37:43",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252090000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252100000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:38:06",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252100000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252110000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:39:06",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252110000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252120000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:40:01",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252120000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252130000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:40:14",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252130000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252140000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:40:31",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252140000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252150000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:41:43",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252150000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252160000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:42:19",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252160000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252170000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:42:30",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252170000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252180000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:43:13",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252180000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252190000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:43:52",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252190000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252200000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:44:07",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252200000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252210000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:45:01",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252210000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252220000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:45:45",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252220000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252240000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:45:54",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252240000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252230000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:46:10",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252230000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252250000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:47:44",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252250000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252260000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:47:59",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252260000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252280000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:48:31",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252280000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252270000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:48:36",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252270000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252290000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:50:17",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252290000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252300000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:50:23",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252300000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252320000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:50:48",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252320000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252310000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:51:24",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252310000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252330000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:52:04",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252330000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252340000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:52:40",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252340000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252350000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:53:04",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252350000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252360000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:53:28",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252360000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252370000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:54:18",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252370000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252380000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:54:33",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252380000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252390000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:55:19",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252390000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252400000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:56:05",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252400000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252410000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:56:36",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252410000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252420000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:56:55",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252420000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252430000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:57:31",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252430000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252440000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:58:07",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252440000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252450000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:59:04",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252450000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252460000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:59:04",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252460000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252470000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-24 23:59:55",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252470000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252480000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:00:38",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252480000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252490000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:01:21",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252490000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252500000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:01:33",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252500000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252510000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:01:34",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252510000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252520000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:03:34",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252520000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252530000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:03:35",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252530000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252540000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:03:46",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252540000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252550000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:03:58",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252550000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252580000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:05:34",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252580000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252560000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:05:47",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252560000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252570000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:05:54",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252570000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252590000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:06:29",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252590000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252610000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:07:57",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252610000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252620000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:08:04",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252620000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252600000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:08:19",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252600000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252630000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:08:59",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252630000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252640000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:10:18",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252640000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252650000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:10:24",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252650000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252660000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:10:54",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252660000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252670000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:11:04",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252670000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252680000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:12:12",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252680000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252690000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:12:40",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252690000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252700000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:12:53",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252700000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252710000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:13:16",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252710000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252720000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:14:29",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252720000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252730000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:15:15",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252730000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252740000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:15:24",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252740000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252750000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:15:45",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252750000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252760000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:16:51",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252760000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252770000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:17:23",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252770000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252780000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:17:33",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252780000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252790000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:18:13",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252790000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252800000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:19:06",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252800000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252820000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:19:38",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252820000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252810000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:19:39",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252810000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252830000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:20:49",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252830000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252840000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:21:37",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252840000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252850000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:22:11",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252850000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252860000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:22:11",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252860000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252870000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:23:21",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252870000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252880000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:23:33",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252880000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252900000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:23:55",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252900000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252890000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:24:24",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252890000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252910000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:25:28",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252910000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252920000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:25:42",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252920000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252930000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:26:07",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252930000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252940000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:27:06",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252940000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252950000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:27:41",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252950000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252960000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:28:03",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252960000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252970000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:28:17",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252970000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252980000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:29:46",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252980000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20252990000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:29:57",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20252990000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253000000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:30:03",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253000000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253010000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:30:25",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253010000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253030000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:32:04",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253030000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253040000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:32:16",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253040000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253020000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:32:28",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253020000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253050000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:33:01",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253050000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253080000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:34:31",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253080000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253060000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:34:36",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253060000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253070000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:34:40",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253070000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253090000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:35:44",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253090000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253100000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:36:33",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253100000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253110000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:37:12",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253110000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253120000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:37:27",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253120000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253130000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:38:08",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253130000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253140000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:39:07",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253140000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253150000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:39:28",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253150000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253160000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:39:49",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253160000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253170000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:40:51",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253170000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253190000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:41:07",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253190000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253180000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:41:33",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253180000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253210000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:42:10",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253210000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253200000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:42:36",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253200000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253220000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:43:19",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253220000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253230000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:43:54",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253230000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253240000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:44:46",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253240000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253250000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:44:47",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253250000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253260000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:45:50",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253260000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253270000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:46:08",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253270000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253290000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:46:55",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253290000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253280000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:47:00",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253280000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253300000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:47:54",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253300000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253320000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:48:21",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253320000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253310000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:48:24",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253310000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253330000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:49:04",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253330000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253360000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:49:57",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253360000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253340000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:50:12",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253340000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253350000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:50:22",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253350000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253370000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:51:32",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253370000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253380000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:52:00",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253380000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253390000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:52:45",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253390000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253400000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:52:56",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253400000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253410000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:53:32",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253410000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253420000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:54:26",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253420000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253440000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:54:34",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253440000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253430000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:54:35",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253430000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253450000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:55:28",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253450000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253480000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:55:56",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253480000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253470000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:56:11",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253470000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253460000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:56:40",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253460000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253490000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:57:20",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253490000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253510000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:57:53",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253510000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253500000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:58:09",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253500000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253520000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:58:39",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253520000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253540000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 00:59:41",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253540000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253530000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 01:00:05",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253530000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253550000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 01:00:16",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253550000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253560000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 01:01:13",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253560000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253580000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 01:01:39",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253580000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253570000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 01:01:39",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253570000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253590000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 01:02:22",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253590000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253600000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 01:02:59",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253600000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253620000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 01:03:39",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253620000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253610000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 01:04:13",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253610000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253630000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 01:04:33",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253630000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253640000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 01:05:18",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253640000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00IGS_R_20253650000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 01:05:24",
+  "src": "ftp://gssc.esa.int/gnss/data/daily/2025/brdc/BRDC00IGS_R_20253650000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00WRD_R_20252680000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 09:02:00",
+  "src": "ftp://igs.gnsswhu.cn/pub/gps/data/daily/2025/brdc/BRDC00WRD_R_20252680000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/BRDC00WRD_R_20252690000_01D_MN.rnx.gz": {
+  "status": "ok",
+  "time": "2026-11-25 09:02:00",
+  "src": "ftp://igs.gnsswhu.cn/pub/gps/data/daily/2025/brdc/BRDC00WRD_R_20252690000_01D_MN.rnx.gz"
+ },
+ "rinex/nav/2025/brdc2680.25n.gz": {
+  "status": "ok",
+  "time": "2026-11-25 11:06:41",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=315429"
+ },
+ "rinex/nav/2025/brdc2690.25n.gz": {
+  "status": "ok",
+  "time": "2026-11-25 11:06:41",
+  "src": "http://www.igs.gnsswhu.cn/index.php/igs/download?year=2025&id=316647"
  }
 }

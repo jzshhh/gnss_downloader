@@ -81,11 +81,19 @@ GNSS 数据下载器 使用说明（中文版）
   部分选中时显示 ▣。
 - 系列：最终（final，延迟约2周）、快速（rapid）、超快速（ultra，每天
   00/06/12/18 四个时点）。超快速钟差含在轨道文件中，故只提供轨道+ERP。
+- 产品树只列各机构实际发布的产品类型（按最新周目录实测收敛）：
+  轨道 SP3、钟差 CLK、ERP，部分机构另有 BIA 偏差。SINEX 坐标（SNX）
+  基线解算用不到，已从默认产品树移除。
 - MGEX 系列（树中标注"MGEX 2014起·含北斗"）：含北斗/Galileo/QZSS，
   2014 年起才有。2022-11（GPS 周 2238）前的产品为短命名，软件自动适配。
-- 电离层 IONEX 挂在各存储库下（codg/igsg/whug/esag/jplg）。
+  目前独立 MGEX 目录仅 WUM 一家（CODE/GFZ 的 MGEX 产品已并入 prod 周目录）。
+- 电离层 IONEX 挂在有此目录的存储库下（codg/igsg/whug/esag/jplg）；
+  SOPAC 无 IONEX 目录，故其节点不显示。
 - 产品机构按 IGS ACC 官方名单（EMR/WHU/GOP/GRG/ESA/GFZ/JGX/CODE/JPL/
   MIT/NGS/SIO/USNO）加 IGS 组合产品。
+- 各存储库路径已实测校准：CDDIS/ESA/SOPAC/IGN 的 MGEX 产品并入 prod 周目录；
+  ESA 观测在日目录（无 25d/ 子目录）；IGN 广播星历在日目录；
+  SOPAC 广播星历在日目录（/pub/rinex/YYYY/DDD/）。
 - CODE 专属产品（GIM 电离层、Bernese ION/BIA、月度 DCB）作为独立顶层节点，
   不依赖任何全球数据中心；下载地址为 aiub.unibe.ch/download/CODE/年/。
 - CODE 数据中心下另有 CODE final / CODE MGEX final 标准产品，直接读

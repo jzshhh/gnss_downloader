@@ -30,7 +30,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2008-07-15/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "ABMF00GLP0": {
                 "GPS": "1019,1074",
@@ -101,7 +101,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2007-11-16/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "ABPO00MDG0": {
                 "GPS": "1076"
@@ -162,7 +162,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2007-06-15/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "AC2300USA0": {
                 "GPS": "1019,1077",
@@ -205,7 +205,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2006-06-30/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "AC2400USA0": {
                 "GPS": "1019,1077",
@@ -258,7 +258,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2022-09-30/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "ACRG00GHA0": {
                 "GPS": "1019,1077",
@@ -319,7 +319,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2006-08-19/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "ACSO00USA0": {
                 "GPS": "1019,1077",
@@ -435,7 +435,7 @@
             "InputFrequency": "",
             "EffectiveDates": "CCYY-MM-DD/CCYY-MM-DD"
         },
-        "LastData": "2026-11-15",
+        "LastData": "2026-11-22",
         "RealTime": {
             "ADIS00ETH1": {
                 "GPS": "1004",
@@ -557,7 +557,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2004-11-19/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "AIRA00JPN0": {
                 "GPS": "1019,1077",
@@ -689,7 +689,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1998-03-06/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "ALAC00ESP0": {
                 "GPS": "1019,1077",
@@ -739,7 +739,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2019-01-16/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "ALBH00CAN0": {
                 "GPS": "1019,1077",
@@ -843,7 +843,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2022-09-20/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "RealTime": {
             "ALGO00CAN0": {
                 "GPS": "1019,1077",
@@ -912,7 +912,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1994-05-15/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "ALIC00AUS0": {
                 "GPS": "1019,1077",
@@ -1182,7 +1182,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2019-06-28/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17"
+        "LastData": "2026-11-22"
     },
     "ANKR00TUR": {
         "CountryOrRegion": "Turkey",
@@ -1291,7 +1291,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2002-01-01/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-20",
         "RealTime": {
             "ANTC00CHL0": {
                 "GPS": "1004,1074,1075,1076,1077",
@@ -1347,7 +1347,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2022-07-22/CCYY-MM-DD"
         },
-        "LastData": "2026-11-15",
+        "LastData": "2026-11-21",
         "RealTime": {
             "ANTF00CHL0": {
                 "GPS": "1019,1077",
@@ -1460,7 +1460,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2014-10-17/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "AREG00PER0": {
                 "GPS": "1019,1077",
@@ -1525,7 +1525,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2009-07-10/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "cod": "2026-09-20",
@@ -1627,7 +1627,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2017-12-05/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "ARHT00ATA0": {
                 "GPS": "1076"
@@ -1719,7 +1719,7 @@
             "InputFrequency": "",
             "EffectiveDates": "CCYY-MM-DD/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "cod": "2026-09-20"
@@ -1812,7 +1812,7 @@
             "InputFrequency": "",
             "EffectiveDates": "CCYY-MM-DD/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17"
+        "LastData": "2026-11-21"
     },
     "ASC100SHN": {
         "CountryOrRegion": "SHN",
@@ -1878,7 +1878,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2015-07-24/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "ASCG00SHN0": {
                 "GPS": "1019,1077",
@@ -1951,7 +1951,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2001-08-12/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "sio": "2026-09-13",
@@ -2043,7 +2043,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1995-09-18/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "AUCK00NZL0": {
                 "GPS": "1019,1074",
@@ -2186,7 +2186,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2010-03-15/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "esa": "2025-01-19",
@@ -2283,7 +2283,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2001-11-04/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "BAIE00CAN0": {
                 "GPS": "1019,1077",
@@ -2343,7 +2343,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2001-11-30/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "BAKE00CAN0": {
                 "GPS": "1019,1077",
@@ -2474,7 +2474,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2005-08-30/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-18",
         "Product": {
             "Final": {
                 "mit": "2026-09-20",
@@ -2588,7 +2588,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1998-10-02/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "mit": "2026-09-20",
@@ -2643,7 +2643,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2018-09-20/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "BAUT00DEU0": {
                 "GPS": "1019,1077",
@@ -2725,7 +2725,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2003-11-19/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "BELE00BRA0": {
                 "GPS": "1004,1019",
@@ -2776,7 +2776,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2023-08-30/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "jgx": "2026-09-26"
@@ -2979,7 +2979,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2014-03-27/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "BIK000KGZ0": {
                 "GPS": "1019,1077",
@@ -3071,7 +3071,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1997-11-18/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "BILL00USA0": {
                 "GPS": "1019,1077",
@@ -3155,7 +3155,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2015-11-26/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "esa": "2025-01-19",
@@ -3239,7 +3239,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1994-01-13/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "BLYT00USA0": {
                 "GPS": "1019,1077",
@@ -3376,7 +3376,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2007-05-31/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "RealTime": {
             "BOAV00BRA0": {
                 "GPS": "1019,1077",
@@ -3431,7 +3431,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2009-07-03/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-22",
         "RealTime": {
             "BOGI00POL0": {
                 "GPS": "1004,1019",
@@ -3484,7 +3484,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2002-02-14/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "BOGT00COL0": {
                 "GPS": "1076"
@@ -3552,7 +3552,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2016-10-05/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "BOR100POL0": {
                 "GPS": ""
@@ -3657,7 +3657,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1995-03-03/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "RealTime": {
             "BRAZ00BRA0": {
                 "GPS": "1019,1077",
@@ -3723,7 +3723,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2018-06-07/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-20",
         "RealTime": {
             "BREW00USA0": {
                 "GPS": "1076"
@@ -3785,7 +3785,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2011-02-07/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "esa": "2025-01-19",
@@ -3846,7 +3846,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2020-03-05/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "BRMG00DEU0": {
                 "GPS": "1019,1077",
@@ -3937,7 +3937,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1998-10-31/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "BRST00FRA0": {
                 "GPS": "1019,1077",
@@ -4086,7 +4086,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2023-01-23/2023-01-23"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "BRUX00BEL0": {
                 "GPS": "1019,1077",
@@ -4159,7 +4159,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2009-07-20/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "BSHM00ISR0": {
                 "GPS": "1076"
@@ -4266,7 +4266,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1999-02-11/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "BUCU00ROU0": {
                 "GPS": "1019,1075",
@@ -4401,7 +4401,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2017-10-27/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-22",
         "RealTime": {
             "BZR200ITA0": {
                 "GPS": "1019,1075",
@@ -4483,7 +4483,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2000-12-05/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "CACE00ESP0": {
                 "GPS": "1019,1077",
@@ -4568,7 +4568,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2000-02-02/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "ngs": "2026-09-20",
@@ -4644,7 +4644,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2000-03-11/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "CANT00ESP0": {
                 "GPS": "1019,1075",
@@ -4718,7 +4718,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "1998-01-09/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "CAS100ATA0": {
                 "GPS": "1019,1077",
@@ -4820,7 +4820,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1999-09-28/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "CASC00PRT0": {
                 "GPS": "1075",
@@ -4903,7 +4903,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2017-09-01/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "CCJ200JPN0": {
                 "GPS": "1019,1077",
@@ -5007,7 +5007,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2012-12-21/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "CEBR00ESP0": {
                 "GPS": "1019,1077"
@@ -5066,7 +5066,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2020-01-15/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "CEDU00AUS0": {
                 "GPS": "1019,1077",
@@ -5206,7 +5206,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2015-09-14/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "cod": "2026-09-20",
@@ -5392,7 +5392,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2013-03-27/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "CHPG00BRA0": {
                 "GPS": "1019,1077",
@@ -5452,7 +5452,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2001-04-17/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "CHPI00BRA0": {
                 "GPS": "1076"
@@ -5522,7 +5522,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2007-12-10/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "CHTI00NZL0": {
                 "GPS": "1019,1074",
@@ -5626,7 +5626,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1997-10-07/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "sio": "2026-09-13",
@@ -5680,7 +5680,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2020-11-26/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "CHUR00CAN0": {
                 "GPS": "1019,1077",
@@ -5753,7 +5753,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1998-11-17/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "ngs": "2024-03-03",
@@ -5800,7 +5800,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2015-10-10/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "CIBG00IDN0": {
                 "GPS": "1019,1077",
@@ -5929,7 +5929,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1994-09-01/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "RealTime": {
             "CIT100USA0": {
                 "GPS": "1019,1077",
@@ -5978,7 +5978,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2002-02-20/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "CKIS00COK0": {
                 "GPS": "1019,1077",
@@ -6049,7 +6049,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2007-01-26/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-17",
         "Product": {
             "Final": {
                 "esa": "2025-01-19",
@@ -6179,7 +6179,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1995-06-22/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "CMP900USA0": {
                 "GPS": "1019,1077",
@@ -6337,7 +6337,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2009-04-16/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "COCO00AUS0": {
                 "GPS": "1019,1077",
@@ -6509,7 +6509,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1999-07-27/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "CORD00ARG0": {
                 "GPS": "1076"
@@ -6575,7 +6575,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1995-08-16/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "RealTime": {
             "COSO00USA0": {
                 "GPS": "1019,1077",
@@ -6624,7 +6624,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2008-01-29/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "jpl": "2023-11-19",
@@ -6668,7 +6668,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1999-01-01/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "sio": "2026-09-13",
@@ -6745,7 +6745,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2013-10-22/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "CPVG00CPV0": {
                 "GPS": "1019,1077",
@@ -6848,7 +6848,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1994-06-15/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "RealTime": {
             "CRFP00USA0": {
                 "GPS": "1019,1077",
@@ -6897,7 +6897,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2021-03-12/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "CRO100VIR0": {
                 "GPS": "1076"
@@ -7011,7 +7011,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1997-06-18/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-22",
         "RealTime": {
             "CUIB00BRA0": {
                 "GPS": "1019,1077",
@@ -7067,7 +7067,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2008-05-12/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "CUSV00THA0": {
                 "GPS": "1076"
@@ -7228,7 +7228,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2019-10-23/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "CYNE00GUF0": {
                 "GPS": "1019,1074",
@@ -7286,7 +7286,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2014-03-14/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "CZTG00ATF0": {
                 "GPS": "1019,1077",
@@ -7352,7 +7352,7 @@
             "InputFrequency": "",
             "EffectiveDates": "CCYY-MM-DD/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "mit": "2024-12-29"
@@ -7628,7 +7628,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2008-02-26/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "DARW00AUS0": {
                 "GPS": "1019,1077",
@@ -7699,7 +7699,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2009-01-07/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "DAV100ATA0": {
                 "GPS": "1019,1077",
@@ -7810,7 +7810,7 @@
             "InputFrequency": "",
             "EffectiveDates": "CCYY-MM-DD/CCYY-MM-DD"
         },
-        "LastData": "2026-11-14",
+        "LastData": "2026-11-20",
         "Product": {
             "Final": {
                 "mit": "2026-09-20"
@@ -7848,7 +7848,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1996-04-20/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "DGAR00GBR0": {
                 "GPS": "1076"
@@ -7955,7 +7955,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1996-04-24/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "ngs": "2026-09-20",
@@ -7997,7 +7997,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2013-12-11/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "DJIG00DJI0": {
                 "GPS": "1019,1077",
@@ -8071,7 +8071,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2011-06-22/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "DLF100NLD0": {
                 "GPS": "1019,1077",
@@ -8198,7 +8198,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2000-02-07/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "emr": "2024-06-30",
@@ -8247,7 +8247,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2019-05-31/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "DRAO00CAN0": {
                 "GPS": "1019,1077",
@@ -8318,7 +8318,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2023-05-01/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "jgx": "2026-09-26"
@@ -8395,7 +8395,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2013-08-04/CCYY-MM-DD"
         },
-        "LastData": "2026-10-29",
+        "LastData": "2026-11-22",
         "RealTime": {
             "DUBI00ARE0": {
                 "GPS": "1073",
@@ -8446,7 +8446,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2014-03-26/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "DUBO00CAN0": {
                 "GPS": "1019,1077",
@@ -8581,7 +8581,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2017-01-17/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-22",
         "RealTime": {
             "DUMG00ATA0": {
                 "GPS": "1019,1077",
@@ -8641,7 +8641,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2005-08-24/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "DUND00NZL0": {
                 "GPS": "1019,1074",
@@ -8736,7 +8736,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2011-05-12/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-18",
         "RealTime": {
             "DYNG00GRC0": {
                 "GPS": "1019,1077",
@@ -8837,7 +8837,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1994-05-23/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "EBRE00ESP0": {
                 "GPS": "1075",
@@ -8967,7 +8967,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2015-06-15/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16"
+        "LastData": "2026-11-21"
     },
     "EIL400USA": {
         "CountryOrRegion": "USA",
@@ -9000,7 +9000,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2015-06-15/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "ngs": "2026-09-20"
@@ -9074,7 +9074,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2019-07-23/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "ENAO00PRT0": {
                 "GPS": "1019,1077",
@@ -9132,7 +9132,7 @@
             "InputFrequency": "",
             "EffectiveDates": "CCYY-MM-DD/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16"
+        "LastData": "2026-11-22"
     },
     "EPRT00USA": {
         "CountryOrRegion": "USA",
@@ -9198,7 +9198,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2004-12-09/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "ngs": "2026-09-20",
@@ -9273,7 +9273,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2014-08-11/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "EUR200CAN0": {}
         },
@@ -9462,7 +9462,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2005-12-20/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "FAIR00USA0": {
                 "GPS": "1076"
@@ -9565,7 +9565,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2008-07-21/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "FALK00FLK0": {
                 "GPS": "1076"
@@ -9634,7 +9634,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2002-02-18/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "FFMJ00DEU0": {
                 "GPS": "1019,1077",
@@ -9687,7 +9687,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1996-06-05/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "FLIN00CAN0": {
                 "GPS": "1019,1077",
@@ -9755,7 +9755,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2008-04-09/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-22",
         "RealTime": {
             "FLRS00PRT0": {
                 "GPS": "1075",
@@ -9851,7 +9851,7 @@
             "InputFrequency": "",
             "EffectiveDates": "CCYY-MM-DD/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16"
+        "LastData": "2026-11-22"
     },
     "FRDN00CAN": {
         "CountryOrRegion": "CAN",
@@ -9884,7 +9884,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2009-11-29/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "FRDN00CAN0": {
                 "GPS": "1019,1077",
@@ -9975,7 +9975,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2012-05-20/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "FTNA00WLF0": {
                 "GPS": "1019,1077",
@@ -10136,7 +10136,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2011-08-04/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "GAMB00PYF0": {
                 "GPS": "1019,1077",
@@ -10203,7 +10203,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2016-07-12/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "GAMG00KOR0": {
                 "GPS": "1019,1077",
@@ -10263,7 +10263,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2002-09-04/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "GANP00SVK0": {
                 "GPS": "1019,1075",
@@ -10330,7 +10330,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2016-08-26/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "jgx": "2026-09-26",
@@ -10384,7 +10384,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2024-01-18/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Rapid": {
                 "sio": "2026-05-10"
@@ -10422,7 +10422,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1998-07-23/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "GENO00ITA0": {
                 "GPS": "1019,1077",
@@ -10480,7 +10480,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2003-01-06/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "GLPS00ECU0": {
                 "GPS": "1076"
@@ -10550,7 +10550,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2008-11-04/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "esa": "2024-11-24",
@@ -10644,7 +10644,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2013-04-01/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "RealTime": {
             "GMSD00JPN0": {
                 "GPS": "1019,1077",
@@ -10711,7 +10711,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2026-07-27/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "GODE00USA0": {
                 "GPS": "1076"
@@ -10779,7 +10779,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2026-07-29/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "mit": "2026-09-20",
@@ -10835,7 +10835,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2026-07-29/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "mit": "2026-09-20",
@@ -10938,7 +10938,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "CCYY-MM-DD/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "sio": "2026-09-13",
@@ -10989,7 +10989,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "CCYY-MM-DD/1999-08-18"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "GOLD00USA0": {
                 "GPS": "1076"
@@ -11056,7 +11056,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2026-08-27/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "GOP600CZE0": {
                 "GPS": "1019,1077",
@@ -11110,7 +11110,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2026-08-27/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "gfz": "2026-09-20"
@@ -11151,7 +11151,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2026-08-27/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "GOPE00CZE0": {
                 "GPS": "1019,1074",
@@ -11243,7 +11243,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2000-04-01/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "GRAC00FRA0": {
                 "GPS": "1019,1077",
@@ -11296,7 +11296,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2021-10-06/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "GRAS00FRA0": {
                 "GPS": "1019,1077",
@@ -11426,7 +11426,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2026-05-11/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17"
+        "LastData": "2026-11-22"
     },
     "GUAM00GUM": {
         "CountryOrRegion": "GUM",
@@ -11459,7 +11459,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1995-01-20/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "GUAM00GUM0": {
                 "GPS": "1076"
@@ -11625,7 +11625,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2003-08-27/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "mit": "2026-09-20",
@@ -11677,7 +11677,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2023-09-28/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "GVDG00GRC0": {
                 "GPS": "1019,1077",
@@ -11732,7 +11732,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2015-02-11/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "HAL100USA0": {
                 "GPS": "1076"
@@ -11853,7 +11853,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2013-10-28/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "HARB00ZAF0": {
                 "GPS": "1019,1077",
@@ -12093,7 +12093,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2022-02-03/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "HERS00GBR0": {
                 "GPS": "1019,1077",
@@ -12168,7 +12168,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2003-03-12/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "HERT00GBR0": {
                 "GPS": "1004,1019",
@@ -12294,7 +12294,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2000-10-07/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-22",
         "RealTime": {
             "HKSL00HKG0": {
                 "GPS": "1019,1075",
@@ -12351,7 +12351,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2004-07-01/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-22",
         "RealTime": {
             "HKWS00HKG0": {
                 "GPS": "1019,1075",
@@ -12404,7 +12404,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2015-03-02/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "HLFX00CAN0": {
                 "GPS": "1019,1077",
@@ -12574,7 +12574,7 @@
             "InputFrequency": "",
             "EffectiveDates": "CCYY-MM-DD/CCYY-MM-DD"
         },
-        "LastData": "2026-11-14",
+        "LastData": "2026-11-20",
         "Product": {
             "Final": {
                 "jpl": "2026-05-17",
@@ -12655,7 +12655,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2023-03-27/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "HOB200AUS0": {
                 "GPS": "1019,1077",
@@ -12732,7 +12732,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1997-05-27/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "HOFN00ISL0": {
                 "GPS": "1019,1075",
@@ -12806,7 +12806,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2001-03-21/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "sio": "2026-09-13",
@@ -12895,7 +12895,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2001-08-28/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "ngs": "2026-09-20",
@@ -12944,7 +12944,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1995-04-05/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "HOLP00USA0": {
                 "GPS": "1019,1077",
@@ -13045,7 +13045,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2021-07-03/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "HRAO00ZAF0": {
                 "GPS": "1076"
@@ -13229,7 +13229,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2023-06-10/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "gfz": "2026-09-20"
@@ -13267,7 +13267,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1995-08-20/CCYY-MM-DD"
         },
-        "LastData": "2026-11-14",
+        "LastData": "2026-11-18",
         "Product": {
             "Final": {
                 "grg": "2026-09-20",
@@ -13358,7 +13358,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2018-04-10/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-22",
         "RealTime": {
             "IENG00ITA0": {
                 "GPS": "1019,1077",
@@ -13454,7 +13454,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1995-10-01/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "IISC00IND0": {
                 "GPS": "1076"
@@ -13528,7 +13528,7 @@
             "InputFrequency": "",
             "EffectiveDates": "CCYY-MM-DD/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "IITK00IND0": {
                 "GPS": "1019,1077",
@@ -13585,7 +13585,7 @@
             "InputFrequency": "",
             "EffectiveDates": "CCYY-MM-DD/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-22",
         "RealTime": {
             "IMPZ00BRA0": {
                 "GPS": "1019,1077",
@@ -13637,7 +13637,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1993-02-19/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "jgx": "2026-09-26",
@@ -13689,7 +13689,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2001-07-22/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "cod": "2026-09-20",
@@ -13746,7 +13746,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2013-08-19/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "IQAL00CAN0": {
                 "GPS": "1019,1077",
@@ -13815,7 +13815,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2002-01-01/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "RealTime": {
             "IQQE00CHL0": {
                 "GPS": "1004",
@@ -13866,7 +13866,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2024-01-16/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "mit": "2026-09-20",
@@ -14040,7 +14040,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2017-06-05/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "RealTime": {
             "ISHI00JPN0": {
                 "GPS": "1019,1077",
@@ -14097,7 +14097,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2004-02-13/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "cod": "2026-09-20",
@@ -14221,7 +14221,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2008-08-10/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "jgx": "2024-03-13"
@@ -14376,7 +14376,7 @@
             "InputFrequency": "",
             "EffectiveDates": "CCYY-MM-DD/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "mit": "2024-12-15",
@@ -14530,7 +14530,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2004-12-08/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "JOG200IDN0": {
                 "GPS": "1019,1077",
@@ -14598,7 +14598,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2008-03-14/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-22",
         "RealTime": {
             "JOZ200POL0": {
                 "GPS": "1019,1074",
@@ -14662,7 +14662,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2005-07-01/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "ngs": "2026-09-20",
@@ -14715,7 +14715,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2018-11-30/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "JPLM00USA0": {
                 "GPS": "1076"
@@ -14818,7 +14818,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1994-07-14/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "KARR00AUS0": {
                 "GPS": "1019,1077",
@@ -14889,7 +14889,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2019-01-11/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "KAT100AUS0": {
                 "GPS": "1019,1077",
@@ -14958,7 +14958,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1995-07-23/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "gfz": "2026-09-20",
@@ -15004,7 +15004,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2011-01-24/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "KERG00ATF0": {
                 "GPS": "1019,1077",
@@ -15206,7 +15206,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2003-08-19/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "KIR000SWE0": {
                 "GPS": "1019,1075",
@@ -15272,7 +15272,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2018-08-02/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "KIR800SWE0": {
                 "GPS": "1019,1075",
@@ -15328,7 +15328,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2002-08-03/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "KIRI00KIR0": {
                 "GPS": "1019,1077",
@@ -15400,7 +15400,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2013-02-19/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "KIRU00SWE0": {
                 "GPS": "1019,1077"
@@ -15470,7 +15470,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1994-10-14/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "KIT300UZB0": {
                 "GPS": "1019,1077",
@@ -15544,7 +15544,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2016-06-18/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "KITG00UZB0": {
                 "GPS": "1019,1077",
@@ -15607,7 +15607,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2014-06-02/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "jgx": "2026-09-26"
@@ -15655,7 +15655,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1996-01-01/CCYY-MM-DD"
         },
-        "LastData": "2026-11-15",
+        "LastData": "2026-11-17",
         "Product": {
             "Final": {
                 "esa": "2024-12-08",
@@ -15869,7 +15869,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2013-06-27/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "KOS100NLD0": {
                 "GPS": "1019,1077",
@@ -16020,7 +16020,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1996-04-22/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-22",
         "RealTime": {
             "KOUC00NCL0": {
                 "GPS": "1019,1074",
@@ -16080,7 +16080,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2015-08-04/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "KOUG00GUF0": {
                 "GPS": "1019,1077",
@@ -16149,7 +16149,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2012-11-20/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "KOUR00GUF0": {
                 "GPS": "1019,1077"
@@ -16255,7 +16255,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2012-03-27/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "KRGG00ATF0": {
                 "GPS": "1019,1077",
@@ -16326,7 +16326,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2008-09-27/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "esa": "2024-01-07",
@@ -16441,7 +16441,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2006-06-28/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "KSU100USA0": {
                 "GPS": "1019,1077",
@@ -16493,7 +16493,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2019-06-14/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "RealTime": {
             "KUJ200CAN0": {
                 "GPS": "1019,1077",
@@ -16632,7 +16632,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2012-02-24/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "RealTime": {
             "KZN200RUS0": {
                 "GPS": "1019,1074",
@@ -16681,7 +16681,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1997-07-28/CCYY-MM-DD"
         },
-        "LastData": "2026-11-14",
+        "LastData": "2026-11-19",
         "Product": {
             "Final": {
                 "cod": "2023-10-08",
@@ -16725,7 +16725,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2001-07-24/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "LAMA00POL0": {
                 "GPS": "1004,1019",
@@ -16786,7 +16786,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2001-11-23/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "LAUT00FJI0": {
                 "GPS": "1019,1077",
@@ -16858,7 +16858,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1994-07-25/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "LBCH00USA0": {
                 "GPS": "1019,1077",
@@ -16990,7 +16990,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2018-06-28/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "ngs": "2026-09-20",
@@ -17109,7 +17109,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1997-03-21/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "LEIJ00DEU0": {
                 "GPS": "1019,1077",
@@ -17297,7 +17297,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2020-01-08/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "LICC00GBR0": {
                 "GPS": "1074",
@@ -17409,7 +17409,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2008-07-11/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "LMMF00MTQ0": {
                 "GPS": "1019,1077",
@@ -17521,7 +17521,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2001-05-17/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "LPAL00ESP0": {
                 "GPS": "1019,1077",
@@ -17588,7 +17588,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2012-03-15/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "LPGS00ARG0": {
                 "GPS": "1019,1077",
@@ -17665,7 +17665,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2001-11-23/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "cod": "2026-09-20",
@@ -17723,7 +17723,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2012-04-13/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "M0SE00ITA0": {
                 "GPS": "1019,1077",
@@ -17906,7 +17906,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2014-01-29/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "MADR00ESP0": {
                 "GPS": "1076"
@@ -18001,7 +18001,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2007-05-22/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "RealTime": {
             "MAJU00MHL0": {
                 "GPS": "1019,1077",
@@ -18064,7 +18064,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2008-07-10/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "MAL200KEN0": {
                 "GPS": "1019,1077"
@@ -18204,7 +18204,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2000-05-12/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "MALL00ESP0": {
                 "GPS": "1019,1077",
@@ -18358,7 +18358,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2018-02-09/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "MAR600SWE0": {
                 "GPS": "1019,1075",
@@ -18425,7 +18425,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2018-02-09/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "MAR700SWE0": {
                 "GPS": "1019,1075",
@@ -18482,7 +18482,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1998-07-16/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "MARS00FRA0": {
                 "GPS": "1019,1077",
@@ -18544,7 +18544,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2012-09-27/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "MAS100ESP0": {
                 "GPS": "1019,1077"
@@ -18650,7 +18650,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2013-12-03/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "MAT100ITA0": {
                 "GPS": "1019,1077",
@@ -18712,7 +18712,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2025-05-14/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "MATE00ITA0": {
                 "GPS": "1019,1077",
@@ -18786,7 +18786,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2012-01-30/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "MATG00ITA0": {
                 "GPS": "1019,1077",
@@ -18874,7 +18874,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1999-01-01/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-20",
         "Product": {
             "Final": {
                 "emr": "2024-01-14",
@@ -18924,7 +18924,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2026-04-25/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17"
+        "LastData": "2026-11-21"
     },
     "MAW100ATA": {
         "CountryOrRegion": "ATA",
@@ -18957,7 +18957,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1994-01-01/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "MAW100ATA0": {
                 "GPS": "1019,1077",
@@ -19174,7 +19174,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2014-04-09/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "RealTime": {
             "MCHL00AUS0": {
                 "GPS": "1019,1077",
@@ -19289,7 +19289,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2009-07-30/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "cod": "2026-09-20",
@@ -19351,7 +19351,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2017-03-23/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "MDO100USA0": {
                 "GPS": "1076"
@@ -19504,7 +19504,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2016-09-19/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "MEDI00ITA0": {
                 "GPS": "1004,1019",
@@ -19564,7 +19564,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2011-12-14/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "MELI00ESP0": {
                 "GPS": "1019,1075",
@@ -19624,7 +19624,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2000-09-12/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "jgx": "2025-02-01",
@@ -19676,7 +19676,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2013-08-27/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "MET300FIN0": {
                 "GPS": "1019,1077",
@@ -19735,7 +19735,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2012-07-03/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "METG00FIN0": {
                 "GPS": "1019,1077",
@@ -19877,7 +19877,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2008-01-29/CCYY-MM-DD"
         },
-        "LastData": "2026-11-14",
+        "LastData": "2026-11-20",
         "Product": {
             "Final": {
                 "mit": "2025-02-16"
@@ -19918,7 +19918,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2013-10-28/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "MGUE00ARG0": {
                 "GPS": "1019,1077"
@@ -19980,7 +19980,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2001-06-10/CCYY-MM-DD"
         },
-        "LastData": "2026-11-15",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "sio": "2026-09-13",
@@ -20036,7 +20036,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2016-02-11/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "MIZU00JPN0": {
                 "GPS": "1019,1077",
@@ -20110,7 +20110,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2021-11-06/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "MKEA00USA0": {
                 "GPS": "1076"
@@ -20280,7 +20280,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2002-10-29/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "MOBS00AUS0": {
                 "GPS": "1019,1077",
@@ -20386,7 +20386,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2008-11-15/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "MOIU00KEN0": {
                 "GPS": "1076"
@@ -20439,7 +20439,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1994-03-31/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "ngs": "2026-09-20",
@@ -20487,7 +20487,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1996-10-31/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "sio": "2026-09-13",
@@ -20535,7 +20535,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1999-09-27/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "MQZG00NZL0": {
                 "GPS": "1019,1074",
@@ -20630,7 +20630,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2019-06-20/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "esa": "2024-04-07",
@@ -20673,7 +20673,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2019-11-22/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "ngs": "2026-09-20",
@@ -20715,7 +20715,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2017-01-25/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "mit": "2026-09-20"
@@ -20753,7 +20753,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2013-10-23/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "RealTime": {
             "MRO100AUS0": {
                 "GPS": "1019,1077",
@@ -20817,7 +20817,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2021-12-09/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-22",
         "RealTime": {
             "MSGR00BRA0": {
                 "GPS": "1019,1077",
@@ -20899,7 +20899,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2020-07-02/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "RealTime": {
             "MSSA00JPN0": {
                 "GPS": "1019,1077",
@@ -20993,7 +20993,7 @@
             "InputFrequency": "",
             "EffectiveDates": "CCYY-MM-DD/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "sio": "2026-08-16",
@@ -21122,7 +21122,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2019-12-12/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "NABG00NOR0": {
                 "GPS": "1019,1077",
@@ -21175,7 +21175,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2002-12-18/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "RealTime": {
             "NAIN00CAN0": {}
         },
@@ -21262,7 +21262,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2003-01-09/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "ngs": "2024-03-03",
@@ -21326,7 +21326,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2003-07-01/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "NAUR00NRU0": {
                 "GPS": "1019,1077",
@@ -21391,7 +21391,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2005-10-25/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-22",
         "RealTime": {
             "NAUS00BRA0": {
                 "GPS": "1019,1077",
@@ -21477,7 +21477,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2014-05-12/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "esa": "2024-10-20",
@@ -21516,7 +21516,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1997-05-14/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "NICO00CYP0": {
                 "GPS": "1019,1075",
@@ -21591,7 +21591,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2006-05-10/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "jgx": "2026-09-26",
@@ -21685,7 +21685,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2005-09-15/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "NIUM00NIU0": {
                 "GPS": "1019,1077",
@@ -21757,7 +21757,7 @@
             "InputFrequency": "",
             "EffectiveDates": "CCYY-MM-DD/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "gfz": "2026-09-20"
@@ -21798,7 +21798,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2010-05-05/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "NKLG00GAB0": {
                 "GPS": "1019,1077",
@@ -21877,7 +21877,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "1993-03-05/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "NLIB00USA0": {
                 "GPS": "1076"
@@ -21946,7 +21946,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2012-10-02/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "NNOR00AUS0": {
                 "GPS": "1019,1077"
@@ -22015,7 +22015,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2025-03-28/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "NOT100ITA0": {
                 "GPS": "1019,1077",
@@ -22186,7 +22186,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2001-07-24/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "ngs": "2023-09-10",
@@ -22266,7 +22266,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2008-01-22/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "RealTime": {
             "NRC100CAN0": {
                 "GPS": "1019,1077",
@@ -22439,7 +22439,7 @@
             "InputFrequency": "",
             "EffectiveDates": "CCYY-MM-DD/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-22",
         "RealTime": {
             "NRMD00NCL0": {
                 "GPS": "1019,1074",
@@ -22506,7 +22506,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2012-09-13/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "NRMG00NCL0": {
                 "GPS": "1019,1077",
@@ -22601,7 +22601,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1997-06-26/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "NTUS00SGP0": {
                 "GPS": "1019,1075",
@@ -22706,7 +22706,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2000-06-30/CCYY-MM-DD"
         },
-        "LastData": "2026-11-15",
+        "LastData": "2026-11-19",
         "Product": {
             "Final": {
                 "grg": "2026-09-13",
@@ -22759,7 +22759,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2021-09-24/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "jpl": "2026-05-31",
@@ -22816,7 +22816,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2013-06-19/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "NYA200NOR0": {
                 "GPS": "1019,1077",
@@ -22884,7 +22884,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2021-09-24/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "emr": "2026-09-13",
@@ -22937,7 +22937,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2012-02-20/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-22",
         "RealTime": {
             "OAFA00ARG0": {
                 "GPS": "1019,1077",
@@ -22989,7 +22989,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2018-07-17/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "jpl": "2024-07-28"
@@ -23027,7 +23027,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2019-09-05/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "ngs": "2026-09-20"
@@ -23167,7 +23167,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2012-09-28/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "OBE400DEU0": {
                 "GPS": "1019,1077",
@@ -23290,7 +23290,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2020-04-23/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "esa": "2023-07-02",
@@ -23487,7 +23487,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2013-05-29/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "ONS100SWE0": {
                 "GPS": "1019,1075",
@@ -23545,7 +23545,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2019-04-02/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "ONSA00SWE0": {
                 "GPS": "1019,1075",
@@ -23614,7 +23614,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2022-11-27/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16"
+        "LastData": "2026-11-21"
     },
     "OPMT00FRA": {
         "CountryOrRegion": "FRA",
@@ -23694,7 +23694,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2000-07-20/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "ORID00MKD0": {
                 "GPS": "1019,1075",
@@ -23886,7 +23886,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2019-08-06/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16"
+        "LastData": "2026-11-21"
     },
     "OSN400KOR": {
         "CountryOrRegion": "KOR",
@@ -23919,7 +23919,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2021-01-08/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "ngs": "2026-09-20"
@@ -23960,7 +23960,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2006-06-19/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "OUS200NZL0": {
                 "GPS": "1019,1077",
@@ -24038,7 +24038,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2016-03-01/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "OWMG00NZL0": {
                 "GPS": "1019,1077",
@@ -24135,7 +24135,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2006-02-13/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "P04300USA0": {
                 "GPS": "1019,1077",
@@ -24187,7 +24187,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2005-10-11/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "P05100USA0": {
                 "GPS": "1019,1077",
@@ -24240,7 +24240,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2007-04-18/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "P05300USA0": {
                 "GPS": "1019,1077",
@@ -24290,7 +24290,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2007-10-27/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "RealTime": {
             "P38900USA0": {
                 "GPS": "1019,1077",
@@ -24341,7 +24341,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2008-04-21/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "P77900USA0": {
                 "GPS": "1019,1077",
@@ -24392,7 +24392,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2012-10-19/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "P80200USA0": {
                 "GPS": "1019,1077",
@@ -24442,7 +24442,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2025-04-30/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17"
+        "LastData": "2026-11-22"
     },
     "PADO00ITA": {
         "CountryOrRegion": "ITA",
@@ -24531,7 +24531,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1997-04-23/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "PALM00ATA0": {
                 "GPS": "1076"
@@ -24661,7 +24661,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1999-01-01/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "sio": "2026-09-13",
@@ -24711,7 +24711,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2022-07-19/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "PARK00AUS0": {
                 "GPS": "1019,1077",
@@ -24809,7 +24809,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2021-02-01/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "jgx": "2025-12-07"
@@ -24888,7 +24888,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2000-01-16/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-22",
         "RealTime": {
             "PDEL00PRT0": {
                 "GPS": "1075",
@@ -24987,7 +24987,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2003-05-22/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "PENC00HUN0": {
                 "GPS": "1004,1019",
@@ -25044,7 +25044,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2012-10-23/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "PERT00AUS0": {
                 "GPS": "1019,1077",
@@ -25215,7 +25215,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2010-01-10/CCYY-MM-DD"
         },
-        "LastData": "2026-11-03",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "esa": "2025-01-05",
@@ -25263,7 +25263,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2001-12-11/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "RealTime": {
             "PICL00CAN0": {
                 "GPS": "1019,1077",
@@ -25327,7 +25327,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2025-08-20/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "PIE100USA0": {
                 "GPS": "1076"
@@ -25401,7 +25401,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1998-07-01/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "PIMO00PHL0": {
                 "GPS": "1076"
@@ -25470,7 +25470,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1990-01-09/CCYY-MM-DD"
         },
-        "LastData": "2026-11-15",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "sio": "2026-09-13",
@@ -25554,7 +25554,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2023-06-10/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "PIUR00PER0": {}
         },
@@ -25596,7 +25596,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2003-05-06/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "RealTime": {
             "PNGM00PNG0": {
                 "GPS": "1019,1077",
@@ -25654,7 +25654,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1998-10-28/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-22",
         "RealTime": {
             "POAL00BRA0": {
                 "GPS": "1019,1077",
@@ -25710,7 +25710,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2003-05-01/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "POHN00FSM0": {
                 "GPS": "1019,1077",
@@ -25778,7 +25778,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1995-05-25/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "esa": "2025-01-19",
@@ -25847,7 +25847,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2001-04-26/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "esa": "2024-12-22",
@@ -25910,7 +25910,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2012-08-08/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "POTS00DEU0": {
                 "GPS": "1019,1077",
@@ -25981,7 +25981,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2005-10-14/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "RealTime": {
             "POVE00BRA0": {
                 "GPS": "1019,1077",
@@ -26088,7 +26088,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2024-05-15/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "RealTime": {
             "PRDS00CAN0": {
                 "GPS": "1019,1077",
@@ -26218,7 +26218,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2019-09-13/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "mit": "2025-02-16"
@@ -26256,7 +26256,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2015-02-13/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "jpl": "2023-12-03",
@@ -26279,10 +26279,10 @@
         "Receiver": {
             "Name": "LEICA GR50",
             "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS+SBAS",
-            "SerialNumber": "1871663",
-            "FirmwareVersion": "4.83/7.9",
+            "SerialNumber": "1832472",
+            "FirmwareVersion": "4.52/7.711",
             "ElevCutoff": "0.0",
-            "DateInstalled": "2025-12-17T01:14Z"
+            "DateInstalled": "2026-11-03T07:42Z"
         },
         "Antenna": {
             "Name": "LEIAR25.R4",
@@ -26299,7 +26299,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2008-09-23/CCYY-MM-DD"
         },
-        "LastData": "2026-11-04",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "mit": "2026-09-20",
@@ -26351,7 +26351,7 @@
             "InputFrequency": "20.0",
             "EffectiveDates": "2010-01-28/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "PTBB00DEU0": {
                 "GPS": "1019,1077",
@@ -26480,7 +26480,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2012-10-14/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "PTVL00VUT0": {
                 "GPS": "1019,1077",
@@ -26575,7 +26575,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2019-06-21/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "esa": "2025-01-19",
@@ -26643,7 +26643,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2004-07-16/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "RealTime": {
             "QIKI00CAN0": {}
         },
@@ -26697,7 +26697,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2017-05-16/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17"
+        "LastData": "2026-11-21"
     },
     "QUI100ECU": {
         "CountryOrRegion": "ECU",
@@ -26796,7 +26796,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2019-09-13/CCYY-MM-DD"
         },
-        "LastData": "2026-11-14",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "mit": "2025-01-19",
@@ -26839,7 +26839,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2015-06-22/CCYY-MM-DD"
         },
-        "LastData": "2026-11-14",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "mit": "2024-11-24"
@@ -26877,7 +26877,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1992-09-06/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "QUIN00USA0": {
                 "GPS": "1076"
@@ -27011,7 +27011,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2018-06-12/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "RAEG00PRT0": {
                 "GPS": "1019,1075",
@@ -27119,7 +27119,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2000-05-10/CCYY-MM-DD"
         },
-        "LastData": "2026-11-14",
+        "LastData": "2026-11-20",
         "RealTime": {
             "RBAY00ZAF0": {
                 "GPS": "1004",
@@ -27239,7 +27239,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2004-08-01/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "RDSD00DOM0": {
                 "GPS": "1019,1077"
@@ -27324,7 +27324,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2013-09-12/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "REDU00BEL0": {
                 "GPS": "1019,1077"
@@ -27435,7 +27435,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1997-10-14/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "REUN00REU0": {
                 "GPS": "1019,1074",
@@ -27514,7 +27514,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1995-11-02/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "REYK00ISL0": {
                 "GPS": "1019,1075",
@@ -27620,7 +27620,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2013-06-20/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "RGDG00ARG0": {
                 "GPS": "1019,1077",
@@ -27680,7 +27680,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2005-01-13/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "RIGA00LVA0": {
                 "GPS": "1019,1077",
@@ -27748,7 +27748,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2011-12-14/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "RIO100ESP0": {
                 "GPS": "1019,1075",
@@ -27793,7 +27793,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2007-04-28/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "RIO200ARG0": {
                 "GPS": "1019,1077",
@@ -27904,7 +27904,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1997-03-10/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "ngs": "2026-09-20",
@@ -27951,7 +27951,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2018-02-05/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-22",
         "RealTime": {
             "ROAG00ESP0": {
                 "GPS": "1019,1077",
@@ -28075,7 +28075,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1995-05-05/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "ROCK00USA0": {
                 "GPS": "1019,1077",
@@ -28125,7 +28125,7 @@
             "InputFrequency": "1191.715",
             "EffectiveDates": "2009-12-23/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "mit": "2026-09-20",
@@ -28177,7 +28177,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2019-02-07/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "SABY00BES0": {
                 "GPS": "1019,1077",
@@ -28259,7 +28259,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2007-05-23/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "RealTime": {
             "SALU00BRA0": {
                 "GPS": "1019,1077",
@@ -28319,7 +28319,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2001-06-30/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "RealTime": {
             "SAMO00WSM0": {
                 "GPS": "1019,1077",
@@ -28379,7 +28379,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2020-08-27/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "SANT00CHL0": {
                 "GPS": "1076"
@@ -28453,7 +28453,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2003-05-08/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "RealTime": {
             "SASK00CAN0": {
                 "GPS": "1019,1077",
@@ -28613,7 +28613,7 @@
             "InputFrequency": "",
             "EffectiveDates": "CCYY-MM-DD/CCYY-MM-DD"
         },
-        "LastData": "2026-11-14",
+        "LastData": "2026-11-20",
         "Product": {
             "Final": {
                 "mit": "2026-09-20",
@@ -28659,7 +28659,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2013-01-21/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "SCH200CAN0": {
                 "GPS": "1019,1077",
@@ -28732,7 +28732,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1998-01-21/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "sio": "2026-09-13",
@@ -28777,7 +28777,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2004-09-12/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "esa": "2025-01-19",
@@ -28843,7 +28843,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2009-04-13/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "RealTime": {
             "SCRZ00BOL0": {
                 "GPS": "1019,1077",
@@ -28901,7 +28901,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2004-10-28/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "RealTime": {
             "SCTB00ATA0": {
                 "GPS": "1019,1074",
@@ -29037,7 +29037,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2012-02-15/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "mit": "2026-08-16"
@@ -29144,7 +29144,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2019-02-01/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "SEUS00BES0": {
                 "GPS": "1019,1075",
@@ -29229,7 +29229,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2015-02-19/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "SEY200SYC0": {
                 "GPS": "1076"
@@ -29286,7 +29286,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2012-06-20/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "SEYG00SYC0": {
                 "GPS": "1019,1077",
@@ -29358,7 +29358,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1999-10-28/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "SFDM00USA0": {
                 "GPS": "1019,1077",
@@ -29409,7 +29409,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2023-09-14/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "jpl": "2023-07-09",
@@ -29468,7 +29468,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2011-12-12/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "SGOC00LKA0": {
                 "GPS": "1019,1077",
@@ -29539,7 +29539,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2019-02-04/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "SGPO00USA0": {
                 "GPS": "1019,1077",
@@ -29660,7 +29660,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2004-12-02/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "ngs": "2026-09-20",
@@ -29703,7 +29703,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2022-12-20/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "cod": "2026-09-20",
@@ -30015,7 +30015,7 @@
             "InputFrequency": "",
             "EffectiveDates": "CCYY-MM-DD/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "ngs": "2026-09-20",
@@ -30059,7 +30059,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1995-11-21/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "sio": "2026-09-13",
@@ -30101,7 +30101,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2012-11-05/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "SOD300FIN0": {
                 "GPS": "1019,1077",
@@ -30159,7 +30159,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1997-05-19/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-22",
         "RealTime": {
             "SOFI00BGR0": {
                 "GPS": "1019,1075",
@@ -30292,7 +30292,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2008-06-30/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "SOLO00SLB0": {
                 "GPS": "1019,1077",
@@ -30405,7 +30405,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2019-04-02/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "SPT000SWE0": {
                 "GPS": "1019,1075",
@@ -30471,7 +30471,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2014-07-25/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-22",
         "RealTime": {
             "SPTU00BRA0": {
                 "GPS": "1019,1074",
@@ -30518,7 +30518,7 @@
             "InputFrequency": "",
             "EffectiveDates": "CCYY-MM-DD/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16"
+        "LastData": "2026-11-22"
     },
     "SSIA00SLV": {
         "CountryOrRegion": "SLV",
@@ -30551,7 +30551,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2000-08-28/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "SSIA00SLV0": {
                 "GPS": "1019,1077",
@@ -30616,7 +30616,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2018-04-24/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "STFU00USA0": {
                 "GPS": "1019,1077",
@@ -30667,7 +30667,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2010-03-03/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "STHL00GBR0": {
                 "GPS": "1076"
@@ -30739,7 +30739,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2025-08-25/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "STJ300CAN0": {
                 "GPS": "1019,1077",
@@ -30803,7 +30803,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2025-09-04/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "STJO00CAN0": {
                 "GPS": "1019,1077",
@@ -30875,7 +30875,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2003-05-23/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "STK200JPN0": {
                 "GPS": "1019,1077",
@@ -30944,7 +30944,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2013-06-20/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "STPM00SPM0": {
                 "GPS": "1019,1077",
@@ -31002,7 +31002,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2012-01-17/2026-02-19"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "STR100AUS0": {
                 "GPS": "1019,1077",
@@ -31074,7 +31074,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1998-06-15/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "RealTime": {
             "STR200AUS0": {
                 "GPS": "1019,1077",
@@ -31240,7 +31240,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1997-12-05/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "cod": "2026-09-20",
@@ -31305,7 +31305,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2008-04-25/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "SUTM00ZAF0": {
                 "GPS": "1019,1077",
@@ -31513,7 +31513,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2008-10-23/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "esa": "2025-01-19",
@@ -31571,7 +31571,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2015-07-15/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "SYDN00AUS0": {
                 "GPS": "1019,1077",
@@ -31641,7 +31641,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2008-01-27/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "SYOG00ATA0": {
                 "GPS": "1019,1077",
@@ -31719,7 +31719,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1995-10-19/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "RealTime": {
             "TABL00USA0": {
                 "GPS": "1019,1077",
@@ -31968,7 +31968,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2003-05-15/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "TASH00UZB0": {
                 "GPS": "1019,1077",
@@ -32087,7 +32087,7 @@
             "InputFrequency": "",
             "EffectiveDates": "CCYY-MM-DD/CCYY-MM-DD"
         },
-        "LastData": "2026-11-14",
+        "LastData": "2026-11-20",
         "Product": {
             "Final": {
                 "jpl": "2025-12-14",
@@ -32204,7 +32204,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2022-12-13/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "RealTime": {
             "TEJA00CHL0": {
                 "GPS": "1019,1077",
@@ -32283,7 +32283,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2022-02-22/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "THTG00PYF0": {
                 "GPS": "1019,1077",
@@ -32352,7 +32352,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2010-11-24/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "THTI00PYF0": {
                 "GPS": "1019,1077",
@@ -32460,7 +32460,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2019-05-04/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "mit": "2026-09-20",
@@ -32561,7 +32561,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2009-09-22/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "RealTime": {
             "TID100AUS0": {
                 "GPS": "1019,1077",
@@ -32664,7 +32664,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "CCYY-MM-DD/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "emr": "2024-06-09",
@@ -32718,7 +32718,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2014-12-10/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "TIT200DEU0": {
                 "GPS": "1019,1077",
@@ -32869,7 +32869,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2022-06-23/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "RealTime": {
             "TKBG00JPN0": {
                 "GPS": "1019,1077",
@@ -32916,7 +32916,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2009-10-23/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "TLSE00FRA0": {
                 "GPS": "1019,1077",
@@ -32985,7 +32985,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2014-02-14/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "TLSG00FRA0": {
                 "GPS": "1019,1077",
@@ -33091,7 +33091,7 @@
             "InputFrequency": "",
             "EffectiveDates": "CCYY-MM-DD/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "jgx": "2026-01-10"
@@ -33137,7 +33137,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2002-02-18/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "TONG00TON0": {
                 "GPS": "1019,1077",
@@ -33262,7 +33262,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1997-03-03/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "TORP00USA0": {
                 "GPS": "1019,1077",
@@ -33347,7 +33347,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2008-09-29/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "TOW200AUS0": {
                 "GPS": "1019,1077",
@@ -33459,7 +33459,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1994-06-02/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "ngs": "2026-09-20",
@@ -33501,7 +33501,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2022-05-07/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "esa": "2024-11-24",
@@ -33596,7 +33596,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2012-12-19/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "RealTime": {
             "TSK200JPN0": {
                 "GPS": "1019,1077",
@@ -33660,7 +33660,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2017-04-24/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "jgx": "2026-09-26",
@@ -33804,7 +33804,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2002-05-12/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "TUVA00TUV0": {
                 "GPS": "1019,1077",
@@ -33871,7 +33871,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2004-12-21/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "sio": "2026-09-13",
@@ -33925,7 +33925,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2013-08-21/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "RealTime": {
             "UCAL00CAN0": {
                 "GPS": "1019,1077",
@@ -33976,7 +33976,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1994-11-30/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "UCLP00USA0": {
                 "GPS": "1077",
@@ -34028,7 +34028,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2001-12-05/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "sio": "2026-09-13",
@@ -34078,7 +34078,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2007-05-08/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-22",
         "RealTime": {
             "UFPR00BRA0": {
                 "GPS": "1019,1077",
@@ -34141,7 +34141,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2000-11-11/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "ULAB00MNG0": {
                 "GPS": "1077",
@@ -34330,7 +34330,7 @@
             "InputFrequency": "",
             "EffectiveDates": "CCYY-MM-DD/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "RealTime": {
             "UNB300CAN0": {
                 "GPS": "1019,1077",
@@ -34387,7 +34387,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2009-02-01/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "cod": "2026-09-20",
@@ -34426,7 +34426,7 @@
             "InputFrequency": "",
             "EffectiveDates": "CCYY-MM-DD/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "esa": "2024-11-24",
@@ -34550,7 +34550,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1995-01-26/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "UNSA00ARG0": {
                 "GPS": "1019,1077",
@@ -34727,7 +34727,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2017-07-20/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "esa": "2025-01-19",
@@ -34771,7 +34771,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1998-04-01/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "URUM00CHN0": {
                 "GPS": "1019,1077",
@@ -34882,7 +34882,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2021-09-05/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "RealTime": {
             "USCL00CHL0": {
                 "GPS": "1001,1002,1003,1004,1019,1076,1077",
@@ -35052,7 +35052,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "1998-03-24/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17"
+        "LastData": "2026-11-21"
     },
     "USN900USA": {
         "CountryOrRegion": "USA",
@@ -35184,7 +35184,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2019-12-01/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-22",
         "RealTime": {
             "USP100FJI0": {
                 "GPS": "1019,1074",
@@ -35225,7 +35225,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "CCYY-MM-DD/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "USUD00JPN0": {
                 "GPS": "1076"
@@ -35290,7 +35290,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2017-07-29/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "UTQI00USA0": {
                 "GPS": "1019,1077",
@@ -35348,7 +35348,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1999-02-05/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "jpl": "2026-05-17",
@@ -35394,7 +35394,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2008-04-07/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "VACS00MUS0": {
                 "GPS": "1076"
@@ -35459,7 +35459,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2001-12-04/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "RealTime": {
             "VALD00CAN0": {
                 "GPS": "1019,1077",
@@ -35626,7 +35626,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2012-12-27/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "VILL00ESP0": {
                 "GPS": "1019,1077"
@@ -35689,7 +35689,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2018-02-14/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-22",
         "RealTime": {
             "VIS000SWE0": {
                 "GPS": "1019,1075",
@@ -35748,7 +35748,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1992-05-25/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "VNDP00USA0": {
                 "GPS": "1019,1077",
@@ -35809,7 +35809,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2013-05-01/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "jgx": "2026-09-26",
@@ -35906,7 +35906,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2017-09-15/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "cod": "2026-09-20",
@@ -35952,7 +35952,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2025-04-10/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "WARK00NZL0": {
                 "GPS": "1019,1074",
@@ -36016,7 +36016,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2003-02-11/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "WARN00DEU0": {
                 "GPS": "1019,1077",
@@ -36141,7 +36141,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2010-06-10/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "ngs": "2026-09-20"
@@ -36182,7 +36182,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2010-06-10/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "Product": {
             "Rapid": {
                 "ngs": "2024-11-30"
@@ -36370,7 +36370,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1996-05-17/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "WGTN00NZL0": {
                 "GPS": "1019,1074",
@@ -36433,7 +36433,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1995-03-14/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "WHC100USA0": {
                 "GPS": "1019,1077",
@@ -36515,7 +36515,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2020-08-08/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "WHIT00CAN0": {
                 "GPS": "1019,1077",
@@ -36586,7 +36586,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1997-09-30/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "RealTime": {
             "WIDC00USA0": {
                 "GPS": "1019,1077",
@@ -36634,7 +36634,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2003-05-06/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "sio": "2026-09-13",
@@ -36694,7 +36694,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2003-06-24/CCYY-MM-DD"
         },
-        "LastData": "2026-11-06",
+        "LastData": "2026-11-22",
         "RealTime": {
             "WIND00NAM0": {
                 "GPS": "1019,1077",
@@ -36771,7 +36771,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1994-07-18/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "RealTime": {
             "WLSN00USA0": {
                 "GPS": "1077",
@@ -36821,7 +36821,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2008-09-12/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-22",
         "RealTime": {
             "WROC00POL0": {
                 "GPS": "1019,1077",
@@ -36913,7 +36913,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2023-12-07/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "WSRT00NLD0": {
                 "GPS": "1077",
@@ -36984,7 +36984,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2003-10-14/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17"
+        "LastData": "2026-11-22"
     },
     "WTZ300DEU": {
         "CountryOrRegion": "DEU",
@@ -37017,7 +37017,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2010-05-12/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "WTZ300DEU0": {
                 "GPS": "1019,1077",
@@ -37058,7 +37058,7 @@
             "InputFrequency": "20.0",
             "EffectiveDates": "2004-02-03/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "mit": "2026-09-20",
@@ -37136,7 +37136,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2013-05-13/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "WTZR00DEU0": {
                 "GPS": "1019,1075",
@@ -37288,7 +37288,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2019-03-14/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "WTZZ00DEU0": {
                 "GPS": "1019,1077",
@@ -37353,7 +37353,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2011-06-08/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "WUH200CHN0": {
                 "GPS": "1019,1077",
@@ -37420,7 +37420,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2011-03-23/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "mit": "2026-08-16",
@@ -37476,7 +37476,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2020-09-05/CCYY-MM-DD"
         },
-        "LastData": "2026-11-16",
+        "LastData": "2026-11-21",
         "RealTime": {
             "WUTH00NOR0": {
                 "GPS": "1019,1077",
@@ -37566,7 +37566,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2005-07-01/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "XMIS00AUS0": {
                 "GPS": "1019,1077",
@@ -37773,7 +37773,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2020-01-09/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "RealTime": {
             "YAR200AUS0": {
                 "GPS": "1019,1077",
@@ -37844,7 +37844,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2007-06-01/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "YAR300AUS0": {
                 "GPS": "1019,1077",
@@ -37907,7 +37907,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2014-12-24/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "RealTime": {
             "YARR00AUS0": {
                 "GPS": "1019,1077",
@@ -37973,7 +37973,7 @@
             "InputFrequency": "10.0",
             "EffectiveDates": "2008-09-17/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "YEBE00ESP0": {
                 "GPS": "1019,1075",
@@ -38040,7 +38040,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2025-08-21/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "YEL200CAN0": {
                 "GPS": "1019,1077",
@@ -38108,7 +38108,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2025-08-13/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "RealTime": {
             "YELL00CAN0": {
                 "GPS": "1019,1077",
@@ -38222,7 +38222,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1999-07-18/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "esa": "2025-01-19",
@@ -38286,7 +38286,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2010-11-01/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-21",
         "Product": {
             "Final": {
                 "jpl": "2024-03-17"
@@ -38364,7 +38364,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2002-06-02/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "ZAMB00ZMB0": {
                 "GPS": "1076"
@@ -38432,7 +38432,7 @@
             "InputFrequency": "5.0",
             "EffectiveDates": "2011-05-28/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "jpl": "2026-09-20",
@@ -38495,7 +38495,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2007-11-08/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "RealTime": {
             "ZIM200CHE0": {
                 "GPS": "1019,1077",
@@ -38562,7 +38562,7 @@
             "InputFrequency": "",
             "EffectiveDates": "2022-07-08/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "cod": "2026-09-20"
@@ -38641,7 +38641,7 @@
             "InputFrequency": "",
             "EffectiveDates": "1993-05-01/CCYY-MM-DD"
         },
-        "LastData": "2026-11-17",
+        "LastData": "2026-11-22",
         "Product": {
             "Final": {
                 "cod": "2026-09-20",

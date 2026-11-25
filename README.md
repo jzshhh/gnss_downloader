@@ -1,5 +1,5 @@
 # gnss_downloader
-A free, portable, one-stop tool for batch-downloading GNSS data: IGS observations and broadcast ephemerides, analysis center products (SP3, CLK, ERP, SINEX, BIA, IONEX — Final/Rapid/Ultra-rapid), h-files (SOPAC, MIT), and regional networks (Hong Kong SatRef built in).
+A free, portable, one-stop tool for batch-downloading GNSS data: IGS observations and broadcast ephemerides (BRDC only), analysis center products (SP3, CLK, ERP, BIA, IONEX — Final/Rapid/Ultra-rapid; product types listed per AC as actually published), h-files (SOPAC, MIT), and regional networks (Hong Kong SatRef built in).
 
 All download addresses are open, editable templates ({YYYY}, {DDD}, {SSSS} …) — when a data center rebuilds its site, you fix the URL yourself instead of waiting for an update.
 

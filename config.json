@@ -1,5 +1,5 @@
 {
-  "root_dir": "F:\\Software\\github\\gnss_downloader",
+  "root_dir": "F:\\Software\\Data",
   "threads": 4,
   "timeout": 60,
   "retry": 2,
@@ -13,22 +13,10 @@
   "verify_downloads": true,
   "ui": {
     "igs_obs": false,
-    "igs_nav": false,
-    "igs_center": "CODE",
-    "igs_stations": [
-      "bjfs",
-      "chan",
-      "hksl",
-      "hkws",
-      "urum",
-      "wuh2",
-      "cksv",
-      "kmnm",
-      "ncku"
-    ],
-    "prd_checked": [
-      "aiub|ion"
-    ],
+    "igs_nav": true,
+    "igs_center": "WHU",
+    "igs_stations": [],
+    "prd_checked": [],
     "hf": {
       "sopacr20": [
         false,
@@ -63,12 +51,12 @@
   },
   "_order": [
     "WHU",
-    "WHU-FTP",
-    "CODE",
     "SOPAC",
-    "IGN",
     "ESA",
+    "CODE",
+    "IGN",
     "CDDIS",
+    "WHU-FTP",
     "KASI"
   ]
 }
